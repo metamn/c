@@ -76,14 +76,16 @@ module.exports = {
 
 
 
-  // .js files to concat
-  js_src: ['site/components/framework/**/*.js', 'site/components/project/**/*.js', 'site/components/pages/**/*.js'],
+  // main .js filename, created with Webpack
+  // - details in the webpack config file
+  js_src: 'dist/assets/scripts/site.bundle.js',
 
-  // .js minimized file name
-  js_filename: 'site.js',
+  // webpack config file
+  js_webpack_config: '../../webpack.config.js',
 
   // .js file destination
   js_dest: 'dist/assets/scripts',
+
 
 
   // .js files to concat for styleguide

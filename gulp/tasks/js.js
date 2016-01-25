@@ -1,6 +1,6 @@
 // JS
 //
-// - collect all .js files from '/components' into a single file (site.min.js, styleguide.min.js), minimize it and move to the destination
+// - compile .js files with Webpack, minimize it and move to the destination
 //
 // Styleguide js
 
@@ -11,26 +11,26 @@ var gulp = require('gulp'),
 
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    webpack = require('webpack-stream');
 
 
 // Configuration
 var paths = require('./../config');
 
 
-var js = function(source, filename, dest) {
+var js = function(source, webpack_config, dest) {
   return gulp.src(source)
     .pipe(plumber({errorHandler: onError}))
-    .pipe(concat(filename))
-    .pipe(rename({ suffix: '.min' }))
-    //.pipe(uglify())
+    .pipe(webpack(require(webpack_config)))
+    .pipe(uglify())
     .pipe(gulp.dest(dest));
 };
 
 
 // Task for concatenating, minifying and moving .js files for /site
 gulp.task('js', function() {
-  js(paths.js_src, paths.js_filename, paths.js_dest);
+  js(paths.js_src, paths.js_webpack_config, paths.js_dest);
 });
 
 // Task for concatenating, minifying and moving .js files for /styleguide
