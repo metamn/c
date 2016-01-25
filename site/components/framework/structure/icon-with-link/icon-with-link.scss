@@ -1,0 +1,15 @@
+@mixin icon-with-link($width, $color-scheme: none, $type: none) {
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+
+  &__link {
+    .link {
+      @include link($color-scheme, $type);
+    }
+  }
+
+  .icon {
+    @include icon($width);
+  }
+}

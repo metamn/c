@@ -1,0 +1,17 @@
+@mixin img($stretch, $loading, $placeholder-color) {
+  @if ($stretch == fluid) {
+    @include img--fluid;
+  }
+
+  @if ($stretch == stretched) {
+    @include img--stretched;
+  }
+
+  @if ($placeholder-color != false) {
+    @include img--placeholder($placeholder-color);
+  }
+
+  @if ($loading != false) {
+    @include img--loading;
+  }
+}

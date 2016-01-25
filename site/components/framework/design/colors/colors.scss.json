@@ -1,0 +1,73 @@
+{
+  "colors": [
+    {
+      "name": "white",
+      "value": "#fffafa",
+      "description": "Main color"
+    },
+    {
+      "name": "black",
+      "value": "#000",
+      "description": "Main color"
+    },
+    {
+      "name": "green",
+      "value": "rgb(34,95,33)",
+      "description": "Highlight color"
+    }
+  ],
+  "color_pairs": [
+    {
+      "name": "black-on-white",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$black"
+        },
+        {
+          "name": "background-color",
+          "value": "$white"
+        }
+      ]
+    },
+    {
+      "name": "white-on-black",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$white"
+        },
+        {
+          "name": "background-color",
+          "value": "$black"
+        }
+      ]
+    },
+    {
+      "name": "white-on-transparent",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$white"
+        },
+        {
+          "name": "background-color",
+          "value": "transparent"
+        }
+      ]
+    },
+    {
+      "name": "green-on-white",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$green"
+        },
+        {
+          "name": "background-color",
+          "value": "$white"
+        }
+      ]
+    }
+  ]
+}

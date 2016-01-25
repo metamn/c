@@ -1,0 +1,88 @@
+// Colors
+//
+// The colors together with the color pairs.
+// Colors don't exist alone yet in pairs, like black on white.
+// All color pairs have a contrast ratio set for perfect readability using [Lea Verou's contrast checking tool](http://leaverou.github.io/contrast-ratio/).
+//
+// Styleguide colors
+
+// Main color
+$white: #fffafa;
+
+// Main color
+$black: #000;
+
+// Highlight color
+$green: rgb(34,95,33);
+
+
+// Color combinations. Colors are not used standalone but in pairs
+@mixin colors($name) {
+
+  @if ($name == 'black-on-white') {
+    color: $black;
+    background-color: $white;
+    
+  }
+
+  @if ($name == 'white-on-black') {
+    color: $white;
+    background-color: $black;
+    
+  }
+
+  @if ($name == 'white-on-transparent') {
+    color: $white;
+    background-color: transparent;
+    
+  }
+
+  @if ($name == 'green-on-white') {
+    color: $green;
+    background-color: $white;
+    
+  }
+
+}
+
+// Color classes
+
+.white {
+  background: #fffafa;
+};
+
+.black {
+  background: #000;
+};
+
+.green {
+  background: rgb(34,95,33);
+};
+
+
+// Color pair classes
+
+.black-on-white {
+  color: $black;
+  background-color: $white;
+  
+}
+
+.white-on-black {
+  color: $white;
+  background-color: $black;
+  
+}
+
+.white-on-transparent {
+  color: $white;
+  background-color: transparent;
+  
+}
+
+.green-on-white {
+  color: $green;
+  background-color: $white;
+  
+}
+

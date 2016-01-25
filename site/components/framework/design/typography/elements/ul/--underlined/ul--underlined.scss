@@ -1,0 +1,7 @@
+@mixin ul--underlined {
+  .li {
+    @include border--normal;
+    padding: $lem / 4 0;
+    margin: $lem / 4 0;
+  }
+}

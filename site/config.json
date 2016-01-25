@@ -1,0 +1,26 @@
+{
+  "url": "/",
+  "urlx": "http://metamn.io/components",
+  "title": "Components",
+  "images": "assets/images/",
+  "videos": "assets/videos/",
+  "javascripts": {
+    "header": [
+      {
+        "file": "picturefill.min.js",
+        "async": "true"
+      }
+    ],
+    "footer": [
+      {
+        "file": "imagesloaded.pkgd.min.js"
+      },
+      {
+        "file": "hammer.min.js"
+      },
+      {
+        "file": "site.min.js"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+dist
+npm-debug.log
+time.csv
+.cache-require-paths.json
+node_modules
+site/assets/images/resized
+site/assets/images/to-resize

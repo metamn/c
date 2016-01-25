@@ -1,0 +1,13 @@
+@mixin grid--mobile($item) {
+  @include mobile {
+    flex-basis: 100%;
+
+    + #{$item} {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

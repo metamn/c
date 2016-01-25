@@ -1,0 +1,17 @@
+@mixin ul--inline {
+  display: flex;
+  flex-wrap: wrap;
+
+  .li {
+    &:after {
+      content: '/';
+      padding: 0 $lem / 4;
+    }
+
+    &:last-of-type {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

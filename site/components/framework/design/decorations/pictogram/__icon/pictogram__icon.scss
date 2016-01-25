@@ -1,0 +1,7 @@
+@mixin pictogram__icon($width) {
+  display: flex;
+  
+  .icon {
+    @include icon($width);
+  }
+}

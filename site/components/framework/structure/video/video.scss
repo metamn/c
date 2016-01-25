@@ -1,0 +1,11 @@
+// Video
+//
+// Displays a video with a fallback image
+// Good source of free HD videos can be found at http://mazwai.com/#/videos
+// The fallback image to be responsive the `responsiveImageURL` script should be used
+//
+// Styleguide video
+
+@mixin video {
+  @include figure--loading;
+}
