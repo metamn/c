@@ -1,7 +1,7 @@
 {
-  "name": "ssgg",
+  "name": "Components",
   "version": "1.0.0",
-  "description": "Static site and styleguide generator",
+  "description": "Metamn components",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
