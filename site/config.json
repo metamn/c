@@ -7,17 +7,16 @@
   "javascripts": {
     "header": [
       {
-        "file": "picturefill.min.js",
-        "async": "true"
+        "file": "https://use.typekit.net/nvy7idl.js",
+        "async": "true",
+        "type": "external"
+      },
+      {
+        "content": "try{Typekit.load({ async: true });}catch(e){}",
+        "type": "inline"
       }
     ],
     "footer": [
-      {
-        "file": "imagesloaded.pkgd.min.js"
-      },
-      {
-        "file": "hammer.min.js"
-      },
       {
         "file": "site.min.js"
       }

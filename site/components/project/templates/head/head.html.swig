@@ -14,13 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>{{ page_title | safe }}</title>
-
-
     <link href="{{ site.url }}assets/styles/site.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
-    <script src="https://use.typekit.net/nvy7idl.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
     {{ scripts | safe }}
 
     {% include '__favicon/head__favicon.html.swig' %}
