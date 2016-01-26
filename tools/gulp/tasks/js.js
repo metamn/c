@@ -19,8 +19,8 @@ var gulp = require('gulp'),
 var paths = require('./../config');
 
 
-var js = function(source, webpack_config, dest) {
-  return gulp.src(source)
+var js = function(webpack_config, dest) {
+  return gulp.src('')
     .pipe(plumber({errorHandler: onError}))
     .pipe(webpack(require(webpack_config)))
     .pipe(uglify())
@@ -28,12 +28,7 @@ var js = function(source, webpack_config, dest) {
 };
 
 
-// Task for concatenating, minifying and moving .js files for /site
+// Task for concatenating, minifying and moving .js files to destination
 gulp.task('js', function() {
-  js(paths.js_src, paths.js_webpack_config, paths.js_dest);
-});
-
-// Task for concatenating, minifying and moving .js files for /styleguide
-gulp.task('jsSg', function() {
-  js(paths.styleguide_js_src, paths.styleguide_js_filename, paths.styleguide_js_dest);
+  js(paths.js_webpack_config, paths.js_dest);
 });
