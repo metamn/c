@@ -1,4 +1,7 @@
-<script src="{{ site.url }}{{ site.scripts }}site.min.js"></script>
+{% import "../../../helpers/includejs/includejs.swig" as j  %}
+{% set scripts = j.includejs(site.javascripts.footer) %}
+
+{{ scripts | safe }}
 
 </body>
 </html>

@@ -2,5 +2,14 @@
   "url": "/",
   "title": "Components",
   "scripts": "assets/scripts/",
-  "styles": "assets/styles/"
+  "styles": "assets/styles/",
+  "javascripts": {
+    "header": [
+    ],
+    "footer": [
+      {
+        "file": "site.min.js"
+      }
+    ]
+  }
 }
