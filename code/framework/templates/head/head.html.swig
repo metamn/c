@@ -16,6 +16,8 @@
     <title>{{ page_title | safe }}</title>
     <link href="{{ site.url }}{{ site.styles }}site.css" media="screen, projection" rel="stylesheet" type="text/css" />
     {{ scripts | safe }}
+
+    {% include '__favicon/head__favicon.html.swig' %}
   </head>
 
   <body>

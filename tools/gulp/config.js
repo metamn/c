@@ -9,6 +9,11 @@ var sourceCode = 'code';
 // the destination folder where production ready code will be generated
 var destination = 'production';
 
+// supported image extensions
+var image_extensions = '*.{png,jpg,gif,jpeg,svg}';
+
+
+
 module.exports = {
   // The destination folder where all the generated files will be copied
   // - the contents of this folder will be uploaded to a static web server like Github Pages
@@ -20,6 +25,7 @@ module.exports = {
   config_json: rootDir + sourceCode + '/config.json',
 
 
+
   // Swig source files
   // - they will be all compiled
   swig_src: sourceCode + '/**/*.swig',
@@ -29,23 +35,34 @@ module.exports = {
   swig_dest: sourceCode,
 
 
-  // .html files to be moved into dest
+
+  // Html files to be moved into dest
   html_src: sourceCode + '/pages/**/**/*.html',
 
 
-  // webpack config file
+
+  // Webpack config file
   js_webpack_config: rootDir + 'webpack.config.js',
 
-  // .js file destination
+  // JS file destination
   js_dest: destination + '/assets/scripts',
 
 
-  // .scss file to compile
+
+  // Scss file to compile
   scss_src: sourceCode + '/config.scss',
 
-  // .css file destination
+  // Css file destination
   scss_dest: destination + '/assets/styles',
 
-  // .css file name
-  scss_dest_name: 'site.min.css'
+  // Css file name
+  scss_dest_name: 'site.min.css',
+
+
+  
+  // Image sources
+  image_src: sourceCode + '/**/' + image_extensions,
+
+  // Image destination
+  image_dest: destination + '/assets/images',
 }
