@@ -7,6 +7,7 @@
 var htmlExt = '.html.swig';
 var scssExt = '.scss';
 var jsExt = '.js';
+var jsonExt = '.json';
 
 
 
@@ -52,6 +53,9 @@ var makeFiles = function(path, klass) {
 
   // JS
   makeFile(path + jsExt, '');
+
+  // JSON
+  makeFile(path + jsonExt, '{}');
 }
 
 
