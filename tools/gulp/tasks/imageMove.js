@@ -15,8 +15,8 @@ var paths = require('./../config');
 
 
 // Task for moving image files for /site
-gulp.task('imageMove', function() {
-  return gulp.src(paths.image_resize_dest + paths.image_extensions)
+gulp.task('imageMove', function(file, dest) {
+  return gulp.src(file)
     .pipe(plumber({errorHandler: onError}))
-    .pipe(gulp.dest(paths.images_dest))
+    .pipe(gulp.dest(dest))
 });

@@ -26,17 +26,17 @@ module.exports = {
 
 
 
-  // Swig source files
+  // SWIG source files
   // - they will be all compiled
   swig_src: sourceCode + '/**/*.swig',
 
-  // Swig dest files (same directory)
+  // SWIG dest files (same directory)
   // - and put in the same directory where the original .swig file was found
   swig_dest: sourceCode,
 
 
 
-  // Html files to be moved into dest
+  // HTML files to be moved into dest
   html_src: sourceCode + '/pages/**/**/*.html',
 
 
@@ -49,19 +49,16 @@ module.exports = {
 
 
 
-  // Scss file to compile
+  // SCSS file to compile
   scss_src: sourceCode + '/config.scss',
 
-  // Css file destination
+  // CSS file destination
   scss_dest: destination + '/assets/styles',
 
-  // Css file name
+  // CSS file name
   scss_dest_name: 'site.min.css',
 
 
-  
-  // Image sources
-  image_src: sourceCode + '/**/' + image_extensions,
 
   // Image destination
   image_dest: destination + '/assets/images',

@@ -21,30 +21,13 @@ var gulp = require('gulp'),
     data = require('gulp-data'),
     fs = require('fs'),
     path = require('path'),
-    onError = require('../utils/onError');;
+    onError = require('../utils/onError'),
+    getJSONData = require('../utils/getJSONData');
 
 
 // Configuration
 var paths = require('./../config');
 
-
-// Get the associated JSON data for every Swig file
-// - ex.: home.html.swig -> home.json
-var getJsonData = function(file) {
-  // home/work/cs/c/pages/home/home.html.swig -> home/work/cs/c/pages/home/home
-  var split = file.path.split('.');
-  if (split[0]) {
-    var json = split[0] + '.json';
-    try {
-      var stats = fs.lstatSync(json);
-      if (stats.isFile()) {
-        return require(json);
-      }
-    } catch(e) {
-      //
-    }
-  }
-};
 
 
 var _swig = function(source, dest, config, grabJSON) {
@@ -52,7 +35,7 @@ var _swig = function(source, dest, config, grabJSON) {
     .pipe(plumber({errorHandler: onError}))
 
     // load JSONs
-    .pipe(data(getJsonData))
+    .pipe(data(getJSONData))
     .pipe(swig({
       defaults: {
         cache: false,

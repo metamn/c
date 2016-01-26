@@ -44,10 +44,9 @@ var _imageResize = function(file, sizeType, size, name) {
 }
 
 
-// Resize a bunch of images
-// - all images from 'to-resize' are resized and moved to the 'resized' folder
-var imageBatchResize = function(files, retina, retina_name) {
-  return gulp.src(files)
+// Resize an image
+var imageBatchResize = function(file, retina, retina_name) {
+  return gulp.src(file)
     .pipe(plumber({errorHandler: onError}))
     .pipe(data(function(file) {
 
@@ -59,16 +58,20 @@ var imageBatchResize = function(files, retina, retina_name) {
       if (fs.existsSync(json_file)) {
         json = require(json_file);
         sizes = json.image_sizes;
-        for (i in sizes) {
-          // Resize width or height?
-          if (typeof sizes[i].height !== 'undefined') {
-            size = sizes[i].height;
-            sizeType = 'height';
-          } else {
-            size = sizes[i].width;
-            sizeType = 'width';
+        if (sizes) {
+          for (i in sizes) {
+            // Resize width or height?
+            if (typeof sizes[i].height !== 'undefined') {
+              size = sizes[i].height;
+              sizeType = 'height';
+            } else {
+              size = sizes[i].width;
+              sizeType = 'width';
+            }
+            _imageResize(file.path, sizeType, size * retina, sizes[i].name + retina_name);
           }
-          _imageResize(file.path, sizeType, size * retina, sizes[i].name + retina_name);
+        } else {
+          console.log('No resize needed');
         }
       }
     }))
@@ -78,12 +81,23 @@ var imageBatchResize = function(files, retina, retina_name) {
 // Image resize
 // - create different images for different devices
 gulp.task('imageResize', function() {
-  imageBatchResize(paths.images_resize_src, 1, '');
+  var fileName = process.argv[4];
+  if (fileName === undefined ) {
+    console.log('Usage: gulp image --file <complete-path-to-image-file>');
+  } else {
+    imageBatchResize(fileName, 1, '');
+  }
 });
 
 
 // Retina images
 // - create 2x images for different devices
 gulp.task('imageResize2x', function() {
-  imageBatchResize(paths.images_resize_src, 2, '2x');
+  var fileName = process.argv[4];
+
+  if (fileName === undefined ) {
+    console.log('Usage: gulp image --file <complete-path-to-image-file>');
+  } else {
+    imageBatchResize(fileName, 2, '2x');
+  }
 });
