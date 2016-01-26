@@ -10,10 +10,6 @@
         "file": "https://use.typekit.net/nvy7idl.js",
         "async": "true",
         "type": "external"
-      },
-      {
-        "content": "try{Typekit.load({ async: true });}catch(e){}",
-        "type": "inline"
       }
     ],
     "footer": [

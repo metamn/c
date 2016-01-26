@@ -5,6 +5,8 @@
 1. To have a set of standalone, reusable UI components
 2. Which can be rendered into a static website
 3. And can be understood easily by other designers and developers
+4. Creating components should be easy
+5. The generated production code should be world class
 
 ### Standalone
 
@@ -21,7 +23,17 @@ Components can freely include other components and can be bundled together to fo
 
 ### Understandability
 
-Naming components and locating them in the source code should follow a rule everybody can easily understand and learn in a day
+1. Naming components and locating them in the source code should follow a rule everybody can easily understand and learn in a day
+2. There should be a live documentation for all components, made both for designers and developers
+
+### Automation
+
+1. There should be scripts generating component skeletons, component collections, and merging them into webpages
+2. Designers and developers should focus only on creating things not on the underlying infrastructure
+
+### Best practices
+
+1. Both source code and the generated final website should incorporate industry best practices
 
 ## Example
 
