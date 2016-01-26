@@ -1,9 +1,0 @@
-@include html-css-reset;
-
-html {
-  body {
-    @include semantic-html5-titles;
-    @include typography-reset;
-    @include text-style(default);  
-  }
-}

@@ -1,4 +1,4 @@
-dist
+production
 npm-debug.log
 time.csv
 .cache-require-paths.json

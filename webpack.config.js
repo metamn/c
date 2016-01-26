@@ -1,6 +1,6 @@
 module.exports = {
   // from /site ....
-  entry: "./site/site.js",
+  entry: "./code/config.js",
   output: {
     // ... goes to /dist/assets/scripts
     path: __dirname,

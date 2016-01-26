@@ -3,7 +3,7 @@
 
 // Modules
 //
-var commands = require('./bem/bem-commands');
+var commands = require('./tools/bem/bem-commands');
 
 
 
