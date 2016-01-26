@@ -15,11 +15,9 @@ module.exports = {
   dest: destination,
 
 
-
   // Global config.json file
   // - this will be loaded every time a .swig file is compiled
   config_json: rootDir + sourceCode + '/config.json',
-
 
 
   // Swig source files
@@ -31,10 +29,8 @@ module.exports = {
   swig_dest: sourceCode,
 
 
-
   // .html files to be moved into dest
   html_src: sourceCode + '/pages/**/**/*.html',
-
 
 
   // webpack config file
@@ -42,4 +38,14 @@ module.exports = {
 
   // .js file destination
   js_dest: destination + '/assets/scripts',
+
+
+  // .scss file to compile
+  scss_src: sourceCode + '/config.scss',
+
+  // .css file destination
+  scss_dest: destination + '/assets/styles',
+
+  // .css file name
+  scss_dest_name: 'site.min.css'
 }

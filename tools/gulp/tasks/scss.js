@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer-core'),
-    minifyCSS = require('gulp-minify-css');
+    minifyCSS = require('gulp-minify-css'),
+    rename = require('gulp-rename');
 
 
 // Configuration
@@ -25,7 +26,7 @@ var paths = require('./../config');
 
 
 
-var _scss = function(source, dest) {
+var _scss = function(source, dest, dest_name) {
   return gulp.src(source)
     .pipe(plumber({errorHandler: onError}))
     .pipe(cssGlobbing({
@@ -35,18 +36,13 @@ var _scss = function(source, dest) {
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
     .pipe(minifyCSS())
+    .pipe(rename(dest_name))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dest));
 }
 
 
-// Task for compiling and movind the .css for /site
+// Task for compiling and movind the .css to destination
 gulp.task('scss', function(){
-  _scss('site/' + paths.scss_src, paths.scss_dest);
-});
-
-
-// Task for compiling and movind the .css for /styleguide
-gulp.task('scssSg', function(){
-  _scss('styleguide/' + paths.styleguide_scss_src, paths.styleguide_scss_dest);
+  _scss(paths.scss_src, paths.scss_dest, paths.scss_dest_name);
 });
