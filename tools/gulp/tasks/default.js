@@ -20,6 +20,7 @@ gulp.task('default', function(cb) {
   runSequence(
     'swig',
     'html',
+    'scss',
     'js',
     cb
   );

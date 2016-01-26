@@ -1,5 +1,5 @@
-{% include 'head/head.html.swig' %}
+{% include '../head/head.html.swig' %}
 
 {% block content %}{% endblock %}
 
-{% include 'footer/footer.html.swig' %}
+{% include '../footer/footer.html.swig' %}

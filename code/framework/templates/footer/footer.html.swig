@@ -1,4 +1,4 @@
-{% import "../../../helpers/includejs/includejs.swig" as j  %}
+{% import "../../helpers/includejs/includejs.swig" as j  %}
 {% set scripts = j.includejs(site.javascripts.footer) %}
 
 {{ scripts | safe }}

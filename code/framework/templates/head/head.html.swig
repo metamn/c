@@ -1,10 +1,10 @@
-{% import "../../../helpers/classname/classname.swig" as c  %}
+{% import "../../helpers/classname/classname.swig" as c  %}
 {% set classname = c.classname(title) %}
 
-{% import "../../../helpers/pagetitle/pagetitle.swig" as t  %}
+{% import "../../helpers/pagetitle/pagetitle.swig" as t  %}
 {% set page_title = t.pagetitle(title, site.title) %}
 
-{% import "../../../helpers/includejs/includejs.swig" as j  %}
+{% import "../../helpers/includejs/includejs.swig" as j  %}
 {% set scripts = j.includejs(site.javascripts.header) %}
 
 <!doctype html>
