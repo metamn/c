@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Transition",
+    "description": "<p>Smooth animation transition using a cubic-bezier function following the recommendations from <a href=\"https://developers.google.com/web/fundamentals/look-and-feel/animations/animating-between-views\">Google Web Fundamentals</a>.\nUsed for all animations like the slider or hovering an element.</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "transition",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "transition",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

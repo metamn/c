@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Image preloading",
+    "description": "<p>The image won&#39;t be displayed until it is completelly loaded. During the load a small animation will be displayed instead.\nOnce the image is fully loaded it&#39;s opacity is set to 1\nThe <a href=\"https://github.com/desandro/imagesloaded\">Imagesloaded script</a> is used fro this task</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "image-with-preloader",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "image-with-preloader",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

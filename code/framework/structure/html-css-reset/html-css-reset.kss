@@ -1,0 +1,41 @@
+[
+  {
+    "header": "Flexbox reset",
+    "description": "<p>Making Flexbox working seamlessly in all browsers\nUses the following fixes:</p>\n<ul>\n<li><a href=\"http://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x\">http://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x</a></li>\n<li><a href=\"https://github.com/philipwalton/flexbugs\">https://github.com/philipwalton/flexbugs</a></li>\n</ul>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "flexbox-reset",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "flexbox-reset",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  },
+  {
+    "header": "HTML and CSS reset",
+    "description": "<p>Resets the browser to display the elements in the best way possible</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "html-css-reset",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "html-css-reset",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  },
+  {
+    "header": "Normalize CSS",
+    "description": "<p>A personalized version of <a href=\"https://github.com/necolas/normalize.css/\">Normalize.css</a></p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "normalize-css",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "normalize-css",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .figure {
-        @include figure($preloading: true);
+      .x-img {
+        @include x-img;
       }
     }
   }

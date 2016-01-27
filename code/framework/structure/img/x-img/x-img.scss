@@ -1,0 +1,14 @@
+@mixin x-img {
+  &__title {
+    display: flex;
+  }
+
+  &--fluid {
+    @include x-img--fluid;
+    margin-bottom: $lem;
+  }
+
+  &--stretched {
+    @include x-img--stretched;
+  }
+}

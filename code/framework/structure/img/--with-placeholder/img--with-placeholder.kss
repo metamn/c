@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Image with placeholder",
+    "description": "",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "image-with-placeholder",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "image-with-placeholder",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

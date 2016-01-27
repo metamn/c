@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Stretched background image",
+    "description": "<p>Makes an image fully fill the element&#39;s background</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "background-image-stretched",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "background-image-stretched",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

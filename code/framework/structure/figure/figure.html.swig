@@ -82,7 +82,7 @@
     <source media="(max-width: 599px)" srcset="{{ site_url }}{{ site.images }}{{ mobile }}, {{ site_url }}{{ site.images }}{{ mobile2x }} 2x">
     <!--[if IE 9]></video><![endif]-->
     <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
-    <img class="img" src="{{ site_url }}{{ site.images }}{{ laptop }}"  alt="{{ image.title }}">
+    <img class="img" src="{{ site_url }}{{ site.images }}{{ laptop }}" alt="{{ image.title }}">
   </picture>
 
   <figcaption class="figcaption {{ figcaption_class }}">

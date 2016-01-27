@@ -1,13 +1,13 @@
 [
   {
-    "header": "Home page",
-    "description": "<p>desc</p>\n",
+    "header": "Figure preloading",
+    "description": "",
     "deprecated": false,
     "experimental": false,
-    "reference": "home",
+    "reference": "figure-preloading",
     "depth": 1,
     "weight": 0,
-    "referenceURI": "home",
+    "referenceURI": "figure-preloading",
     "markup": false,
     "modifiers": [],
     "parameters": []

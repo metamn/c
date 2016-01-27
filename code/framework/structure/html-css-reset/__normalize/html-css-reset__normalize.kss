@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Normalize CSS",
+    "description": "<p>A personalized version of <a href=\"https://github.com/necolas/normalize.css/\">Normalize.css</a></p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "normalize-css",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "normalize-css",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

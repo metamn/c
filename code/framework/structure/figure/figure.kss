@@ -1,0 +1,45 @@
+[
+  {
+    "header": "Figure",
+    "description": "<p>Displaying images in a responsive and retina friendly way using the <a href=\"http://scottjehl.github.io/picturefill/\">Picturefill library</a>.</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "figure",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "figure",
+    "markup": false,
+    "modifiers": [],
+    "parameters": [
+      {
+        "name": "$stretch",
+        "description": "<code>stretched</code> images are taking as much space as possible even if they have to be magnified; <code>fluid</code> images are taking as much space as possible without being magnified"
+      },
+      {
+        "name": "$preloading",
+        "description": "when <code>true</code> a loading indicator will be displayed, usually a spinning image"
+      },
+      {
+        "name": "$placeholder-color",
+        "description": "if not <code>false</code> a solid color background will be displayed until the image is loaded"
+      },
+      {
+        "name": "$figcaption",
+        "description": "when <code>off</code> the figcaption won&#39;t be displayed; when <code>on</code> it will be displayed"
+      }
+    ]
+  },
+  {
+    "header": "Figure preloading",
+    "description": "",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "figure-preloading",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "figure-preloading",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

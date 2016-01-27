@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Text style",
+    "description": "<p>Typographic settings for different text types.\nEach text type has set a <code>font</code>, a <code>scale</code>, a <code>color</code> and parameters like letter-spacing, max-width or else.\nEverything text uses this <code>text-style</code> mixin. We don&#39;t set <code>color</code> or <code>font</code> directly for a text.</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "text-style",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "text-style",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

@@ -1,13 +1,13 @@
 // Image
 //
-// Displaying an image in different ways (strectched, fluid), with or without a placeholder color and a loading spinner
+// Displaying an image in different ways
 //
-// $stretch - aaa
+// $stretch - See <section.stretched-image> and <section.fluid-image>
 // $preloading - displaying a spinning image
 // $placeholder-color - displaying a background color until the image is loaded
 //
 // Styleguide img
-@mixin img($stretch, $preloading, $placeholder-color) {
+@mixin img($stretch: fluid, $preloading: false, $placeholder-color: $white) {
   @if ($stretch == fluid) {
     @include img--fluid;
   }

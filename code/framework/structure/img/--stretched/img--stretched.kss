@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Stretched image",
+    "description": "<p>A stretched image will fill the available space even if it has to be magnified</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "stretched-image",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "stretched-image",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]
