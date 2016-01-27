@@ -1,8 +1,12 @@
 // The default page template
 //
-// It displays a `<head>` section and inserts javascripts in the footer if necessary
+// 1. It displays a `<head>` section and inserts javascripts in the footer if necessary
+// 2. Resets the browser
 //
 // Styleguide default-template
+
+@include html-css-reset;
+
 html {
   body {
 
