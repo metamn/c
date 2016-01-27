@@ -1,2 +1,2 @@
-var imagesLoading = require('./../../framework/structure/figure/img/--preloading/img--preloading.js');
+var imagesLoading = require('./../../framework/structure/figure/img/img.js');
 imagesLoading('.home');

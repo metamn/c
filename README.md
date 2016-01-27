@@ -5,8 +5,8 @@
 1. To have a set of standalone, reusable UI components
 2. Which can be rendered into a static website
 3. And can be understood easily by other designers and developers
-4. Creating components should be easy
-5. The generated production code should be world class
+4. Also creating components should be easy
+5. And the generated production code should be world class
 
 ### Standalone
 

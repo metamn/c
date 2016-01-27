@@ -35,7 +35,7 @@
     },
     {
       "name": "tablet",
-      "media_query": "(min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet - 0.1)"
+      "media_query": "(min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet)"
     },
     {
       "name": "tablet-landscape",
@@ -43,7 +43,7 @@
     },
     {
       "name": "laptop",
-      "media_query": "(min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop)"
+      "media_query": "(min-width: $breakpoint-tablet + 0.1) and (max-width: $breakpoint-desktop)"
     },
     {
       "name": "desktop",
