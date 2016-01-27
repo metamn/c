@@ -8,5 +8,8 @@ module.exports = {
     // ... goes to /dist/assets/scripts
     path: __dirname,
     filename: "site.[name].min.js"
+  },
+  externals: {
+    imagesLoaded: 'imagesLoaded'
   }
 };

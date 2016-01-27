@@ -6,7 +6,9 @@
 html {
   &.home {
     body {
-
+      .figure {
+        @include figure($preloading: true);
+      }
     }
   }
 }

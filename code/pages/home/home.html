@@ -15,6 +15,14 @@
     
   
     
+      <script src="/assets/scripts/picturefill.min.js"></script>
+    
+  
+    
+      <script src="/assets/scripts/imagesloaded.pkgd.min.js"></script>
+    
+  
+    
       <script src="/assets/scripts/site.header.min.js"></script>
     
   
@@ -30,6 +38,69 @@
 
 
   home
+
+  
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg"  alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
 
 
 

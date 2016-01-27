@@ -1,6 +1,7 @@
 {
   "url": "/",
   "title": "Components",
+  "images": "assets/images/",
   "scripts": "assets/scripts/",
   "styles": "assets/styles/",
   "javascripts": {
@@ -8,6 +9,12 @@
       {
         "file": "https://use.typekit.net/nvy7idl.js",
         "type": "external"
+      },
+      {
+        "file": "picturefill.min.js"
+      },
+      {
+        "file": "imagesloaded.pkgd.min.js"
       },
       {
         "file": "site.header.min.js"

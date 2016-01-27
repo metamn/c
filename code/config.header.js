@@ -1,1 +1,1 @@
-require('./framework/design/typography/fonts/typekit.js')
+require('./framework/design/typography/fonts/typekit.js');
