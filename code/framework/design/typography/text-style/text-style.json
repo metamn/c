@@ -1,0 +1,29 @@
+{
+  "text_styles": [
+    {
+      "name": "Default",
+      "description": "The basic settings for a text.",
+      "based_on": "Nimbus Sans",
+      "mixins": [
+        {
+          "name": "font",
+          "value": "nimbus-sans-regular"
+        },
+        {
+          "name": "scale",
+          "value": "default"
+        },
+        {
+          "name": "colors",
+          "value": "black-on-white"
+        }
+      ],
+      "properties": [
+        {
+          "name": "letter-spacing",
+          "value": "1.1px"
+        }
+      ]
+    }
+  ]
+}
