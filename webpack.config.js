@@ -1,9 +1,12 @@
 module.exports = {
   // from /site ....
-  entry: "./code/config.js",
+  entry: {
+    header: "./code/config.header.js",
+    footer: "./code/config.footer.js",
+  },
   output: {
     // ... goes to /dist/assets/scripts
     path: __dirname,
-    filename: "site.min.js"
+    filename: "site.[name].min.js"
   }
 };

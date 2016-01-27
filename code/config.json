@@ -5,10 +5,17 @@
   "styles": "assets/styles/",
   "javascripts": {
     "header": [
+      {
+        "file": "https://use.typekit.net/nvy7idl.js",
+        "type": "external"
+      },
+      {
+        "file": "site.header.min.js"
+      }
     ],
     "footer": [
       {
-        "file": "site.min.js"
+        "file": "site.footer.min.js"
       }
     ]
   }

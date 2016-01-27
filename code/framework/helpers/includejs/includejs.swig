@@ -6,6 +6,10 @@
 
 {% macro includejs(scripts) -%}
   {% for script in scripts %}
-    <script src="{{ site.url }}{{ site.scripts }}{{ script.file }}"></script>
+    {% if script.type == "external" %}
+      <script src="{{ script.file }}"></script>
+    {% else %}
+      <script src="{{ site.url }}{{ site.scripts }}{{ script.file }}"></script>
+    {% endif %}
   {% endfor %}
 {%- endmacro %}
