@@ -1,0 +1,15 @@
+[
+  {
+    "header": "The default page template",
+    "description": "<p>It displays a <code>&lt;head&gt;</code> section and inserts javascripts in the footer if necessary</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "default-template",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "default-template",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

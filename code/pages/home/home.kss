@@ -1,0 +1,15 @@
+[
+  {
+    "header": "Home page",
+    "description": "<p>desc</p>\n",
+    "deprecated": false,
+    "experimental": false,
+    "reference": "home",
+    "depth": 1,
+    "weight": 0,
+    "referenceURI": "home",
+    "markup": false,
+    "modifiers": [],
+    "parameters": []
+  }
+]

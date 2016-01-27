@@ -64,5 +64,10 @@ module.exports = {
   image_dest: destination + '/assets/images',
 
   // Image extensions
-  image_ext: image_extensions
+  image_ext: image_extensions,
+
+
+
+  // KSS sources
+  kss_src: sourceCode + '/**/*.scss',
 }
