@@ -8,20 +8,62 @@ var gulp = require('gulp'),
 
     rename = require('gulp-rename'),
     data = require('gulp-data'),
-    fs = require('fs');
+    fs = require('fs'),
+    imageResize = require('gulp-image-resize'),
+    gulpif = require('gulp-if'),
+
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant');
 
 // Configuration
 var paths = require('./../config');
 
 
 
-// Resize an image
-var imageResize = function(file, data) {
+// Resize a single image with ImageMagick
+var _imageResize = function(file, sizeType, size, name, dest) {
+  console.log("Resizing " + file + " " + sizeType + " to " + size);
+  gulp.src(file)
+    .pipe(plumber({errorHandler: onError}))
+    .pipe(gulpif(sizeType == 'height',
+      imageResize({
+        height : size,
+        sharpen: true,
+        imageMagick: true
+      }),
+      imageResize({
+        width : size,
+        sharpen: true,
+        imageMagick: true
+      })
+    ))
+    .pipe(rename(function (path) { path.basename += "_" + name; }))
+    .pipe(gulp.dest(dest));
+}
 
-  sizes = data.image_sizes;
+
+
+
+// Resize an image to 1x and 2x
+var imageSize = function(file, data, dest) {
+  sizes = data.sizes;
   resize = data.resize;
-  if (sizes && resize) {
-    imageResize(fileName.path, sizes);
+  if (sizes && (resize == "true")) {
+    for (i in sizes) {
+
+      // Width or height?
+      size = sizes[i].width;
+      sizeType = 'width';
+      if (typeof sizes[i].height !== 'undefined') {
+        size = sizes[i].height;
+        sizeType = 'height';
+      }
+
+      // Normal and retina
+      _imageResize(file, sizeType, size, sizes[i].name, dest);
+      _imageResize(file, sizeType, size * 2, sizes[i].name + '2x', dest);
+    }
+
   } else {
     console.log('No resize needed.');
   }
@@ -29,12 +71,18 @@ var imageResize = function(file, data) {
 
 
 
-// Optimize an image
-var imageOptimize = function(file, data) {
-
+// Optimize images from a folder
+var imageOptimize = function(data, dest) {
   optimize = data.optimize
-  if (optimize) {
-
+  if (optimize && (optimize == "true")) {
+    return gulp.src(dest + paths.image_ext)
+      .pipe(plumber({errorHandler: onError}))
+      .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        use: [pngquant()]
+      }))
+      .pipe(gulp.dest(dest));
   } else {
     console.log('No optimization needed.');
   }
@@ -42,18 +90,36 @@ var imageOptimize = function(file, data) {
 
 
 
-// Move image to destination
-var imageMove = function(file, data) {
-
-  dest = paths.image_dest;
+// Move image(s) to destination
+// - if in the image .json file we have "destination" set the image will be moved there
+// - otherwise all resized & optimized images from '/resized' will be moved to dest
+var imageMove = function(file, data, dest) {
   destination = data.destination
   if (destination) {
-    dest = destination;
+    console.log('Moving a single image ...');
+    return gulp.src(file)
+      .pipe(plumber({errorHandler: onError}))
+      .pipe(gulp.dest(destination))
+  } else {
+    console.log('Moving resized & optimized images ...');
+    return gulp.src(dest + paths.image_ext)
+      .pipe(plumber({errorHandler: onError}))
+      .pipe(gulp.dest(paths.image_dest))
   }
+}
 
-  return gulp.src(file)
-    .pipe(plumber({errorHandler: onError}))
-    .pipe(gulp.dest(dest))
+
+
+
+// Get the destination folder
+// - the same as original + '/resized'
+var imageDestinationFolder = function(file) {
+  var dest = file.split('/');
+  dest.splice(dest.length - 1, 1);
+  dest = dest.join('/');
+  dest += '/resized';
+
+  return dest;
 }
 
 
@@ -70,9 +136,10 @@ gulp.task('image', function() {
       .pipe(data(function(fileName) {
         data = getJSONData(fileName);
         if (data) {
-          imageResize(fileName.path, data);
-          imageOptimize(fileName.path, data);
-          imageMove(fileName.path, data);
+          dest = imageDestinationFolder(fileName.path);
+          imageSize(fileName.path, data, dest);
+          imageOptimize(data, dest);
+          imageMove(fileName.path, data, dest);
         }
       }))
   }

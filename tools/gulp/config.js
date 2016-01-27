@@ -10,7 +10,7 @@ var sourceCode = 'code';
 var destination = 'production';
 
 // supported image extensions
-var image_extensions = '*.{png,jpg,gif,jpeg,svg}';
+var image_extensions = '/*.{png,jpg,gif,jpeg,svg}';
 
 
 
@@ -62,4 +62,7 @@ module.exports = {
 
   // Image destination
   image_dest: destination + '/assets/images',
+
+  // Image extensions
+  image_ext: image_extensions
 }
