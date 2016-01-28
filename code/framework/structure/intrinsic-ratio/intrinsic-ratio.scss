@@ -7,11 +7,14 @@
 // $height - The height of the intrinsic ratio. Like 9, 3, etc ...
 // $item - To which element apply the intrinsic ratio. The element must be wrapped into a parent container where this mixin should be applied.
 //
+// Experimental: The content should be prepared for the intrinsic ratio otherwise behaves ... hm ... ugly. See the example.
+//
 // Styleguide intrinsic-ratio
 @mixin intrinsic-ratio($width, $height, $item) {
   position: relative;
   padding-bottom: 100% / ($width / $height);
   height: 0;
+  overflow: hidden;
 
   #{$item} {
     position: absolute;
