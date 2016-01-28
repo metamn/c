@@ -1,0 +1,4 @@
+@mixin link-with-fliptext {
+  @include link;
+  @include flip;
+}
