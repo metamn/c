@@ -1,6 +1,20 @@
 @mixin x-grid__example1 {
   .container {
-    @include grid(5, $lem, $lem, 7);
+    @include mobile {
+      @include grid(1, $lem, $lem, 7);
+    }
+
+    @include tablet {
+      @include grid(3, $lem, $lem, 7);
+    }
+
+    @include landscape {
+      @include grid(4, $lem, $lem, 7);
+    }
+
+    @include desktop {
+      @include grid(5, $lem, $lem, 7);
+    }
 
     span {
       border: 1px solid;
