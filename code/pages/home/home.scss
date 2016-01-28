@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-intrinsic-ratio {
-        @include x-intrinsic-ratio;
+      .x-grid {
+        @include x-grid;
       }
     }
   }
