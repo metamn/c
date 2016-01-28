@@ -9,10 +9,7 @@
 
     &:hover,
     &:focus,
-    &:active,
-    &:visited:hover,
-    &:visited:focus,
-    &:visited:active {
+    &:active {
       @include colors($color-scheme);
     }
   }
