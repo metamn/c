@@ -8,7 +8,7 @@
       @include grid(3, $lem, $lem, 7);
     }
 
-    @include landscape {
+    @include laptop {
       @include grid(4, $lem, $lem, 7);
     }
 
