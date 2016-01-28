@@ -12,6 +12,9 @@ $white: #fff;
 // Main color
 $black: #000;
 
+// Main color
+$blue: #4916DA;
+
 
 // Color combinations. Colors are not used standalone but in pairs
 @mixin colors($name) {
@@ -28,6 +31,18 @@ $black: #000;
     
   }
 
+  @if ($name == 'white-on-blue') {
+    color: $white;
+    background-color: $blue;
+    
+  }
+
+  @if ($name == 'blue-on-white') {
+    color: $blue;
+    background-color: $white;
+    
+  }
+
 }
 
 // Color classes
@@ -38,6 +53,10 @@ $black: #000;
 
 .black {
   background: #000;
+};
+
+.blue {
+  background: #4916DA;
 };
 
 
@@ -52,6 +71,18 @@ $black: #000;
 .white-on-black {
   color: $white;
   background-color: $black;
+  
+}
+
+.white-on-blue {
+  color: $white;
+  background-color: $blue;
+  
+}
+
+.blue-on-white {
+  color: $blue;
+  background-color: $white;
   
 }
 

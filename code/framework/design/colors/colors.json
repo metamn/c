@@ -9,6 +9,11 @@
       "name": "black",
       "value": "#000",
       "description": "Main color"
+    },
+    {
+      "name": "blue",
+      "value": "#4916DA",
+      "description": "Main color"
     }
   ],
   "color_pairs": [
@@ -35,6 +40,32 @@
         {
           "name": "background-color",
           "value": "$black"
+        }
+      ]
+    },
+    {
+      "name": "white-on-blue",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$white"
+        },
+        {
+          "name": "background-color",
+          "value": "$blue"
+        }
+      ]
+    },
+    {
+      "name": "blue-on-white",
+      "properties": [
+        {
+          "name": "color",
+          "value": "$blue"
+        },
+        {
+          "name": "background-color",
+          "value": "$white"
         }
       ]
     }

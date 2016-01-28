@@ -1,9 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  <div class="flip">
-    {% set text = "flip" %}
-    {% include '../../framework/behavior/flip/flip.html.swig' %}
-  </div>
+  {% include '../../framework/design/typography/elements/link/x-link/x-link.html.swig' %}
 
 {% endblock %}

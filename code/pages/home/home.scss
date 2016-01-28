@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .flip {
-        @include flip;
+      .x-link {
+        @include x-link;
       }
     }
   }
