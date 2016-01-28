@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/structure/img/x-img/x-img.html.swig' %}
+  {% include '../../framework/structure/intrinsic-ratio/x-intrinsic-ratio/x-intrinsic-ratio.html.swig' %}
 
 {% endblock %}
