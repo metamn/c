@@ -1,5 +1,10 @@
 @mixin x-grid__example1 {
   .container {
+
+    // If the breakpoints overlap the right margins will be messed up
+    // Or if a `grid` call is not wrapped into a responsive `@include`
+    // - examples:
+    // - if instead of `@include laptop` we have `@include landscape` the right margin of every 4th item will be zero also on desktops
     @include mobile {
       @include grid(1, $lem, $lem, 7);
     }
