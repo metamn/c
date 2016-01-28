@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-grid {
-        @include x-grid;
+      .flip {
+        @include flip;
       }
     }
   }
