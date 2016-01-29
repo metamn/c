@@ -3,6 +3,10 @@
     display: flex;
   }
 
+  .img {
+    @include img($preloading: true);
+  }
+
   &--fluid {
     @include x-img--fluid;
     margin-bottom: $lem;

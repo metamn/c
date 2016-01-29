@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-link-with-icon {
-        @include x-link-with-icon;
+      .x-img{
+        @include x-img;
       }
     }
   }
