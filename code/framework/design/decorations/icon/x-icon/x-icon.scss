@@ -4,6 +4,10 @@
   }
 
   .icon {
-    @include icon($title: true);
+    @include icon;
+
+    &--facebook {
+      @include icon($color: $blue);
+    }
   }
 }

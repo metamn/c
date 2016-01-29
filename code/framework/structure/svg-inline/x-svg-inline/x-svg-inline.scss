@@ -1,14 +1,10 @@
 @mixin x-svg-inline {
-  &__title {
-    display: flex;
-  }
-
   .svg-inline {
-    @include svg-inline($title: true);
+    @include svg-inline;
 
     &--fullscreen {
-      @include svg-inline--styleable;
-      svg {
+      @include svg-inline($styleable: true);
+      .svg {
         fill: black;
         stroke: green;
       }

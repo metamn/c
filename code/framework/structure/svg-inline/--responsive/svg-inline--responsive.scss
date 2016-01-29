@@ -5,8 +5,9 @@
 //
 // Styleguide responsive-inline-svg
 @mixin svg-inline--responsive {
-  svg {
-    &.portrait {
+  svg,
+  .svg {
+    &--portrait {
       @include portrait {
         display: flex;
       }
@@ -16,7 +17,7 @@
       }
     }
 
-    &.landscape {
+    &--landscape {
       @include landscape {
         display: flex;
       }

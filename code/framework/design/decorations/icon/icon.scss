@@ -1,19 +1,19 @@
 // SVG icons
 //
-// [Icomoon](https://icomoon.io/) lets collect all icons into a single SVG sprite and use them elegantly
+// [Icomoon](https://icomoon.io/) can collect all icons into a single SVG sprite.
+// This mixin can include them one-by-one using the inline SVG method
 // [Simpleicons.org](http://simpleicons.org/) has a set of original brand icons.
 //
 // Styleguide icon
-@mixin icon($width: $lem, $height: $lem, $title: false, $color-scheme: none) {
-  display: flex;
-  align-items: center;
+@mixin icon($width: $lem, $height: $lem, $color: none) {
+  @include svg-inline--styleable;
 
-  .svg-inline {
-    @include svg-inline($title: $title);
+  .svg {
+    width: $width;
+    height: $height;
 
-    .svg {
-      width: $width;
-      height: $height;
+    @if ($color != none) {
+      fill: $color;
     }
   }
 }

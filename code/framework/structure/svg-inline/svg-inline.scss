@@ -1,19 +1,12 @@
 // Inline SVG
 //
-// It displays an SVG inline, in a fluid and responsive way, wrapped into a container.
+// It displays an SVG inline, in a fluid and/or responsive way, wrapped into a container.
 // Full details are [aivailable](https://github.com/metamn/svg/blob/master/README.md).
 //
-// $title - To display or not the title of the SVG
 // $styleable- To accept restyling with CSS or not
 //
 // Styleguide inline-svg
-@mixin svg-inline($title: false, $styleable: false) {
-  &__title {
-    @if ($title != false) {
-      display: flex;
-    }
-  }
-
+@mixin svg-inline($styleable: false) {
   @if ($styleable == true) {
     @include svg-inline--styleable;
   }
