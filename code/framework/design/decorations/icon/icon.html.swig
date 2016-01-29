@@ -1,5 +1,5 @@
 {% import "../../../helpers/link/link.swig" as l  %}
-<div class="icon icon--{{ icon.name }}">
+<div class="icon icon--{{ icon.name }} {{ icon.klass }}">
   {% if icon.link %}{{ l.link(link) }}{% endif %}
 
   <svg class="svg">

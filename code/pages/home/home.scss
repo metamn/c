@@ -6,12 +6,8 @@
 html {
   &.home {
     body {
-      .x-svg-inline {
-        @include x-svg-inline;
-      }
-
-      .x-icon {
-        @include x-icon;
+      .x-link-with-icon {
+        @include x-link-with-icon;
       }
     }
   }

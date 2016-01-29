@@ -1,0 +1,16 @@
+@mixin link-with-icon {
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+
+  &__icon {
+    @include icon;
+    margin-right: $lem / 4;
+  }
+
+  &__link {
+    .link {
+      @include link;
+    }
+  }
+}

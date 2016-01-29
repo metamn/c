@@ -8,6 +8,10 @@
 @mixin icon($width: $lem, $height: $lem, $color: none) {
   @include svg-inline--styleable;
 
+  .link {
+    display: flex;
+  }
+
   .svg {
     width: $width;
     height: $height;

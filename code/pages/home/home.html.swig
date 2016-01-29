@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/design/decorations/icon/x-icon/x-icon.html.swig' %}
+  {% include '../../framework/design/typography/elements/link-with-icon/x-link-with-icon/x-link-with-icon.html.swig' %}
 
 {% endblock %}

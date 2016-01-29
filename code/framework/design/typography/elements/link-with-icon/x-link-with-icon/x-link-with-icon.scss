@@ -1,0 +1,5 @@
+@mixin x-link-with-icon {
+  .link-with-icon {
+    @include link-with-icon;
+  }
+}
