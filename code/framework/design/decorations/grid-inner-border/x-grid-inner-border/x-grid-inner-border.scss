@@ -4,8 +4,11 @@
   }
 
   &__container {
-    @include grid(4);
-    @include grid-inner-border(4, 10);
+    $nr: 7;
+    @include grid($nr);
+    @include grid-inner-border($nr, 20);
+
+    justify-content: center;
 
     span {
       justify-content: center;
