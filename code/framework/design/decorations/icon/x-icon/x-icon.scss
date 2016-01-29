@@ -1,0 +1,9 @@
+@mixin x-icon {
+  .title {
+    display: flex;
+  }
+
+  .icon {
+    @include icon($title: true);
+  }
+}

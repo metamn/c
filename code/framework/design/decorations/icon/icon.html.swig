@@ -1,10 +1,17 @@
-<div class="icon">
-  {% if icon.url %}
-    <a class="link" href="{{ icon.url }}" title="{{ icon.title }}">
+{% import "../../../helpers/svginline/svginline.swig" as s  %}
+{% import "../../../helpers/link/link.swig" as l  %}
+
+<div class="icon icon--{{ icon.name }}">
+  {% if icon.link %}
+    {{ l.link(link) }}
   {% endif %}
 
-  <svg class="icon__glyph icon--{{ icon.name }}"><use xlink:href="#icon-{{ icon.name }}"></use></svg>
-  <span class="icon__title">{{ icon.title }}</span>
+  {% set svg = { 'title': icon.title, 'klass': 'icon__glyph' } %}
+  {{ s.svginline(svg) }}
+    <svg class="svg">
+      <use xlink:href="#icon-{{ icon.name }}"></use>
+    </svg>
+  </aside>
 
-  {% if icon.url %}</a>{% endif %}
+{% if icon.link %}</a>{% endif %}
 </div>

@@ -4,4 +4,16 @@
 // [Simpleicons.org](http://simpleicons.org/) has a set of original brand icons.
 //
 // Styleguide icon
-@mixin icon {}
+@mixin icon($width: $lem, $height: $lem, $title: false, $color-scheme: none) {
+  display: flex;
+  align-items: center;
+
+  .svg-inline {
+    @include svg-inline($title: $title);
+
+    .svg {
+      width: $width;
+      height: $height;
+    }
+  }
+}

@@ -9,6 +9,10 @@ html {
       .x-svg-inline {
         @include x-svg-inline;
       }
+
+      .x-icon {
+        @include x-icon;
+      }
     }
   }
 }
