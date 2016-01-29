@@ -1,0 +1,9 @@
+@mixin x-svg-inline {
+  &__title {
+    display: flex;
+  }
+
+  .svg-inline {
+    @include svg-inline($title: true);
+  }
+}

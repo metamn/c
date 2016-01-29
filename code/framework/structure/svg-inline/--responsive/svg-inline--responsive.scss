@@ -1,10 +1,10 @@
-// Responsive SVG
+// Responsive inline SVG
 //
 // Displays a `portrait` and a `landscape` version of an SVG depending on device orientation.
 // The `<svg>`s must have set their klass either to `portrait` or `landscape`
 //
-// Styleguide responsive-svg
-@mixin svg--responsive {
+// Styleguide responsive-inline-svg
+@mixin svg-inline--responsive {
   svg {
     &.portrait {
       @include portrait {
