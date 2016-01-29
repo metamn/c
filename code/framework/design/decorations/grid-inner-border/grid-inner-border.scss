@@ -1,0 +1,23 @@
+@mixin grid-inner-border($items-per-row, $max-items-to-display) {
+  > * {
+    @include border--normal(right);
+    @include border--normal(bottom);
+
+    // Remove some right borders
+    &:nth-child(#{$items-per-row}n) {
+      border-right: 0;
+    }
+
+    // Remove some bottom borders
+    $remove: $max-items-to-display % $items-per-row;
+    @if ($remove == 0) {
+      $remove: $items-per-row;
+    }
+
+    @for $i from 1 to $remove + 1 {
+      &:nth-last-child(#{$i}) {
+        border-bottom: 0;
+      }
+    }
+  }
+}

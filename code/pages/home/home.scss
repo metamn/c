@@ -6,8 +6,10 @@
 html {
   &.home {
     body {
-      .x-link-with-fliptext {
-        @include x-link-with-fliptext;
+      @include section-padding;
+
+      .x-grid-inner-border {
+        @include x-grid-inner-border;
       }
     }
   }

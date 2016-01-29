@@ -1,4 +1,4 @@
-@mixin grid($items-per-row, $margin-right, $margin-bottom, $max-items-to-display: null) {
+@mixin grid($items-per-row, $margin-right: 0px, $margin-bottom: 0px, $max-items-to-display: null) {
   display: flex;
   flex-wrap: wrap;
 
@@ -9,7 +9,7 @@
     margin-right: $margin-right;
     margin-bottom: $margin-bottom;
 
-    // Now we can have padding and border of items
+    // Now we can have padding and border for items
     box-sizing: border-box;
 
     // Right margins
@@ -19,13 +19,13 @@
 
     // Only $max-items-to-display number of items will be shown
     @if ($max-items-to-display != null) {
+      display: none;
+
       @for $i from 1 to $max-items-to-display + 1 {
         &:nth-child(#{$i}) {
           display: flex;
         }
       }
-
-      display: none;
     }
   }
 }
