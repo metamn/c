@@ -5,5 +5,13 @@
 
   .svg-inline {
     @include svg-inline($title: true);
+
+    &--fullscreen {
+      @include svg-inline--styleable;
+      svg {
+        fill: black;
+        stroke: green;
+      }
+    }
   }
 }
