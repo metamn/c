@@ -70,4 +70,17 @@ module.exports = {
 
   // KSS sources
   kss_src: sourceCode + '/**/*.scss',
+
+
+  // Articles
+  articles_src: sourceCode + '/pages/**/*.json',
+
+  // Article metadata collected into a JSON file
+  articles_json: sourceCode + '/articles.json',
+
+  // Archives metadata collected into a JSON file
+  archives_json: sourceCode + '/archives.json',
+
+  // Where to put archives
+  archives_folder: sourceCode + '/pages/archive/'
 }

@@ -76,7 +76,7 @@ var generateFile = function(archive) {
   var content = '';
 
   content += "{% set title='" + archive.category + "' %}"
-  content += "{% extends '../../../project/templates/tag/tag.html.swig' %}{% block content %}";
+  content += "{% extends '../../../framework/templates/default/default.html.swig' %}{% block content %}";
   content += "<section class='tag'>";
   content += "<h3 class='tag__title'>" + archive.category + "</h3>";
 
@@ -84,7 +84,7 @@ var generateFile = function(archive) {
     content += "<article>";
     content += "<h3 class='article__title'>" + archive.articles[i].title + "</h3>";
     content += "<a class='link' href='{{ site.url }}" + archive.articles[i].url + "' title='" + archive.articles[i].title + "'>" + archive.articles[i].title + "</a>";
-    content += "<date class='article__date'>{{ " + archive.articles[i].date + " | date('F Y') }}</date>";
+    content += "<date class='article__date'>{{ '" + archive.articles[i].date + "' | date('F Y') }}</date>";
     content += "</article>";
   }
 
@@ -97,9 +97,9 @@ var generateFile = function(archive) {
 
 // Generate an archive folder
 // - all archive folders
-var generateFolder = function(archive) {
+var generateFolder = function(archive, archive_folder) {
   var categoryName = archive.category.toLowerCase().replace(/\s/g, '-');
-  var folder = 'site/components/pages/on/' + categoryName;
+  var folder = archive_folder + categoryName;
   var fileName = folder + '/' + categoryName + '.html.swig';
 
   mkdirp(folder, function (err) {
@@ -130,7 +130,7 @@ gulp.task('generateArchiveFolders', function() {
   var archives = JSON.parse(fs.readFileSync(paths.archives_json, 'utf8'));
 
   for (var i=0; i < archives.length; i++) {
-    generateFolder(archives[i]);
+    generateFolder(archives[i], paths.archives_folder);
   }
 });
 

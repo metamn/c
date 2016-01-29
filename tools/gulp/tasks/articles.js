@@ -25,9 +25,11 @@ gulp.task('articleCreateFile', function() {
 
   return gulp.src(paths.articles_src)
     .pipe(plumber({errorHandler: onError}))
-
     .pipe(data(function(file) {
-      fs.appendFileSync(paths.articles_json, file.contents + ',');
+      // Do not include .jsons from @assets
+      if (file.path.indexOf('@assets') == -1) {
+        fs.appendFileSync(paths.articles_json, file.contents + ',');
+      }
     }))
 });
 
