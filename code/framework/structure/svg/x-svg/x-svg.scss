@@ -1,0 +1,9 @@
+@mixin x-svg {
+  &__title {
+    display: flex;
+  }
+
+  .svg {
+    @include svg;
+  }
+}

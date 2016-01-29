@@ -6,10 +6,8 @@
 html {
   &.home {
     body {
-      @include section-padding;
-
-      .x-grid-inner-border {
-        @include x-grid-inner-border;
+      .x-svg {
+        @include x-svg;
       }
     }
   }

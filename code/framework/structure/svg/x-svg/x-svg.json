@@ -1,0 +1,18 @@
+{
+  "svgs": [
+    {
+      "title": "Fluid SVG",
+      "content": ""
+    },
+    {
+      "title": "Fulscreen SVG",
+      "name": "test",
+      "type": "fullscreen"
+    },
+    {
+      "title": "Responsive SVG",
+      "name": "test",
+      "type": "responsive",
+    }
+  ]
+}

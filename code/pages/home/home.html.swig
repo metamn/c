@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/design/decorations/grid-inner-border/x-grid-inner-border/x-grid-inner-border.html.swig' %}
+  {% include '../../framework/structure/svg/x-svg/x-svg.html.swig' %}
 
 {% endblock %}

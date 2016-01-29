@@ -1,0 +1,14 @@
+// SVG
+//
+// It displays an SVG in a fluid and responsive way. Full details are [aivailable](https://github.com/metamn/svg/blob/master/README.md).
+//
+// Styleguide svg
+@mixin svg {
+  &--fullscreen {
+    @include svg--fullscreen;
+  }
+
+  &--responsive {
+    @include svg--responsive;
+  }
+}
