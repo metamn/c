@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-img{
-        @include x-img;
+      .x-slider {
+        @include x-slider;
       }
     }
   }

@@ -7,6 +7,14 @@
       "extension": ".jpg"
     }
   ],
+  "slides": [
+    {
+      "title": "Slide 1"
+    },
+    {
+      "title": "Slide 2"
+    }
+  ],
   "categories": [
     "knowledge",
     "creation",
