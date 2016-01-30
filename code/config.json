@@ -18,6 +18,9 @@
         "file": "imagesloaded.pkgd.min.js"
       },
       {
+        "file": "hammer.min.js"
+      },
+      {
         "file": "site.header.min.js"
       }
     ],

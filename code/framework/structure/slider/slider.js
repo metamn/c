@@ -29,7 +29,8 @@ var slider = function(sliderID, bulletsID) {
   var direction = 'prev';
   var slideCount = slides.length;
 
-  // Click
+
+  // Click on slide
   click(slides, clickSlide);
 
   function clickSlide(event) {
@@ -43,6 +44,28 @@ var slider = function(sliderID, bulletsID) {
       direction = 'prev';
     }
   }
+
+
+  // Swipe with Hammer.js
+  slides.loop(function(slide) {
+    var hammer = new Hammer(slide);
+    hammer.get('swipe').set({
+      direction: Hammer.DIRECTION_HORIZONTAL,
+      threshold: 1,
+      velocity: 0.1
+    });
+
+    hammer.on("swipeleft", function() {
+      previousSlide(1);
+    });
+
+    hammer.on("swiperight", function() {
+      nextSlide(1);
+    });
+  });
+
+
+
 
 
   // Get previous slide
