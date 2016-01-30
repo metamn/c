@@ -9,4 +9,6 @@
     {% endfor %}
     </div>
   </section>
+
+  {% include '../__bullets/slider__bullets.html.swig' %}
 </section>
