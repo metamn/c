@@ -1,4 +1,4 @@
-var select = require('./../../helpers/js/select.js')
+var select = require('./../../helpers/js/select.js');
 
 // Preloading an image or a set of images
 // - it is using the `imagesLoaded` script
