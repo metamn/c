@@ -2,49 +2,37 @@ var select = require('./../../helpers/js/select.js');
 var transform = require('./../../helpers/js/transform.js');
 var click = require('./../../helpers/js/click.js');
 
-var slider = function(sliderID, bulletsID) {
+
+// Set up the slider
+function Slider(sliderID, bulletsID) {
   // Slider
-  var slider = select(sliderID);
+  this.slider = select(sliderID);
 
   // Slides
-  var slides = select(sliderID + ' .slide');
-  var pos = 0;
-  var offset = slides[0].offsetWidth;
-
-  // Move out of viewport all inactive slides
-  function setTransform() {
-    slides.loop(function(slide, i) {
-      var webkitValue = 'translate(' + ((i + pos) * offset) + 'px, 0)' + 'translateZ(0)';
-      var value = 'translateX(' + ((i + pos) * offset) + 'px)';
-      transform(slide, webkitValue, value);
-    });
-  }
-
-  // Make responsive
-  setTransform();
-  window.addEventListener('resize', setTransform);
-
+  this.slides = select(sliderID + ' .slide');
+  this.pos = 0;
+  this.offset = this.slides[0].offsetWidth;
 
   // Navigation
-  var direction = 'prev';
-  var slideCount = slides.length;
+  this.direction = 'prev';
+  this.slideCount = this.slides.length;
+}
+
+
+// The main function
+var slider = function(sliderID, bulletsID) {
+  s = new Slider(sliderID, bulletsID);
+
+  // Make responsive
+  s.setTransform();
+  window.addEventListener('resize', s.setTransform.bind(s)); // without `bind(s)` the object is lost in `addEventListener`
 
 
   // Click on slide
-  click(slides, clickSlide);
+  click(s.slides, s.clickSlide.bind(s));
 
-  function clickSlide(event) {
-    (direction == 'prev') ? previousSlide(1) : nextSlide(1);
 
-    if (pos == -(slideCount - 1)) {
-      direction = 'next';
-    }
-
-    if (pos == 0) {
-      direction = 'prev';
-    }
-  }
-
+  /*
 
   // Swipe with Hammer.js
   slides.loop(function(slide) {
@@ -121,21 +109,52 @@ var slider = function(sliderID, bulletsID) {
   }
 
 
+  */
+}
 
 
-  // Get previous slide
-  // - it moves prev with 'step' slides
-  function previousSlide(step) {
-    pos = Math.max(pos - step, -(slideCount - 1));
-    setTransform();
+
+// Click on a slide
+Slider.prototype.clickSlide = function() {
+  (this.direction == 'prev') ? this.previousSlide(1) : this.nextSlide(1);
+
+  if (this.pos == -(this.slideCount - 1)) {
+    this.direction = 'next';
   }
 
-  // Get next slide
-  // - it moves next with 'step' slides
-  function nextSlide(step) {
-    pos = Math.min(pos + step, 0);
-    setTransform();
+  if (this.pos == 0) {
+    this.direction = 'prev';
   }
+}
+
+
+// Get previous slide
+// - it moves prev with 'step' slides
+Slider.prototype.previousSlide = function(step) {
+  this.pos = Math.max(this.pos - step, -(this.slideCount - 1));
+  this.setTransform();
+}
+
+
+// Get next slide
+// - it moves next with 'step' slides
+Slider.prototype.nextSlide = function(step) {
+  this.pos = Math.min(this.pos + step, 0);
+  this.setTransform();
+}
+
+
+
+// Move out of viewport all inactive slides
+Slider.prototype.setTransform = function() {
+  that = this; // loop will alter `this`
+
+  that.slides.loop(function(slide, i) {
+    var move = (i + that.pos) * that.offset;
+    var webkitValue = 'translate(' + move + 'px, 0)' + 'translateZ(0)';
+    var value = 'translateX(' + move + 'px)';
+    transform(slide, webkitValue, value);
+  });
 }
 
 
