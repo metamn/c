@@ -3,30 +3,6 @@
 
 
 
-// Add a class for elements in a list meeting a criteria
-//
-// Usage: `items.addClass(klass, key, value)`
-NodeList.prototype.addClass = function(klass, key, value) {
-  this.loop(items) {
-    if (item.key == value) {
-      item.addClass(klass)
-    }
-  }
-}
-
-
-
-// Remove a class from all elements in a list
-//
-// Usage: `items.removeClass(klass)`
-NodeList.prototype.removeClass = function(klass) {
-  this.loop(items) {
-    item.classList.remove(klass)
-  }
-}
-
-
-
 // Get the index of an element from a list
 //
 // Usage: `items.index(item)`
@@ -39,10 +15,45 @@ NodeList.prototype.index = function(element) {
 }
 
 
+// Add a class for elements in a list meeting a criteria
+//
+// Usage: `items.addClass(klass, key, value)`
+NodeList.prototype.addClass = function(klass, key, value) {
+  this.loop(items) {
+    if (item.key == value) {
+      item.addClass(klass);
+    }
+  }
+}
+
+
+
+// Remove a class from all elements in a list
+//
+// Usage: `items.removeClass(klass)`
+NodeList.prototype.removeClass = function(klass) {
+  this.loop(items) {
+    item.removeClass(klass);
+  }
+}
+
+
+
+// Remove a class for an elememt
+//
+// This is a replacement for `element.classList.remove()`
+//
+// Usage: `item.removeClass(klass)`
+Element.prototype.addClass = function(klass) {
+  this.classList.remove(klass);
+}
+
 
 // Add a class for an elememt
 //
-// Usage: `item.addClass()`
+// This is a replacement for `element.classList.add()`
+//
+// Usage: `item.addClass(klass)`
 Element.prototype.addClass = function(klass) {
   this.classList.add(klass);
 }
@@ -52,10 +63,12 @@ Element.prototype.addClass = function(klass) {
 //
 // This is a replacement for `element.classList.contains()`
 //
-// Usage: `element.hasClass()`
+// Usage: `element.hasClass(klass)`
 Element.prototype.hasClass = function(klass) {
   return this.classList.contains(klass);
 }
+
+
 
 
 // Loop

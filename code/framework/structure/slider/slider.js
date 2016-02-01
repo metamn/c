@@ -55,17 +55,6 @@ Slider.prototype.clickBullet = function(event) {
 
 
 
-// Set active state for a bullet
-function setActiveBulletClass(slider) {
-  for (var i = 0; i < slider.bullets.length; i++) {
-    if (slider.slides[i].style['transform'] == 'translateX(0px)') {
-      slider.bullets[i].classList.add('active');
-    }
-  }
-}
-
-
-
 // Swipe with Hammer.js
 Slider.prototype.swipe = function() {
   that = this;
@@ -81,12 +70,11 @@ Slider.prototype.swipe = function() {
     hammer.on("swipeleft", function() {
       that.previousSlide(1);
       that.bullets.setClass('active', "style['transform']", "translateX(0px)");
-      setActiveBulletClass(that);
     });
 
     hammer.on("swiperight", function() {
       that.nextSlide(1);
-      setActiveBulletClass(that);
+      that.bullets.setClass('active', "style['transform']", "translateX(0px)");
     });
   });
 
@@ -105,8 +93,8 @@ Slider.prototype.clickSlide = function() {
     this.direction = 'prev';
   }
 
-  removeActiveBulletClass(this.bullets);
-  setActiveBulletClass(this);
+  this.bullets.removeClass('active');
+  this.bullets.setClass('active', "style['transform']", "translateX(0px)");
 }
 
 
