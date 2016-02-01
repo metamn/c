@@ -42,34 +42,17 @@ var slider = function(sliderID, bulletsID) {
 // Click on a bullet
 Slider.prototype.clickBullet = function(event) {
   var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
-  active = bullet.classList.contains('active');
 
-  if (!active) {
-    current = bulletIndex(bullet);
+  if (!bullet.hasClass('active')) {
+    current = this.bullets.index(bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
-    removeActiveBulletClass(this.bullets);
-    bullet.classList.add('active');
+    this.bullets.removeClass('active');
+    bullet.addClass('active');
   }
 }
 
-// Return the index of the clicked element
-function bulletIndex(bullet) {
-  var siblings = bullet.parentNode.childNodes;
-  for (var i = 0; i < siblings.length; i++) {
-    if (bullet == siblings[i]) break;
-  }
-  return i - 1;
-}
-
-
-// Clear active state for all bullets
-function removeActiveBulletClass(bullets) {
-  for (var i = 0; i < bullets.length; i++) {
-    bullets[i].classList.remove('active');
-  }
-}
 
 
 // Set active state for a bullet
@@ -97,6 +80,7 @@ Slider.prototype.swipe = function() {
 
     hammer.on("swipeleft", function() {
       that.previousSlide(1);
+      that.bullets.setClass('active', "style['transform']", "translateX(0px)");
       setActiveBulletClass(that);
     });
 
