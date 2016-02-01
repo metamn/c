@@ -7,6 +7,7 @@
 
 
 var select = require('./select.js');
+var l = require('./loop.js')
 
 
 var click = function(items, cb) {

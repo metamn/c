@@ -1,3 +1,4 @@
+var l = require('./../../helpers/js/loop.js');
 var select = require('./../../helpers/js/select.js');
 
 // Preloading an image or a set of images

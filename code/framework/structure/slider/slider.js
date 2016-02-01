@@ -1,3 +1,4 @@
+var l = require('./../../helpers/js/loop.js');
 var select = require('./../../helpers/js/select.js');
 var transform = require('./../../helpers/js/transform.js');
 var click = require('./../../helpers/js/click.js');
@@ -44,12 +45,12 @@ Slider.prototype.clickBullet = function(event) {
   var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
 
   if (!bullet.hasClass('active')) {
-    current = this.bullets.index(bullet);
+    //current = this.bullets.index(bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
-    this.bullets.removeClass('active');
-    bullet.addClass('active');
+    //this.bullets.removeClass('active');
+    //bullet.addClass('active');
   }
 }
 
@@ -69,12 +70,12 @@ Slider.prototype.swipe = function() {
 
     hammer.on("swipeleft", function() {
       that.previousSlide(1);
-      that.bullets.setClass('active', "style['transform']", "translateX(0px)");
+      //that.bullets.setClass('active', "style['transform']", "translateX(0px)");
     });
 
     hammer.on("swiperight", function() {
       that.nextSlide(1);
-      that.bullets.setClass('active', "style['transform']", "translateX(0px)");
+      //that.bullets.setClass('active', "style['transform']", "translateX(0px)");
     });
   });
 
@@ -93,8 +94,8 @@ Slider.prototype.clickSlide = function() {
     this.direction = 'prev';
   }
 
-  this.bullets.removeClass('active');
-  this.bullets.setClass('active', "style['transform']", "translateX(0px)");
+  //this.bullets.removeClass('active');
+  //this.bullets.setClass('active', "style['transform']", "translateX(0px)");
 }
 
 
