@@ -44,13 +44,13 @@ var slider = function(sliderID, bulletsID) {
 Slider.prototype.clickBullet = function(event) {
   var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
 
-  if (!bullet.hasClass('active')) {
-    //current = this.bullets.index(bullet);
+  if (!bullet.classList.contains('active')) {
+    current = bulletIndex(bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
-    //this.bullets.removeClass('active');
-    //bullet.addClass('active');
+    removeActiveBulletClass(this.bullets);
+    bullet.classList.add('active');
   }
 }
 
@@ -58,9 +58,9 @@ Slider.prototype.clickBullet = function(event) {
 
 // Swipe with Hammer.js
 Slider.prototype.swipe = function() {
-  that = this;
+  _this = this;
 
-  that.slides.loop(function(slide) {
+  _this.slides.loop(function(slide) {
     var hammer = new Hammer(slide);
     hammer.get('swipe').set({
       direction: Hammer.DIRECTION_HORIZONTAL,
@@ -69,13 +69,13 @@ Slider.prototype.swipe = function() {
     });
 
     hammer.on("swipeleft", function() {
-      that.previousSlide(1);
-      //that.bullets.setClass('active', "style['transform']", "translateX(0px)");
+      _this.previousSlide(1);
+      setActiveBulletClass(_this.bullets, _this.slides);
     });
 
     hammer.on("swiperight", function() {
-      that.nextSlide(1);
-      //that.bullets.setClass('active', "style['transform']", "translateX(0px)");
+      _this.nextSlide(1);
+      setActiveBulletClass(_this.bullets, _this.slides);
     });
   });
 
@@ -94,8 +94,8 @@ Slider.prototype.clickSlide = function() {
     this.direction = 'prev';
   }
 
-  //this.bullets.removeClass('active');
-  //this.bullets.setClass('active', "style['transform']", "translateX(0px)");
+  removeActiveBulletClass(this.bullets);
+  setActiveBulletClass(this.bullets, this.slides);
 }
 
 
@@ -117,14 +117,44 @@ Slider.prototype.nextSlide = function(step) {
 
 // Move out of viewport all inactive slides
 Slider.prototype.setTransform = function() {
-  that = this; // loop will alter `this`
+  _this = this; // loop will alter `this`
 
-  that.slides.loop(function(slide, i) {
-    var move = (i + that.pos) * that.offset;
+  _this.slides.loop(function(slide, i) {
+    var move = (i + _this.pos) * _this.offset;
     var webkitValue = 'translate(' + move + 'px, 0)' + 'translateZ(0)';
     var value = 'translateX(' + move + 'px)';
     transform(slide, webkitValue, value);
   });
+}
+
+
+// Helpers
+
+// Return the index of the clicked element
+function bulletIndex(bullet) {
+  var siblings = bullet.parentNode.childNodes;
+  for (var i = 0; i < siblings.length; i++) {
+    if (bullet == siblings[i]) break;
+  }
+  return i - 1;
+}
+
+
+// Clear active state for all bullets
+function removeActiveBulletClass(bullets) {
+  for (var i = 0; i < bullets.length; i++) {
+    bullets[i].classList.remove('active');
+  }
+}
+
+
+// Set active state for a bullet
+function setActiveBulletClass(bullets, slides) {
+  for (var i = 0; i < bullets.length; i++) {
+    if (slides[i].style['transform'] == 'translateX(0px)') {
+      bullets[i].classList.add('active');
+    }
+  }
 }
 
 
