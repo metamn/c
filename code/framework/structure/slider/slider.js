@@ -16,6 +16,7 @@ function Slider(sliderID, bulletsID) {
   // Navigation
   this.direction = 'prev';
   this.slideCount = this.slides.length;
+  this.bullets = select(bulletsID);
 }
 
 
@@ -27,15 +28,66 @@ var slider = function(sliderID, bulletsID) {
   s.setTransform();
   window.addEventListener('resize', s.setTransform.bind(s)); // without `bind(s)` the object is lost in `addEventListener`
 
-
   // Click on slide
   click(s.slides, s.clickSlide.bind(s));
 
+  // Swipe on slide
+  s.swipe();
 
-  /*
+  // Click on bullets
+  click(s.bullets, s.clickBullet.bind(s));
+}
 
-  // Swipe with Hammer.js
-  slides.loop(function(slide) {
+
+// Click on a bullet
+Slider.prototype.clickBullet = function(event) {
+  var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
+  active = bullet.classList.contains('active');
+
+  if (!active) {
+    current = bulletIndex(bullet);
+    step = current - Math.abs(this.pos);
+    (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
+
+    removeActiveBulletClass(this.bullets);
+    bullet.classList.add('active');
+  }
+}
+
+// Return the index of the clicked element
+function bulletIndex(bullet) {
+  var siblings = bullet.parentNode.childNodes;
+  for (var i = 0; i < siblings.length; i++) {
+    if (bullet == siblings[i]) break;
+  }
+  return i - 1;
+}
+
+
+// Clear active state for all bullets
+function removeActiveBulletClass(bullets) {
+  for (var i = 0; i < bullets.length; i++) {
+    bullets[i].classList.remove('active');
+  }
+}
+
+
+// Set active state for a bullet
+function setActiveBulletClass(slider) {
+  for (var i = 0; i < slider.bullets.length; i++) {
+    if (slider.slides[i].style['transform'] == 'translateX(0px)') {
+      slider.bullets[i].classList.add('active');
+    }
+  }
+}
+
+
+
+// Swipe with Hammer.js
+Slider.prototype.swipe = function() {
+  that = this;
+
+  that.slides.loop(function(slide) {
     var hammer = new Hammer(slide);
     hammer.get('swipe').set({
       direction: Hammer.DIRECTION_HORIZONTAL,
@@ -44,74 +96,17 @@ var slider = function(sliderID, bulletsID) {
     });
 
     hammer.on("swipeleft", function() {
-      previousSlide(1);
+      that.previousSlide(1);
+      setActiveBulletClass(that);
     });
 
     hammer.on("swiperight", function() {
-      nextSlide(1);
+      that.nextSlide(1);
+      setActiveBulletClass(that);
     });
   });
 
-
-
-  // Click on bullets
-  var bullets = select(bulletsID);
-  click(bullets, clickBullet);
-
-  // - click on a bullet
-  function clickBullet(event) {
-    active = this.classList.contains('active');
-
-    if (!active) {
-      moveSlide(this);
-      removeActiveBulletClass();
-      this.classList.add('active');
-    }
-  }
-
-  // - move slide
-  function moveSlide(bullet) {
-    current = bulletIndex(bullet);
-    step = current - Math.abs(pos);
-
-    if (Math.abs(pos) < current ) {
-      previousSlide(step);
-    } else {
-      nextSlide(-step);
-    }
-  }
-
-  // Return the index of the clicked element
-  function bulletIndex(bullet) {
-    var siblings = bullet.parentNode.childNodes;
-    for (var i = 0; i < siblings.length; i++) {
-      if (bullet == siblings[i]) break;
-    }
-    return i - 1;
-  }
-
-
-  // Clear active state for all bullets
-  function removeActiveBulletClass() {
-    for (var i = 0; i < bullets.length; i++) {
-      bullets[i].classList.remove('active');
-    }
-  }
-
-
-  // Set active state for a bullet
-  function setActiveBulletClass() {
-    for (var i = 0; i < bullets.length; i++) {
-      if (slides[i].style['transform'] == 'translateX(0px)') {
-        bullets[i].classList.add('active');
-      }
-    }
-  }
-
-
-  */
 }
-
 
 
 // Click on a slide
@@ -125,6 +120,9 @@ Slider.prototype.clickSlide = function() {
   if (this.pos == 0) {
     this.direction = 'prev';
   }
+
+  removeActiveBulletClass(this.bullets);
+  setActiveBulletClass(this);
 }
 
 
@@ -142,7 +140,6 @@ Slider.prototype.nextSlide = function(step) {
   this.pos = Math.min(this.pos + step, 0);
   this.setTransform();
 }
-
 
 
 // Move out of viewport all inactive slides
