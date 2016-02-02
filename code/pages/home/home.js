@@ -3,4 +3,5 @@ imagesLoading('.home');
 
 
 var slider = require('./../../framework/structure/slider/slider.js');
-slider('.x-slider .slider', '.x-slider .bullet');
+slider('.x-slider .demo-slider', '.x-slider .demo-slider .bullet');
+slider('.x-slider .demo-slider-2', '.x-slider .demo-slider-2 .bullet');

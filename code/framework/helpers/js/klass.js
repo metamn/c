@@ -9,10 +9,14 @@ Klass.prototype.removeAll = function(elements, klass, k) {
   });
 }
 
-
-
 Klass.prototype.remove = function(element, klass) {
   element.classList.remove(klass);
+}
+
+Klass.prototype.addAll = function(elements, klass, k) {
+  elements.loop(function(element) {
+    k.add(element, klass);
+  });
 }
 
 Klass.prototype.add = function(element, klass) {
@@ -36,6 +40,9 @@ var klass = function(element, klass, action) {
       break;
     case 'removeAll':
       k.removeAll(element, klass, k);
+      break;
+    case 'addAll':
+      k.addAll(element, klass, k);
       break;
     case 'has':
       k.has(element, klass);

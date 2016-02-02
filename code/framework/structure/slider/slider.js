@@ -96,7 +96,7 @@ Slider.prototype.clickSlide = function() {
     this.direction = 'prev';
   }
 
-  removeActiveBulletClass(this.bullets);
+  klass(this.bullets, 'active', 'removeAll');
   setActiveBulletClass(this.bullets, this.slides);
 }
 
@@ -139,14 +139,6 @@ function bulletIndex(bullet) {
     if (bullet == siblings[i]) break;
   }
   return i - 1;
-}
-
-
-// Clear active state for all bullets
-function removeActiveBulletClass(bullets) {
-  for (var i = 0; i < bullets.length; i++) {
-    bullets[i].classList.remove('active');
-  }
 }
 
 
