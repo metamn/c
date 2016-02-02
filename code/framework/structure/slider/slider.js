@@ -2,6 +2,8 @@ var l = require('./../../helpers/js/loop.js');
 var select = require('./../../helpers/js/select.js');
 var transform = require('./../../helpers/js/transform.js');
 var click = require('./../../helpers/js/click.js');
+var klass = require('./../../helpers/js/klass.js');
+
 
 
 // Set up the slider
@@ -44,13 +46,13 @@ var slider = function(sliderID, bulletsID) {
 Slider.prototype.clickBullet = function(event) {
   var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
 
-  if (!bullet.classList.contains('active')) {
+  if (!klass(bullet, 'active', 'has')) {
     current = bulletIndex(bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
-    removeActiveBulletClass(this.bullets);
-    bullet.classList.add('active');
+    klass(this.bullets, 'active', 'removeAll');
+    klass(bullet, 'active', 'add');
   }
 }
 
