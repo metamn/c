@@ -9,6 +9,7 @@
 //
 // Usage: `items.loop(item, index)`
 NodeList.prototype.loop = Array.prototype.forEach;
+Array.prototype.loop = Array.prototype.forEach;
 
 
 var loopDummy = function() {}

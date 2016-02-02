@@ -1,6 +1,12 @@
 var l = require('./loop.js');
 
-function Klass() {
+// The main Klass object
+//
+// $klass - one or more klasses like 'active' or 'active inactive'
+function Klass(klass) {
+  // converts multiple classes into an array
+  // - 'active inactive' => 'active', 'inactive'
+  this.klass = klass.split(' ');
 }
 
 Klass.prototype.removeAll = function(elements, klass, k) {
@@ -27,24 +33,33 @@ Klass.prototype.has = function(element, klass) {
   return element.classList.contains(klass);
 }
 
-
+//
+// $element - can be a single element or a collection of elements
+// $klass - can be a single klass or multiple klasses separated by space
+//
 var klass = function(element, klass, action) {
-  var k = new Klass();
-
-  console.log(element.classList + ' ' + klass + ' ' + action);
+  var k = new Klass(klass);
 
   switch (action) {
     case 'add':
-      k.add(element, klass);
+      k.klass.loop(function(klassname) {
+        k.add(element, klassname, k);
+      });
       break;
     case 'remove':
-      k.remove(element, klass);
+      k.klass.loop(function(klassname) {
+        k.remove(element, klassname, k);
+      });
       break;
     case 'removeAll':
-      k.removeAll(element, klass, k);
+      k.klass.loop(function(klassname) {
+        k.removeAll(element, klassname, k);
+      });
       break;
     case 'addAll':
-      k.addAll(element, klass, k);
+      k.klass.loop(function(klassname) {
+        k.addAll(element, klassname, k);
+      });
       break;
     case 'has':
       k.has(element, klass);

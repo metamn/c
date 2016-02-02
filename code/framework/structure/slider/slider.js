@@ -49,12 +49,12 @@ Slider.prototype.clickBullet = function(event) {
   var bullet = event.target;
 
   if (!klass(bullet, 'bullet--active', 'has')) {
-    current = bulletIndex(bullet);
+    current = bulletIndex(this.bullets, bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
+    klass(this.bullets, 'bullet--active', 'removeAll');
     klass(bullet, 'bullet--active', 'add');
-    klass(bullet, 'bullet--inactive', 'remove');
   }
 }
 
@@ -135,12 +135,11 @@ Slider.prototype.setTransform = function() {
 // Helpers
 
 // Return the index of the clicked element
-function bulletIndex(bullet) {
-  var siblings = bullet.parentNode.childNodes;
-  for (var i = 0; i < siblings.length; i++) {
-    if (bullet == siblings[i]) break;
+function bulletIndex(bullets, bullet) {
+  for (var i = 0; i < bullets.length; i++) {
+    if (bullet == bullets[i]) break;
   }
-  return i - 1;
+  return i;
 }
 
 
