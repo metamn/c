@@ -2,9 +2,11 @@
   cursor: pointer;
   margin-right: $lem / 2;
 
-  @include bullet__inactive;
+  &--inactive {
+    @include bullet__inactive;
+  }
 
-  &.active {
+  &--active {
     @include bullet__active;
   }
 }

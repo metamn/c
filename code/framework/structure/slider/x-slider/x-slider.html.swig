@@ -13,6 +13,9 @@
   {% set klass = 'demo-slider' %}
   {% include '../__bullets/slider__bullets.html.swig' %}
 
+
+
+
   {{ s.slider('Demo slider', 'demo-slider-2') }}
     {% for slide in slides %}
       {% include 'x-slide/x-slide.html.swig' %}

@@ -1,10 +1,11 @@
-{% set klass = '' %}
+{% import '../../../../helpers/button-local/button-local.swig' as b %}
 
+{% set klass = 'bullet--inactive' %}
 {% if loop.first %}
-  {% set klass="active" %}
+  {% set klass="bullet--active" %}
 {% endif %}
 
-<div class="bullet {{ klass }}">
-  <span class="inactive">O</span>
-  <span class="active">&bull;</span>
-</div>
+{{ b.button_local('bullet bullet-' + loop.index + ' ' + klass) }}
+  <span class="span inactive">O</span>
+  <span class="span active">&bull;</span>
+</button>

@@ -44,15 +44,17 @@ var slider = function(sliderID, bulletsID) {
 
 // Click on a bullet
 Slider.prototype.clickBullet = function(event) {
-  var bullet = event.target.parentNode; // `this` is the slider object, not the button clicked http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
+  // `this` is the slider object, not the button clicked
+  // - see http://stackoverflow.com/questions/1553661/how-to-get-the-onclick-calling-object
+  var bullet = event.target;
 
-  if (!klass(bullet, 'active', 'has')) {
+  if (!klass(bullet, 'bullet--active', 'has')) {
     current = bulletIndex(bullet);
     step = current - Math.abs(this.pos);
     (Math.abs(this.pos) < current ) ? this.previousSlide(step) : this.nextSlide(-step);
 
-    klass(this.bullets, 'active', 'removeAll');
-    klass(bullet, 'active', 'add');
+    klass(bullet, 'bullet--active', 'add');
+    klass(bullet, 'bullet--inactive', 'remove');
   }
 }
 
@@ -96,7 +98,7 @@ Slider.prototype.clickSlide = function() {
     this.direction = 'prev';
   }
 
-  klass(this.bullets, 'active', 'removeAll');
+  klass(this.bullets, 'bullet--active', 'removeAll');
   setActiveBulletClass(this.bullets, this.slides);
 }
 
@@ -146,7 +148,7 @@ function bulletIndex(bullet) {
 function setActiveBulletClass(bullets, slides) {
   for (var i = 0; i < bullets.length; i++) {
     if (slides[i].style['transform'] == 'translateX(0px)') {
-      bullets[i].classList.add('active');
+      bullets[i].classList.add('bullet--active');
     }
   }
 }

@@ -1,6 +1,6 @@
 {#
   title: Slider
-  description: a pure Javascript slider
+  description: The header of a slider. Slides can be added after this header
 #}
 
 
