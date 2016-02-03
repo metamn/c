@@ -8,6 +8,8 @@
 //
 // Styleguide hamburger-icon-close
 @mixin icon-hamburger--close($height: $lem + $lem / 2) {
+  overflow: hidden;
+
   .line {
     display: flex;
   }
@@ -16,8 +18,8 @@
     @include animation(iconHamburgerLine1);
     @include keyframes(iconHamburgerLine1) {
       to {
-        transform: rotate(45deg) translateY($height / 2);
-        margin-left: $height / 2;
+        transform: rotate(45deg) translateY($height / 4) scale(2);
+        @include border--thinner;
       }
     }
   }
@@ -26,8 +28,8 @@
     @include animation(iconHamburgerLine3);
     @include keyframes(iconHamburgerLine3) {
       to {
-        transform: rotate(-45deg) translateY(-$height / 2);
-        margin-left: $height / 2;
+        transform: rotate(-45deg) translateY(-$height / 4)  scale(2);
+        @include border--thinner;
       }
     }
   }
@@ -36,6 +38,7 @@
     @include animation(iconHamburgerLine2);
     @include keyframes(iconHamburgerLine2) {
       to {
+        transform: scale(0);
         opacity: 0;
       }
     }

@@ -7,6 +7,10 @@
     @include border--thin($position);
   }
 
+  @if ($type == thinner) {
+    @include border--thinner($position);
+  }
+
   @if ($type == thick) {
     @include border--thick($position);
   }

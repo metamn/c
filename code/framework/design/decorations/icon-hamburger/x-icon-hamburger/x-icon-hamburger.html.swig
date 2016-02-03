@@ -3,7 +3,4 @@
 
   {% set klass = 'normal' %}
   {% include '../icon-hamburger.html.swig' %}
-
-  {% set klass = 'x' %}
-  {% include '../icon-hamburger.html.swig' %}
 </section>
