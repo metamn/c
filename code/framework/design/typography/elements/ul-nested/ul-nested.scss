@@ -1,5 +1,5 @@
-@mixin ul-nested {
+@mixin ul-nested($margin: $lem) {
   .li {
-    @include li;
+    @include li($lem);
   }
 }

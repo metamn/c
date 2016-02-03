@@ -1,4 +1,4 @@
-@mixin li__nested {
+@mixin li__nested($margin: $lem) {
   .title {
     cursor: pointer;
     @include colors(blue-on-white);
@@ -7,7 +7,7 @@
   .ul {
     @include ul;
     @include ul--vertical;
-    margin-left: $lem;
+    margin-left: $margin;
 
     @include transition(opacity);
     display: none;
