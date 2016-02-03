@@ -4,9 +4,10 @@
 // https://css-tricks.com/almanac/properties/a/animation/
 //
 // Styleguide animation
-@mixin animation($keyframe, $duration: 0.3s, $continuous: false) {
+@mixin animation($keyframe, $duration: 0.3s, $continuous: false, $direction: normal) {
   animation-name: $keyframe;
   animation-duration: $duration;
+  animation-direction: $direction;
 
   @if ($continuous == false) {
     animation-fill-mode: forwards;

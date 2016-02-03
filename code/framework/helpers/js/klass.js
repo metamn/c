@@ -67,7 +67,7 @@ var klass = function(element, klass, action) {
       });
       break;
     case 'has':
-      k.has(element, klass);
+      return k.has(element, klass);
       break;
     default:
   }

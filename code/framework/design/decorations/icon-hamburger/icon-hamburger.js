@@ -6,9 +6,19 @@ var iconHamburgerClick = function(triggerID) {
   var trigger = select(triggerID);
 
   click(trigger, function() {
+    renameKlass(trigger[0], 'icon-hamburger--default', 'icon-hamburger--open');
     klass(trigger[0], 'icon-hamburger--close', 'toggle');
     klass(trigger[0], 'icon-hamburger--open', 'toggle');
   });
+
+  // Transforms the `deafult` state to `open` state
+  // - if the icon is in `open` state already this function is not required
+  function renameKlass(element, oldKlass, newKlass) {
+    if (klass(element, oldKlass, 'has')) {
+      klass(element, oldKlass, 'remove');
+      klass(element, newKlass, 'add');
+    }
+  }
 }
 
 module.exports = iconHamburgerClick;
