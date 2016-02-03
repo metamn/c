@@ -1,2 +1,2 @@
-var ulNested = require('./../../framework/design/typography/elements/ul-nested/ul-nested.js');
-ulNested('.ul-nested');
+var menu = require('./../../framework/structure/menu/menu.js');
+menu('.menu');

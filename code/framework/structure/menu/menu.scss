@@ -1,0 +1,17 @@
+@mixin menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__items {
+    @include menu__items;
+  }
+
+  .icon-hamburger {
+    @include icon-hamburger;
+
+    @include landscape {
+      display: none;
+    }
+  }
+}

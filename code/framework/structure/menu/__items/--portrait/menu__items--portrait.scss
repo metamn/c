@@ -1,0 +1,4 @@
+@mixin menu__items--portrait {
+  @include ul--vertical;
+  @include menu__items--inactive;
+}
