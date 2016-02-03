@@ -1,3 +1,8 @@
+// Menu with a hamburger icon
+//
+// On portrait screens the menu will be revealed by the click on the hanburger menu
+//
+// Styleguide menu
 @mixin menu {
   display: flex;
   justify-content: space-between;
