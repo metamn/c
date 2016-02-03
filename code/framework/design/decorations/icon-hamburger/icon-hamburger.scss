@@ -4,6 +4,7 @@
 @mixin icon-hamburger($width: $lem + $lem / 2) {
   width: $width;
   height: $width;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -12,10 +13,15 @@
   cursor: pointer;
 
   .line {
+    display: flex;
     @include border--thin;
   }
 
   &--close {
     @include icon-hamburger--close($width);
+  }
+
+  &--open {
+    @include icon-hamburger--open;
   }
 }

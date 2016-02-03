@@ -8,39 +8,5 @@
 //
 // Styleguide hamburger-icon-close
 @mixin icon-hamburger--close($height: $lem + $lem / 2) {
-  overflow: hidden;
-
-  .line {
-    display: flex;
-  }
-
-  .line-1 {
-    @include animation(iconHamburgerLine1);
-    @include keyframes(iconHamburgerLine1) {
-      to {
-        transform: rotate(45deg) translateY($height / 4) scale(2);
-        @include border--thinner;
-      }
-    }
-  }
-
-  .line-3 {
-    @include animation(iconHamburgerLine3);
-    @include keyframes(iconHamburgerLine3) {
-      to {
-        transform: rotate(-45deg) translateY(-$height / 4)  scale(2);
-        @include border--thinner;
-      }
-    }
-  }
-
-  .line-2 {
-    @include animation(iconHamburgerLine2);
-    @include keyframes(iconHamburgerLine2) {
-      to {
-        transform: scale(0);
-        opacity: 0;
-      }
-    }
-  }
+  @include icon-hamburger--animation('to-close', 45deg, $height / 4, 2, thinner, -45deg, -$height / 4, 0, 0);
 }

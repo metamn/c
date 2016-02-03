@@ -7,6 +7,7 @@ var iconHamburgerClick = function(triggerID) {
 
   click(trigger, function() {
     klass(trigger[0], 'icon-hamburger--close', 'toggle');
+    klass(trigger[0], 'icon-hamburger--open', 'toggle');
   });
 }
 
