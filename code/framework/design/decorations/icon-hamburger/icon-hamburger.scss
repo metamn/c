@@ -3,11 +3,11 @@
 // Styleguide hamburger-icon
 @mixin icon-hamburger($width: $lem + $lem / 2) {
   width: $width;
-  height: $width / 2;
+  height: $width;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   cursor: pointer;
 

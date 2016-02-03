@@ -6,10 +6,10 @@
   height: 100vh;
 
   .icon-hamburger {
-    @include icon-hamburger();
+    @include icon-hamburger($lem * 3);
   }
 
   .x {
-    @include icon-hamburger--close();
+    @include icon-hamburger--close($lem * 3);
   }
 }

@@ -1,0 +1,8 @@
+@mixin animation($keyframe, $duration: 0.3s, $continuous: false) {
+  animation-name: $keyframe;
+  animation-duration: $duration;
+
+  @if ($continuous == false) {
+    animation-fill-mode: forwards;
+  }
+}
