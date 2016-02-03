@@ -8,4 +8,4 @@
 {{ b.button('bullet ' + klass) }}
   <span class="span inactive">O</span>
   <span class="span active">&bull;</span>
-</button>
+</div>

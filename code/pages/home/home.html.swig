@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/structure/slider/x-slider/x-slider.html.swig' %}
+  {% include '../../framework/design/decorations/icon-hamburger/x-icon-hamburger/x-icon-hamburger.html.swig' %}
 
 {% endblock %}

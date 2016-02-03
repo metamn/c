@@ -1,0 +1,32 @@
+// Hamburger icon close
+//
+// The hamburger icon transformed into a close button (X)
+//
+// $height - it should be as tall as wide;
+//
+// Experimental - the `rotate()` is messing up everything; this manual adjust (`/2.3` and `-46deg`) is need for this small size;
+// on large sizes all's fine without manual adjust
+//
+// Styleguide hamburger-icon-close
+@mixin icon-hamburger--close($height: $lem + $lem / 2) {
+  height: $height;
+
+  .line {
+    display: flex;
+    position: relative;
+  }
+
+  .line-1 {
+    transform: rotate(45deg);
+    top: $height / 2.3;
+  }
+
+  .line-2 {
+    transform: rotate(-46deg);
+    top: -$height / 2;
+  }
+
+  .line-3 {
+    display: none;
+  }
+}

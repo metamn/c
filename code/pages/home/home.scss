@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-slider {
-        @include x-slider;
+      .x-icon-hamburger {
+        @include x-icon-hamburger;
       }
     }
   }

@@ -1,0 +1,21 @@
+// Hamburger icon
+//
+// Styleguide hamburger-icon
+@mixin icon-hamburger($width: $lem + $lem / 2) {
+  width: $width;
+  height: $width / 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  .line {
+    @include border--thin;
+  }
+
+  &--close {
+    @include icon-hamburger--close($width);
+  }
+}
