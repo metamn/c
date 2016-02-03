@@ -13,6 +13,8 @@
   }
 
   .icon-hamburger {
+    order: 2;
+    
     @include icon-hamburger;
 
     @include landscape {
