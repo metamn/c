@@ -1,0 +1,5 @@
+@mixin li {
+  &__nested {
+    @include li__nested;
+  }
+}

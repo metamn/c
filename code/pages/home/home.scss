@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-ul {
-        @include x-ul;
+      .x-ul-nested {
+        @include x-ul-nested;
       }
     }
   }
