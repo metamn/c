@@ -51,6 +51,11 @@ var klass = function(element, klass, action) {
         k.remove(element, klassname, k);
       });
       break;
+    case 'toggle':
+      k.klass.loop(function(klassname) {
+        k.has(element, klassname) ? k.remove(element, klassname, k) : k.add(element, klassname, k);
+      });
+      break;
     case 'removeAll':
       k.klass.loop(function(klassname) {
         k.removeAll(element, klassname, k);

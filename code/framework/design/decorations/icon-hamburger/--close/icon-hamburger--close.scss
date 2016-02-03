@@ -4,8 +4,8 @@
 //
 // $height - it should be as tall as wide;
 //
-// Experimental - the `rotate()` is messing up everything; this manual adjust (`/2.3` and `-46deg`) is need for this small size;
-// on large sizes all's fine without manual adjust
+// Experimental - the `rotate()` is messing up everything; this manual adjust (`/2.3` and `-46deg`) is needed only for this small size;
+// On large sizes all's fine without manual adjust
 //
 // Styleguide hamburger-icon-close
 @mixin icon-hamburger--close($height: $lem + $lem / 2) {
@@ -21,12 +21,12 @@
     top: $height / 2.25;
   }
 
-  .line-2 {
+  .line-3 {
     transform: rotate(-46deg);
     top: -$height / 2;
   }
 
-  .line-3 {
+  .line-2 {
     display: none;
   }
 }
