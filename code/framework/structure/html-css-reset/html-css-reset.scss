@@ -6,4 +6,5 @@
 @mixin html-css-reset {
   @include html-css-reset__flexbox;
   @include html-css-reset__normalize;
+  @include html-css-reset__mobile-tap-highlight;
 }
