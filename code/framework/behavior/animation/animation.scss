@@ -4,7 +4,7 @@
 // https://css-tricks.com/almanac/properties/a/animation/
 //
 // Styleguide animation
-@mixin animation($keyframe, $duration: 1s, $continuous: false) {
+@mixin animation($keyframe, $duration: 0.3s, $continuous: false) {
   animation-name: $keyframe;
   animation-duration: $duration;
 
