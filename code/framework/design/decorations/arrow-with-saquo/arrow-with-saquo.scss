@@ -27,15 +27,15 @@
   }
 
   @if ($direction == left) {
-    @include arrow-with-saquo--left($size / 3);
+    @include arrow-with-saquo--left(-$size / 3);
   }
 
   @if ($direction == top) {
-    @include arrow-with-saquo--top;
+    @include arrow-with-saquo--top(-$size / 3);
   }
 
   @if ($direction == bottom) {
-    @include arrow-with-saquo--bottom;
+    @include arrow-with-saquo--bottom(-$size / 3);
   }
 
   &--right {
@@ -43,14 +43,14 @@
   }
 
   &--left {
-    @include arrow-with-saquo--left($size / 3);
+    @include arrow-with-saquo--left(-$size / 3);
   }
 
   &--top {
-    @include arrow-with-saquo--top;
+    @include arrow-with-saquo--top(-$size / 3);
   }
 
   &--bottom {
-    @include arrow-with-saquo--bottom;
+    @include arrow-with-saquo--bottom(-$size / 3);
   }
 }
