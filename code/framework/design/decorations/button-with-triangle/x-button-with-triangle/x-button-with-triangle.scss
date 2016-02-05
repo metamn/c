@@ -1,0 +1,10 @@
+@mixin x-button-with-triangle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .button-with-triangle {
+    @include button-with-triangle;
+  }
+}

@@ -6,20 +6,8 @@
 html {
   &.home {
     body {
-      .x-arrow-with-saquo {
-        @include x-arrow-with-saquo;
-      }
-
-      .x-arrow-with-triangle {
-        @include x-arrow-with-triangle;
-      }
-
-      .x-saquo {
-        @include x-saquo;
-      }
-
-      .x-triangle {
-        @include x-triangle;
+      .x-button-with-triangle {
+        @include x-button-with-triangle;
       }
     }
   }
