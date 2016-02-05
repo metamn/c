@@ -1,0 +1,11 @@
+@mixin x-arrow-with-saquo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .arrow-with-saquo {
+    @include arrow-with-saquo;
+    margin: $lem;
+  }
+}
