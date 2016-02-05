@@ -14,4 +14,36 @@
   &__triangle {
     @include triangle($direction: $direction, $size: $size / 6, $color: $color);
   }
+
+  @if ($direction == right) {
+    @include arrow-with-triangle--right;
+  }
+
+  @if ($direction == left) {
+    @include arrow-with-triangle--left;
+  }
+
+  @if ($direction == top) {
+    @include arrow-with-triangle--top;
+  }
+
+  @if ($direction == bottom) {
+    @include arrow-with-triangle--bottom;
+  }
+
+  &--right {
+    @include arrow-with-triangle--right;
+  }
+
+  &--left {
+    @include arrow-with-triangle--left;
+  }
+
+  &--top {
+    @include arrow-with-triangle--top;
+  }
+
+  &--bottom {
+    @include arrow-with-triangle--bottom;
+  }
 }
