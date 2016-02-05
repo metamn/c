@@ -13,7 +13,12 @@
     {
       "name": "blue",
       "value": "#4916DA",
-      "description": "Main color"
+      "description": "Main color, the Metamn blue"
+    },
+    {
+      "name": "red",
+      "value": "#F10051",
+      "description": "Main color, created from the Metamn blue with hue rotation in Paletton"
     }
   ],
   "color_pairs": [

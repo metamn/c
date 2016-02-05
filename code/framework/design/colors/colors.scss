@@ -12,8 +12,11 @@ $white: #fff;
 // Main color
 $black: #000;
 
-// Main color
+// Main color, the Metamn blue
 $blue: #4916DA;
+
+// Main color, created from the Metamn blue with hue rotation in Paletton
+$red: #F10051;
 
 
 // Color combinations. Colors are not used standalone but in pairs
@@ -57,6 +60,10 @@ $blue: #4916DA;
 
 .blue {
   background: #4916DA;
+};
+
+.red {
+  background: #F10051;
 };
 
 
