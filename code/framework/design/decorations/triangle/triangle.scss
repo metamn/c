@@ -6,7 +6,7 @@
 // $size - starting from $lem / 4
 //
 // Styleguide triangle
-@mixin triangle($direction: right, $size: $lem * 8, $color: $black) {
+@mixin triangle($direction: right, $size: $lem, $color: $black) {
   width: 0;
   height: 0;
   border-style: solid;
