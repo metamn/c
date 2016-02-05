@@ -1,11 +1,11 @@
-// Arrow ith saquo
+// Arrow with saquo
 //
 // Done in pure CSS
 //
-// $size - starting from $lem * 2. As th size goes above $lem * 3 the line thickness must be increased
+// $size - starting from $lem. All sizes above working well.
 //
 // Styleguide arrow-with-saquo
-@mixin arrow-with-saquo($direction: right, $size: $lem * 3) {
+@mixin arrow-with-saquo($direction: right, $size: $lem * 8) {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
