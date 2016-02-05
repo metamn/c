@@ -1,0 +1,35 @@
+// Button with arrow triangle
+//
+//
+// Styleguide button-with-arrow-triangle
+@mixin button-with-arrow-triangle($direction: right, $size: $lem * 3, $color: $black) {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    @include text-style(button-with-arrow-triangle);
+    order: 2;
+  }
+
+  .arrow-with-triangle {
+    @include arrow-with-triangle($direction, $size, $color);
+    //transform: translateX(-1px) scale(1.01);
+    order: 2;
+  }
+
+  &--left {
+    @include button-with-arrow-triangle--left;
+  }
+
+  &--right {
+    @include button-with-arrow-triangle--right;
+  }
+
+  &--bottom {
+    @include button-with-arrow-triangle--bottom;
+  }
+
+  &--top {
+    @include button-with-arrow-triangle--top;
+  }
+}

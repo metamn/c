@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-button-with-triangle {
-        @include x-button-with-triangle;
+      .x-button-with-arrow-triangle {
+        @include x-button-with-arrow-triangle;
       }
     }
   }

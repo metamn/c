@@ -40,6 +40,19 @@
     
   }
   
+  // Button with arrow triangle
+  // - Strong text, call for action.
+  @if ($variant == 'button-with-arrow-triangle') {
+    @include font(nimbus-sans-black);
+    @include uppercase(1.25px);
+    @include border(normal, all);
+    
+    padding: $lem / 2 $lem;
+    transform: translateX($lem);
+    
+    
+  }
+  
 }
 
 
@@ -61,6 +74,17 @@
   @include colors(white-on-black);
   
   padding: $lem / 2 $lem;
+  
+  
+}
+
+.text-style--button-with-arrow-triangle {
+  @include font(nimbus-sans-black);
+  @include uppercase(1.25px);
+  @include border(normal, all);
+  
+  padding: $lem / 2 $lem;
+  transform: translateX($lem);
   
   
 }
