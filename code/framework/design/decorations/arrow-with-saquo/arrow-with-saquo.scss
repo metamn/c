@@ -5,15 +5,11 @@
 // $size - starting from $lem. All sizes above working well. If the size of the arrow is reduced by the parent container everything will be distorted
 //
 // Styleguide arrow-with-saquo
-@mixin arrow-with-saquo($direction: right, $size: $lem) {
+@mixin arrow-with-saquo($direction: right, $size: $lem * 3) {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-
-  @include mobile {
-    flex-wrap: wrap;
-  }
 
   width: $size;
 

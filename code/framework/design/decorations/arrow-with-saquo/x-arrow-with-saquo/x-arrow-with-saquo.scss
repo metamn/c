@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh;
 
+  @include mobile {
+    flex-wrap: wrap;
+  }
+
   .arrow-with-saquo {
     @include arrow-with-saquo;
     margin: $lem;
