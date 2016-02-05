@@ -1,0 +1,21 @@
+@mixin triangle($direction: right, $size: $lem / 2, $color: $black) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  &--right {
+    @include triangle--right($size, $color);
+  }
+
+  &--left {
+    @include triangle--left($size, $color);
+  }
+
+  &--top {
+    @include triangle--top($size, $color);
+  }
+
+  &--bottom {
+    @include triangle--bottom($size, $color);
+  }
+}

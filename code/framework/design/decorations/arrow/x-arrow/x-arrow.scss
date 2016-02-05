@@ -1,0 +1,9 @@
+@mixin x-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .arrow {
+    @include arrow;
+  }
+}

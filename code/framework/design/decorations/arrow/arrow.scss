@@ -1,0 +1,7 @@
+@mixin arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $lem 0 $lem $lem;
+  border-color: transparent transparent transparent black;
+}

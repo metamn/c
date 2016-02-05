@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .menu {
-        @include menu;
+      .x-triangle {
+        @include x-triangle;
       }
     }
   }
