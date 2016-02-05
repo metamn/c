@@ -1,4 +1,11 @@
-@mixin arrow-with-triangle($direction: right, $size: $lem * 2, $color: $black) {
+// Arrow ith triangle
+//
+// Done in pure CSS
+//
+// $size - starting from $lem * 2. As th size goes above $lem * 3 the line thickness must be increased
+//
+// Styleguide arrow-with-triangle
+@mixin arrow-with-triangle($direction: right, $size: $lem * 3, $color: $black) {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
