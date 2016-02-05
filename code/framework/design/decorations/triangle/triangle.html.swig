@@ -1,1 +1,1 @@
-<span class="triangle triangle--{{ direction }}"></span>
+<span class="triangle triangle--{{ direction }} {{ klass }}"></span>

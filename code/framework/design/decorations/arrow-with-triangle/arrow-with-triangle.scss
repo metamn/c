@@ -1,0 +1,17 @@
+@mixin arrow-with-triangle($direction: right, $size: $lem * 2, $color: $black) {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: $size;
+
+  &__line {
+    width: calc(#{$size - $size / 6});
+    @include border;
+  }
+
+  &__triangle {
+    @include triangle($direction: $direction, $size: $size / 6, $color: $color);
+  }
+}
