@@ -1,5 +1,6 @@
 // Button with arrow triangle
 //
+// An original idea. Works well in all cases and browsers
 //
 // Styleguide button-with-arrow-triangle
 @mixin button-with-arrow-triangle($direction: right, $size: $lem * 3, $color: $black) {
@@ -13,7 +14,6 @@
 
   .arrow-with-triangle {
     @include arrow-with-triangle($direction, $size, $color);
-    //transform: translateX(-1px) scale(1.01);
     order: 2;
   }
 
