@@ -24,6 +24,31 @@
           "value": "1.1px"
         }
       ]
+    },
+    {
+      "name": "Button with triangle",
+      "description": "Strong text, call for action.",
+      "based_on": "Nimbus Sans Black",
+      "mixins": [
+        {
+          "name": "font",
+          "value": "nimbus-sans-black"
+        },
+        {
+          "name": "uppercase",
+          "value": "1.25px"
+        },
+        {
+          "name": "colors",
+          "value": "white-on-black"
+        }
+      ],
+      "properties": [
+        {
+          "name": "padding",
+          "value": "$lem / 2 $lem"
+        }
+      ]
     }
   ]
 }

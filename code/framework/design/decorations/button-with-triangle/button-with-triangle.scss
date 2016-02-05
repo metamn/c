@@ -1,12 +1,14 @@
+// Experimental
+
 @mixin button-with-triangle($direction: right, $size: $lem, $color: $black) {
   display: flex;
   align-items: center;
 
   &__text {
-    margin-right: $lem / 2;
+    @include text-style(button-with-triangle);
   }
 
   .triangle {
-    @include triangle($direction, $size, $color)
+    @include triangle($direction, $size, $color);
   }
 }
