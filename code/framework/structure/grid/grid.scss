@@ -1,3 +1,10 @@
+// Grid
+//
+// Displays items in a grid
+//
+// Experimental: the container cannot contain other elements like the grid title, just the grid items
+//
+// Styleguide grid
 @mixin grid($items-per-row, $margin-right: 0px, $margin-bottom: 0px, $max-items-to-display: null) {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,8 @@
+@mixin list--full-view($margin-bottom: $lem) {
+  display: flex;
+  flex-direction: column;
+
+  .list-item {
+    margin-bottom: $margin-bottom;
+  }
+}
