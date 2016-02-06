@@ -7,6 +7,29 @@
       "extension": ".jpg"
     }
   ],
+  "placeholders": [
+    {
+      "title": "Placeholder image",
+      "responsive": [
+        {
+          "breakpoint": "mobile",
+          "name": "placeholder-3-2"
+        },
+        {
+          "breakpoint": "tablet",
+          "name": "placeholder-3-2"
+        },
+        {
+          "breakpoint": "laptop",
+          "name": "placeholder-16-9"
+        },
+        {
+          "breakpoint": "desktop",
+          "name": "placeholder-16-9"
+        }
+      ]
+    }
+  ],
   "slides": [
     {
       "title": "Slide 1"
@@ -28,27 +51,194 @@
   ],
   "url": "",
   "date": "2009-12-02",
-  "list": [
+  "articles": [
     {
-      "title": "Item 1"
+      "title": "Analysts Detail Claims That Reports on ISIS Were Distorted",
+      "excerpt": "The Pentagon’s inspector general is examining claims that senior military officers manipulated conclusions about progress against the Islamic State.",
+      "date": "2015-09-16",
+      "authors": [
+        "Mark Mazetti",
+        "Matt Apuzzo"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-1514",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ],
+      "categories": [
+        "category1",
+        "category2",
+        "category3"
+      ]
     },
     {
-      "title": "Item 2"
+      "title": "As Shutdown Nears, Obama to Join Budget Fight",
+      "excerpt": "As Republicans threaten to block a budget deal if it includes financing for Planned Parenthood, President Obama plans to push them to scrap a tax advantage for private equity managers.",
+      "date": "2015-09-17",
+      "authors": [
+        "DAVID M. HERSZENHORN",
+        "JULIE HIRSCHFELD DAVIS"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-2230",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
     },
     {
-      "title": "Item 3"
+      "title": "Obama Weighing Talks With Putin on Syrian Crisis",
+      "excerpt": "President Obama’s administration is debating whether the two leaders should try to work out their differences. Some fear a meeting would only play into Mr. Putin’s hands. ",
+      "date": "2015-11-17",
+      "authors": [
+        "PETER BAKER",
+        "ANDREW E. KRAMER"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-2443",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
     },
     {
-      "title": "Item 4"
+      "title": "Closing the Back Door to Europe",
+      "excerpt": "In recent months European nations have worked to block the main route taken by migrants fleeing war and upheaval.",
+      "date": "2015-01-01",
+      "authors": [
+        "SARAH ALMUKHTAR",
+        "DEREK WATKINS",
+        "JOSH KELLER"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-6055",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
     },
     {
-      "title": "Item 5"
+      "title": "Attitudes Shift on Paid Leave: Dads Sue, Too",
+      "excerpt": "More men are filing lawsuits about taking time off work when a baby is born and facing setbacks when they return.",
+      "date": "2015-01-01",
+      "authors": [
+        "NOAM SCHEIBER"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-1964",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
     },
     {
-      "title": "Item 6"
+      "title": "Julianne Moore, Beauty and a Beast",
+      "excerpt": "Offscreen, she insists on normality. Onscreen, she lets the monster out.",
+      "date": "2015-06-21",
+      "authors": [
+        "John Lahr"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-1829",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
     },
     {
-      "title": "Item 7"
+      "title": "The March Toward Moral Clarity",
+      "excerpt": "Whether or not reform actually follows from Pope Francis’s advocacy, he is pointing to a hopeful future.",
+      "date": "2015-06-21",
+      "authors": [
+        "John Cassidy"
+      ],
+      "categories": [
+        "Daily comment"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "google-earth-view-1240",
+          "extension": ".jpg",
+          "onesize": "mobile"
+        }
+      ]
+    },
+    {
+      "title": "The Imam’s Curse",
+      "excerpt": "A family accused of financing terrorists.",
+      "date": "2015-04-21",
+      "authors": [
+        "Evan Osnos"
+      ],
+      "categories": [
+        "A Reporter at Large"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "download-1",
+          "extension": ".jpeg",
+          "onesize": "mobile"
+        }
+      ]
+    },
+    {
+      "title": "Five Things Jeremy Corbyn Has Right",
+      "excerpt": "Whether he can translate his radical beliefs into effective leadership is a fair question to pose.",
+      "date": "2015-02-21",
+      "authors": [
+        "John Cassidy"
+      ],
+      "categories": [
+        "John Cassidy"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "download-2",
+          "extension": ".jpeg",
+          "onesize": "mobile"
+        }
+      ]
+    },
+    {
+      "title": "Bringing the Refugee Crisis Home",
+      "excerpt": "Many Berliners are part of a growing cultural movement, influenced by simple humanism and an awareness of Germany’s own past.",
+      "date": "2015-02-21",
+      "authors": [
+        "Sally McGrane"
+      ],
+      "categories": [
+        "News Desk"
+      ],
+      "images": [
+        {
+          "title": "Image title",
+          "name": "download-3",
+          "extension": ".jpeg",
+          "onesize": "mobile"
+        },
+        {
+          "title": "Image title",
+          "name": "download-4",
+          "extension": ".jpeg",
+          "onesize": "mobile"
+        }
+      ]
     }
   ]
 }

@@ -11,6 +11,11 @@
       "description": "Main color"
     },
     {
+      "name": "gray",
+      "value": "mix(#000, #fff)",
+      "description": "Secondary color"
+    },
+    {
       "name": "blue",
       "value": "#4916DA",
       "description": "Main color, the Metamn blue"

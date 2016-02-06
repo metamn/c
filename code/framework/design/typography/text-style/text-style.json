@@ -26,6 +26,22 @@
       ]
     },
     {
+      "name": "Body text",
+      "description": "Settings for long text blocks.",
+      "based_on": "Nimbus Sans",
+      "mixins": [
+        {
+          "name": "p"
+        }
+      ],
+      "properties": [
+        {
+          "name": "max-width",
+          "value": "25em"
+        }
+      ]
+    },
+    {
       "name": "Button with triangle",
       "description": "Strong text, call for action.",
       "based_on": "Nimbus Sans Black",

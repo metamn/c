@@ -3,6 +3,26 @@
     @include list-item__title;
   }
 
+  &__thumb {
+    @include list-item__thumb;
+  }
+
+  &__excerpt {
+    @include list-item__excerpt;
+  }
+
+  &__date {
+    @include list-item__date;
+  }
+
+  &__categories {
+    @include list-item__categories;
+  }
+
+  &__authors {
+    @include list-item__authors;
+  }
+
   &--fullscreen {
     @include list-item--fullscreen;
   }
