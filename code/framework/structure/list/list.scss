@@ -1,0 +1,10 @@
+@mixin list {
+  .list-item {
+    @include list-item;
+  }
+
+  @include list--grid-view;
+  &--grid-view {
+    @include list--grid-view;
+  }
+}

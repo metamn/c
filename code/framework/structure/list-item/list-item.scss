@@ -1,0 +1,9 @@
+@mixin list-item {
+  &__title {
+    @include list-item__title;
+  }
+
+  &--fullscreen {
+    @include list-item--fullscreen;
+  }
+}
