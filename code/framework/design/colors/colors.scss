@@ -13,7 +13,7 @@ $white: #fff;
 $black: #000;
 
 // Secondary color
-$gray: mix(#000, #fff);
+$gray: mix($white, $black);
 
 // Main color, the Metamn blue
 $blue: #4916DA;
@@ -62,7 +62,7 @@ $red: #F10051;
 };
 
 .gray {
-  background: mix(#000, #fff);
+  background: mix($white, $black);
 };
 
 .blue {

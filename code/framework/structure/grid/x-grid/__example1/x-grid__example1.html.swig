@@ -2,6 +2,7 @@
   <h3 class="title">Grid example 1</h3>
 
   <div class="container">
+    <h3>Title must be present !!!</h3>
     <span>1</span>
     <span>2</span>
     <span>3</span>

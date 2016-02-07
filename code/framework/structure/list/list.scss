@@ -3,7 +3,7 @@
     @include list-item;
   }
 
-  @include list--full-view;
+  @include list--grid-view;
 
   &--grid-view {
     @include list--grid-view;
