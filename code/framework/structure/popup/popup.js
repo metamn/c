@@ -1,10 +1,15 @@
 // Popup
 //
 // A full screen popup
-// All other elements will be hidden
+// All other elements on the page will be hidden
 //
 // $item - the only element to show
 //
+// Other parameters:
+// - $url - a `<meta>` property with the site url
+// - 'home.json' - this JSON file will be loaded
+// - $collection, $id - the item data in JSON must sit under a `collection`
+// 
 // Styleguide popup
 
 

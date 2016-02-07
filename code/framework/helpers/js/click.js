@@ -5,6 +5,9 @@
 // - $items - a set of elements to apply click
 // - $cb - a callback function which returns the element clicked
 //
+// Usage:
+// click(items, function(item) { .... });
+//
 // Styleguide click
 
 
