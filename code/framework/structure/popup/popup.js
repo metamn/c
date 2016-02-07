@@ -24,24 +24,24 @@ var popup = function(item) {
 
   // Get JSON
   jsonAJAX(url, function(json) {
-    console.log('json: ' + json[collection][id].title);
+    var title = json[collection][id].title;
+
+    // Hide all other elements
+    var toHide = select('body > *');
+    toHide.loop(function(item) {
+      item.style.display = 'none';
+    });
+
+    // Create the popup element
+    var p = document.createElement('section');
+    p.classList.add('popup');
+
+    // Create popup content
+    p.innerHTML = '<nav class="popup__close"><h3 class="title">Close</h3><div class="button icon-hamburger icon-hamburger--default"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></nav>' + title;
+
+    // Insert into `body`
+    document.body.appendChild(p);
   });
-
-  // Hide all other elements
-  var toHide = select('body > *');
-  toHide.loop(function(item) {
-    item.style.display = 'none';
-  });
-
-  // Create the popup element
-  var p = document.createElement('section');
-  p.classList.add('popup');
-
-  // Create popup content
-  p.innerHTML = '<nav class="popup__close"><h3 class="title">Close</h3><div class="button"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></nav>';
-
-  // Insert into `body`
-  document.body.appendChild(p);
 }
 
 

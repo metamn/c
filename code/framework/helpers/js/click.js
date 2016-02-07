@@ -1,9 +1,11 @@
 // Click
 //
 // Shorthand for `addEventListener("click")`
-// - it is applied for a set of elements
 //
-
+// - $items - a set of elements to apply click
+// - $cb - a callback function which returns the element clicked
+//
+// Styleguide click
 
 
 var select = require('./select.js');
@@ -15,6 +17,8 @@ var click = function(items, cb) {
     item.addEventListener("click", fn, false);
   });
 
+  // The only way to return the HTMLElement clicked
+  // - all other constructs will return the mouse event instead
   function fn() {
     cb(this);
   }
