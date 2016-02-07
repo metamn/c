@@ -12,8 +12,12 @@ var l = require('./loop.js');
 
 var click = function(items, cb) {
   items.loop(function(item) {
-    item.addEventListener("click", cb, false);
+    item.addEventListener("click", fn, false);
   });
+
+  function fn() {
+    cb(this);
+  }
 }
 
 

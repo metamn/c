@@ -10,8 +10,7 @@
 <!doctype html>
 <html lang="en" class="{{ classname }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    {% include '__meta/head__meta.html.swig' %}
 
     <title>{{ page_title | safe }}</title>
     <link href="{{ site.url }}{{ site.styles }}site.min.css" media="screen, projection" rel="stylesheet" type="text/css" />

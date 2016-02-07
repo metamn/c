@@ -10,9 +10,22 @@
 
 var select = require('./../../helpers/js/select.js');
 var l = require('./../../helpers/js/loop.js');
+var jsonAJAX = require('./../../helpers/js/jsonAJAX.js');
 
 
 var popup = function(item) {
+
+  // Set up the call
+  var url = select('meta[property="og:url"]');
+  url = url[0].getAttribute('content') + 'home.json';
+
+  var collection = item.dataset.collection;
+  var id = item.dataset.id;
+
+  // Get JSON
+  jsonAJAX(url, function(json) {
+    console.log('json: ' + json[collection][id].title);
+  });
 
   // Hide all other elements
   var toHide = select('body > *');
