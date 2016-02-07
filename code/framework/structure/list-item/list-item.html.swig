@@ -1,4 +1,4 @@
-<article class="list-item">
+<article class="list-item" data-collection="{{ collection }}" data-id="{{ loop.index0 }}">
   {% if (item.images[0]) and (to_display.indexOf('thumb') !== -1) %}
     {% include '__thumb/list-item__thumb.html.swig' %}
   {% endif %}
