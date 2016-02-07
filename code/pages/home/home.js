@@ -1,2 +1,2 @@
-var menu = require('./../../framework/structure/menu/menu.js');
-menu('.menu');
+var list = require('./../../framework/structure/list/list.js');
+list('.x-list', 'popup');

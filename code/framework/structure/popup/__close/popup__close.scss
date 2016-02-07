@@ -1,0 +1,11 @@
+@mixin popup__close {
+  display: flex;
+
+  position: absolute;
+  right: $lem / 2;
+  top: $lem / 2;
+
+  .button {
+    @include icon-hamburger;
+  }
+}
