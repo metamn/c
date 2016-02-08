@@ -37,6 +37,7 @@
     "gulp-kss": "0.0.2",
     "gulp-minify-css": "^1.1.6",
     "gulp-minify-html": "^1.0.3",
+    "gulp-nunjucks-render": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^5.1.8",
     "gulp-rename": "^1.2.2",

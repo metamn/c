@@ -1,0 +1,6 @@
+{% include 'framework/templates/head/head.html.nunjucks' %}
+{% include 'framework/templates/icons/icons.html.nunjucks' %}
+
+{% block content %}{% endblock %}
+
+{% include 'framework/templates/footer/footer.html.nunjucks' %}

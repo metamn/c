@@ -1,1 +1,0 @@
-{% set title='newsledge' %}{% extends '../../../framework/templates/default/default.html.swig' %}{% block content %}<section class='tag'><h3 class='tag__title'>newsledge</h3><article><h3 class='article__title'>Home</h3><a class='link' href='{{ site.url }}' title='Home'>Home</a><date class='article__date'>{{ '2009-12-02' | date('F Y') }}</date></article></section>{% endblock %}

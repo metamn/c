@@ -1,0 +1,6 @@
+{% extends "framework/templates/default/default.html.nunjucks" %}
+{% block content %}
+
+  {% include 'framework/structure/list/x-list/x-list.html.nunjucks' %}
+
+{% endblock %}

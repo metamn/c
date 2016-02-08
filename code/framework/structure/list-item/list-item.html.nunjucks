@@ -1,0 +1,25 @@
+<article class="list-item" data-collection="{{ collection }}" data-id="{{ loop.index0 }}">
+  {% if (item.images[0]) and ('thumb' in to_display) %}
+    {% include '__thumb/list-item__thumb.html.nunjucks' %}
+  {% endif %}
+
+  {% if (item.title) and ('title' in to_display) %}
+    {% include '__title/list-item__title.html.nunjucks' %}
+  {% endif %}
+
+  {% if (item.excerpt) and ('excerpt' in to_display) %}
+    {% include '__excerpt/list-item__excerpt.html.nunjucks' %}
+  {% endif %}
+
+  {% if (item.categories) and ('categories' in to_display) %}
+    {% include '__categories/list-item__categories.html.nunjucks' %}
+  {% endif %}
+
+  {% if (item.date) and ('date' in to_display) %}
+    {% include '__date/list-item__date.html.nunjucks' %}
+  {% endif %}
+
+  {% if (item.authors) and ('authors' in to_display) %}
+    {% include '__authors/list-item__authors.html.nunjucks' %}
+  {% endif %}
+</article>

@@ -1,0 +1,2 @@
+{% import "helpers/link/link.nunjucks" as l  %}
+{{ l.link(link) }}{{ link.title }}</a>
