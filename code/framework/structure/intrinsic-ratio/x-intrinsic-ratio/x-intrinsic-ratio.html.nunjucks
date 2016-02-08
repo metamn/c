@@ -1,7 +1,0 @@
-<section class="x-intrinsic-ratio">
-  <h3 class="x-intrinsic-ratio__title">Intrinsic ratio</h3>
-
-  {% include '--simple/x-intrinsic-ratio--simple.html.nunjucks' %}
-  {% include '--with-image/x-intrinsic-ratio--with-image.html.nunjucks' %}
-  {% include '--with-image-stretched/x-intrinsic-ratio--with-image-stretched.html.nunjucks' %}
-</section>
