@@ -25,15 +25,6 @@ module.exports = {
   config_json: rootDir + sourceCode + '/config.json',
 
 
-  // Nunjucks source files
-  // - they will be all compiled
-  nunjucks_src: sourceCode + '/**/*.nunjucks',
-
-  // Nunjucks dest files (same directory)
-  // - and put in the same directory where the original .nunj file was found
-  nunjucks_dest: sourceCode,
-
-
 
   // SWIG source files
   // - they will be all compiled

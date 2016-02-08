@@ -18,7 +18,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', function(cb) {
   runSequence(
-    'nunjucks',
+    'swig',
     'html',
     'scss',
     'js',
