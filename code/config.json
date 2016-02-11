@@ -13,9 +13,6 @@
       },
       {
         "file": "vendors.js"
-      },
-      {
-        "file": "site.header.min.js"
       }
     ],
     "footer": [

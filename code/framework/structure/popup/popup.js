@@ -7,8 +7,8 @@
 //
 // Other parameters:
 // - $url - a `<meta>` property containing the site url
-// - 'home.json' - this JSON file which will be loaded
-// - $collection, $id - the item data in JSON must sit under a `collection`
+// - 'home.json' - the JSON file which will be loaded
+// - $collection, $id - which item `collection` to display
 //
 // Styleguide popup
 
@@ -18,35 +18,73 @@ var l = require('./../../helpers/js/loop.js');
 var jsonAJAX = require('./../../helpers/js/jsonAJAX.js');
 
 
-var popup = function(item) {
 
-  // Set up the call
+// The Popup object
+function Popup(item) {
+  // the site url
   var url = select('meta[property="og:url"]');
-  url = url[0].getAttribute('content') + 'home.json';
+  this.url = (url[0].getAttribute('content') === undefined) ? null : url[0].getAttribute('content');
 
-  var collection = item.dataset.collection;
-  var id = item.dataset.id;
+  // the JSON file
+  this.json = (item.dataset.json === undefined) ? null : item.dataset.json;
 
-  // Get JSON
-  jsonAJAX(url, function(json) {
-    var title = json[collection][id].title;
+  // site url + JSON file
+  this.ajaxURL = this.url + this.json;
 
-    // Hide all other elements
-    var toHide = select('body > *');
-    toHide.loop(function(item) {
-      item.style.display = 'none';
-    });
+  // like articles
+  this.collection = (item.dataset.collection === undefined) ? null : item.dataset.collection;
 
-    // Create the popup element
-    var p = document.createElement('section');
-    p.classList.add('popup');
+  // like articles[0]
+  this.id = (item.dataset.id === undefined) ? null : item.dataset.id;
 
-    // Create popup content
-    p.innerHTML = '<nav class="popup__close"><h3 class="title">Close</h3><div class="button icon-hamburger icon-hamburger--default"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></nav>' + title;
+  // all params are ok for the call
+  this.canCall = (this.url && this.json && this.collection && this.id);
+}
 
-    // Insert into `body`
-    document.body.appendChild(p);
+
+// Hide all elements of a container
+Popup.prototype.hideAll = function(containerID) {
+  var toHide = select(containerID);
+
+  toHide.loop(function(item) {
+    item.style.display = 'none';
   });
+}
+
+
+// Create the response useing SWIG
+Popup.prototype.response = function(json) {
+  var tpl = '{{ title }}';
+  var output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  return output;
+}
+
+
+
+var popup = function(item) {
+  var p = new Popup(item);
+
+  if (p.canCall) {
+    // Get JSON
+    jsonAJAX(p.ajaxURL, function(json) {
+      //var title = json[collection][id].title;
+
+      // Hide all other elements
+      p.hideAll('body > *');
+
+      // Create the response element
+      var section = document.createElement('section');
+      section.classList.add('popup');
+
+      // Create the response content
+      section.innerHTML = p.response(json);
+
+      // Insert into `body`
+      document.body.appendChild(section);
+    });
+  } else {
+    console.log('Not all parameters are set up for the ajax call');
+  }
 }
 
 

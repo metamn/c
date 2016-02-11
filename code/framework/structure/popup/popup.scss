@@ -1,9 +1,4 @@
 @mixin popup {
   display: flex;
-
   position: relative;
-
-  &__close {
-    @include popup__close;
-  }
 }
