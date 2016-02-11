@@ -54,8 +54,24 @@ Popup.prototype.hideAll = function(containerID) {
 
 // Create the response useing SWIG
 Popup.prototype.response = function(json) {
-  var tpl = '{{ title }}';
-  var output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  var output = "na";
+
+  /*
+  var tpl = "{{ title }}";
+  output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  */
+
+  //swig.run(popupTemplate, {}, '/popupTemplate.html');
+  //var tpl = swig.compileFile('/popupTemplate.html');
+  //output = tpl({title: 'awesome'});
+  //console.log('tpl:' + tpl);
+  //output = swig.renderFile('/popupTemplate.html', { title: 'awesome' });
+
+
+  var tpl = swig.compileFile('http://localhost:300/popup.html.swig');
+  output = tpl({title: 'awesome'});
+
+
   return output;
 }
 
