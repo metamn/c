@@ -8,9 +8,7 @@
 var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     onError = require('../utils/onError'),
-
-    concat = require('gulp-concat'),
-    rename = require('gulp-rename'),
+    
     uglify = require('gulp-uglify'),
     webpack = require('webpack-stream');
 

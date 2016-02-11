@@ -12,16 +12,7 @@
         "type": "external"
       },
       {
-        "file": "picturefill.min.js"
-      },
-      {
-        "file": "imagesloaded.pkgd.min.js"
-      },
-      {
-        "file": "hammer.min.js"
-      },
-      {
-        "file": "swig.min.js"
+        "file": "vendors.js"
       },
       {
         "file": "site.header.min.js"

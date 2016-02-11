@@ -47,6 +47,13 @@ module.exports = {
   // JS file destination
   js_dest: destination + '/assets/scripts',
 
+  // JS external scripts source
+  // - they will be filtered for '@assets/scripts' in the task
+  js_external_src: sourceCode + '/**/*.js',
+
+  // JS external libraries destination name
+  js_external_dest_name: 'vendors.js' ,
+
 
 
   // SCSS file to compile
