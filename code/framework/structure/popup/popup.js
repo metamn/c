@@ -6,10 +6,10 @@
 // $item - the only element to show
 //
 // Other parameters:
-// - $url - a `<meta>` property with the site url
-// - 'home.json' - this JSON file will be loaded
+// - $url - a `<meta>` property containing the site url
+// - 'home.json' - this JSON file which will be loaded
 // - $collection, $id - the item data in JSON must sit under a `collection`
-// 
+//
 // Styleguide popup
 
 

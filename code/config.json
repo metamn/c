@@ -21,6 +21,9 @@
         "file": "hammer.min.js"
       },
       {
+        "file": "swig.min.js"
+      },
+      {
         "file": "site.header.min.js"
       }
     ],
