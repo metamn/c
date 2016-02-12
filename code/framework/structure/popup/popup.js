@@ -52,27 +52,54 @@ Popup.prototype.hideAll = function(containerID) {
 }
 
 
-// Create the response useing SWIG
-Popup.prototype.response = function(json) {
+// Create the response using SWIG
+Popup.prototype.swig = function(json) {
   var output = "na";
 
-  /*
+  /* This works
   var tpl = "{{ title }}";
   output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
   */
 
-  //swig.run(popupTemplate, {}, '/popupTemplate.html');
-  //var tpl = swig.compileFile('/popupTemplate.html');
-  //output = tpl({title: 'awesome'});
-  //console.log('tpl:' + tpl);
-  //output = swig.renderFile('/popupTemplate.html', { title: 'awesome' });
-
-
-  var tpl = swig.compileFile('http://localhost:300/popup.html.swig');
-  output = tpl({title: 'awesome'});
-
+  /* This works not
+  swig.run(popupTemplate, {}, '/popupTemplate.html');
+  var tpl = "{% include './popupTemplate.html' %}";
+  output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  */
 
   return output;
+}
+
+
+// Create the response by manually adding content
+Popup.prototype.response = function(item) {
+  var res = '';
+
+  res += '<section class="popup">';
+
+  // close
+  res += '<div class="popup__close">';
+  res += 'close';
+  res += '</div>';
+
+  // article
+  res += '<article class="list-item">';
+
+  // title
+  res += '<h3 class="list-item__title">' + item.title + '</h3>';
+
+  // figure
+  var image = item.images[0].name + item.images[0].extension;
+  res += '<figure class="figure"><picture class="picture>"';
+  res += '<source media="(min-width: 1600px)" srcset="/assets/images/' + image + '_desktop.png, /assets/images/' + image + '_desktop2x.png 2x"></source>';
+  res += '</picture></figure>';
+
+  res += '</article>';
+
+  res += '';
+  res += '</section>';
+
+  return res;
 }
 
 
@@ -83,20 +110,13 @@ var popup = function(item) {
   if (p.canCall) {
     // Get JSON
     jsonAJAX(p.ajaxURL, function(json) {
-      //var title = json[collection][id].title;
+      var item = json[p.collection][p.id];
 
       // Hide all other elements
       p.hideAll('body > *');
 
-      // Create the response element
-      var section = document.createElement('section');
-      section.classList.add('popup');
-
-      // Create the response content
-      section.innerHTML = p.response(json);
-
-      // Insert into `body`
-      document.body.appendChild(section);
+      // Create the response
+      document.body.innerHTML += p.response(item);
     });
   } else {
     console.log('Not all parameters are set up for the ajax call');
