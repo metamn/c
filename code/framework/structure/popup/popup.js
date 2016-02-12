@@ -11,6 +11,14 @@
 // - $id - the id of the item from the collection
 // - $template - the SWIG template to render the item stored in a JSON file's 'data' attribute
 //
+// Experimental
+// - in the $template we can store the complete response, so we don't really need SWIG.
+// - for example:
+// 1. The full article is rendered locally
+// 2. It's outer HTML is copied into the $template
+// 3. Only some parts of the article are rendered as a thumb
+// 4. On click on thumb the full article from 1. is popped up
+//
 // Styleguide popup
 
 
@@ -61,46 +69,15 @@ Popup.prototype.hideAll = function(containerID) {
 
 // Create the response using SWIG
 Popup.prototype.swig = function(item, template) {
-  var output = "na";
+  var output = '<section class="popup">';
 
   var tpl = template;
-  output = swig.render(tpl, { filename: '/tpl', locals: { item: item }});
+  output += swig.render(tpl, { filename: '/tpl', locals: { item: item }});
+
+  output += '</section>';
 
   return output;
 }
-
-
-// Create the response by manually adding content
-Popup.prototype.response = function(item) {
-  var res = '';
-
-  res += '<section class="popup">';
-
-  // close
-  res += '<div class="popup__close">';
-  res += 'close';
-  res += '</div>';
-
-  // article
-  res += '<article class="list-item">';
-
-  // title
-  res += '<h3 class="list-item__title">' + item.title + '</h3>';
-
-  // figure
-  var image = item.images[0].name + item.images[0].extension;
-  res += '<figure class="figure"><picture class="picture>"';
-  res += '<source media="(min-width: 1600px)" srcset="/assets/images/' + image + '_desktop.png, /assets/images/' + image + '_desktop2x.png 2x"></source>';
-  res += '</picture></figure>';
-
-  res += '</article>';
-
-  res += '';
-  res += '</section>';
-
-  return res;
-}
-
 
 
 var popup = function(item) {
