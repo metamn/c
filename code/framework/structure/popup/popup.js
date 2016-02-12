@@ -3,9 +3,13 @@
 // A full screen popup
 // All other elements on the page will be hidden
 //
-// $item - the only element to show
+// - $item - the only element to show
 //
-// Other parameters are passed through the `data` attributes of the item
+// Other parameters are passed through the `data` attributes of the item:
+// - $data - the JSON file where the item data can be found
+// - collection - the name of the collection where the item can be found
+// - $id - the id of the item from the collection
+// - $template - the SWIG template to render the item stored in a JSON file's 'data' attribute
 //
 // Styleguide popup
 
@@ -60,7 +64,7 @@ Popup.prototype.swig = function(item, template) {
   var output = "na";
 
   var tpl = template;
-  output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  output = swig.render(tpl, { filename: '/tpl', locals: { item: item }});
 
   return output;
 }
