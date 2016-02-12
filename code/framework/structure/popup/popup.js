@@ -61,10 +61,11 @@ Popup.prototype.swig = function(json) {
   output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
   */
 
-  /* This works not
+  /* This works not, ie locals are not recognized, the rest is rendered well
   swig.run(popupTemplate, {}, '/popupTemplate.html');
-  var tpl = "{% include './popupTemplate.html' %}";
+  var tpl = '{% include "./popupTemplate.html" %}';
   output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
+  console.log('o:' + output);
   */
 
   return output;
@@ -116,7 +117,7 @@ var popup = function(item) {
       p.hideAll('body > *');
 
       // Create the response
-      document.body.innerHTML += p.response(item);
+      document.body.innerHTML += p.swig(item);
     });
   } else {
     console.log('Not all parameters are set up for the ajax call');
