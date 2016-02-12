@@ -5,10 +5,7 @@
 //
 // $item - the only element to show
 //
-// Other parameters:
-// - $url - a `<meta>` property containing the site url
-// - 'home.json' - the JSON file which will be loaded
-// - $collection, $id - which item `collection` to display
+// Other parameters are passed through the `data` attributes of the item
 //
 // Styleguide popup
 
@@ -25,20 +22,26 @@ function Popup(item) {
   var url = select('meta[property="og:url"]');
   this.url = (url[0].getAttribute('content') === undefined) ? null : url[0].getAttribute('content');
 
-  // the JSON file
-  this.json = (item.dataset.json === undefined) ? null : item.dataset.json;
+  // the JSON file name
+  this.json = (item.dataset.data === undefined) ? null : item.dataset.data;
 
-  // site url + JSON file
-  this.ajaxURL = this.url + this.json;
+  // site url + JSON data file
+  this.dataURL = this.url + this.json + '.json';
 
-  // like articles
+  // the collection if items, like articles
   this.collection = (item.dataset.collection === undefined) ? null : item.dataset.collection;
 
-  // like articles[0]
+  // the item, like articles[0]
   this.id = (item.dataset.id === undefined) ? null : item.dataset.id;
 
+  // the SWIG template to render put in a JSON file
+  this.template = (item.dataset.template === undefined) ? null : item.dataset.template;
+
+  // site.url + template JSON file
+  this.templateURL = this.url + this.template + '.json';
+
   // all params are ok for the call
-  this.canCall = (this.url && this.json && this.collection && this.id);
+  this.canCall = (this.url && this.json && this.collection && this.id && this.template);
 }
 
 
@@ -53,20 +56,11 @@ Popup.prototype.hideAll = function(containerID) {
 
 
 // Create the response using SWIG
-Popup.prototype.swig = function(json) {
+Popup.prototype.swig = function(item, template) {
   var output = "na";
 
-  /* This works
-  var tpl = "{{ title }}";
+  var tpl = template;
   output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
-  */
-
-  /* This works not, ie locals are not recognized, the rest is rendered well
-  swig.run(popupTemplate, {}, '/popupTemplate.html');
-  var tpl = '{% include "./popupTemplate.html" %}';
-  output = swig.render(tpl, { filename: '/tpl', locals: { title: 'awesome' }});
-  console.log('o:' + output);
-  */
 
   return output;
 }
@@ -109,15 +103,28 @@ var popup = function(item) {
   var p = new Popup(item);
 
   if (p.canCall) {
-    // Get JSON
-    jsonAJAX(p.ajaxURL, function(json) {
+    // Get JSON data
+    jsonAJAX(p.dataURL, function(json) {
       var item = json[p.collection][p.id];
+      if (!item) {
+        console.log('The item was not found in the data JSON');
+        return;
+      }
 
-      // Hide all other elements
-      p.hideAll('body > *');
+      // Get SWIG template
+      jsonAJAX(p.templateURL, function(template) {
+        var template = template['data'];
+        if (!template) {
+          console.log('The template cannot be read');
+          return;
+        }
 
-      // Create the response
-      document.body.innerHTML += p.swig(item);
+        // Hide all other elements
+        p.hideAll('body > *');
+
+        // Create the response
+        document.body.innerHTML += p.swig(item, template);
+      });
     });
   } else {
     console.log('Not all parameters are set up for the ajax call');
