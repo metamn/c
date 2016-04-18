@@ -7,9 +7,10 @@ html {
   &.home {
     body {
       display: flex;
+      padding: $lem;
 
       .fixed-scroll {
-        @include fixed-scroll;
+        @include fixed-scroll(20%);
       }
     }
   }
