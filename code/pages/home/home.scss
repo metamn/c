@@ -6,11 +6,8 @@
 html {
   &.home {
     body {
-      display: flex;
-      padding: $lem;
-
-      .x-fixed-scroll {
-        @include x-fixed-scroll;
+      .x-parallax {
+        @include x-parallax;
       }
     }
   }
