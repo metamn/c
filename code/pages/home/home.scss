@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-list {
-        @include x-list;
+      .x-fixed-scroll {
+        @include x-fixed-scroll;
       }
     }
   }

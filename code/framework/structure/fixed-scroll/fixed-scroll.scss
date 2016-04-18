@@ -1,0 +1,33 @@
+@mixin fixed-scroll($title-width: 10%) {
+  .slide {
+    position: relative;
+    width: 100%;
+    float: left;
+
+    margin-bottom: 10vh;
+
+    &__title {
+      display: block;
+      position: absolute;;
+      float: left;
+
+      width: $title-width;
+
+      font-size: 3em;
+    }
+
+    &:nth-of-type(1) {
+      .slide__title {
+        position: fixed;
+      }
+    }
+
+    &__content {
+      width: calc(100% - #{$title-width});
+      float: right;
+
+      @include list;
+      @include list--list-view;
+    }
+  }
+}

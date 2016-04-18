@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/structure/list/x-list/x-list.html.swig' %}
+  {% include '../../framework/structure/fixed-scroll/x-fixed-scroll/x-fixed-scroll.html.swig' %}
 
 {% endblock %}
