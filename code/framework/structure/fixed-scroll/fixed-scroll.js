@@ -4,7 +4,9 @@ var select = require('./../../helpers/js/select.js');
 var klass = require('./../../helpers/js/klass.js');
 
 var fixedScroll = function(slidesContainerID, slideID) {
-  window.addEventListener('scroll', _.throttle(_.bind(fixedScrolling, this, slidesContainerID, slideID), 300));
+  window.addEventListener('scroll',
+    _.throttle(_.bind(fixedScrolling, this, slidesContainerID, slideID), 300)
+  );
 };
 
 var fixedScrolling = function() {

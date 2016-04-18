@@ -1,3 +1,16 @@
 @mixin x-fixed-scroll {
+  display: flex;
+  flex-direction: column;
 
+  .placeholder {
+    min-height: 70vh;
+
+    &:last-of-type {
+      min-height: 170vh;
+    }
+  }
+
+  .fixed-scroll {
+    @include fixed-scroll(20%);
+  }
 }

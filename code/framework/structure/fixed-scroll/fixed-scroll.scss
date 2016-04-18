@@ -1,4 +1,20 @@
+// Fixed scroll
+//
+// Displays a set of sections where the section title is fixed and it's content scrolls normally
+// Uses '_.throttle' from [Lodash](https://lodash.com/docs#throttle).
+// Based on an idea from [CSS Tricks](https://css-tricks.com/debouncing-throttling-explained-examples/)
+//
+// $title-width - the width of the fixed part
+//
+// How it works:
+// - all fixed parts has `position: absolute`, the current visible part has `position: fixed`
+// - since we use `fixed` we can't use flexbox just the plain old positioning
+// - since we use `fixed` this technique must be used as a layout, ie, can't have anything above and/or below like other sections
+//
+// Styleguide fixed-scroll
 @mixin fixed-scroll($title-width: 10%) {
+  position: relative;
+
   &__slide {
     @include fixed-scroll__slide($title-width);
   }
