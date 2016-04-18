@@ -10,6 +10,7 @@ module.exports = {
     filename: "site.[name].min.js"
   },
   externals: {
-    imagesLoaded: 'imagesLoaded'
+    imagesLoaded: 'imagesLoaded',
+    _: "_"
   }
 };

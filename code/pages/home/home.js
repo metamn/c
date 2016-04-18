@@ -1,2 +1,2 @@
-var list = require('./../../framework/structure/list/list.js');
-list('.x-list', 'popup');
+var fixedScroll = require('./../../framework/structure/fixed-scroll/fixed-scroll.js');
+fixedScroll('.slide');
