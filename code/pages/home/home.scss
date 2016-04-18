@@ -7,9 +7,9 @@ html {
   &.home {
     body {
       display: flex;
-      
-      .x-fixed-scroll {
-        @include x-fixed-scroll;
+
+      .fixed-scroll {
+        @include fixed-scroll;
       }
     }
   }
