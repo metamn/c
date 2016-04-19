@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-parallax {
-        @include x-parallax;
+      .x-fixed-scroll {
+        @include x-fixed-scroll;
       }
     }
   }

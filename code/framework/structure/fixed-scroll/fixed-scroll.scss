@@ -10,9 +10,6 @@
 // - all fixed parts has `position: absolute`, the current visible part has `position: fixed`
 // - since we use `fixed` we can't use flexbox just the plain old positioning.
 // - This is no problem since both the fixed part and content part can use flexbox internally
-// - since we use `fixed` this technique must be used as a layout, ie, can't have anything above and/or below like other sections
-// - if we put placeholders above and below, a new function has to be added which checks if the `position` has to be switched or not.
-// - ie. the slides container is in the viewport or not
 //
 // Styleguide fixed-scroll
 @mixin fixed-scroll($title-width: 10%) {
