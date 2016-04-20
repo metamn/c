@@ -1,1 +1,11 @@
-@mixin x-text-half-dark {}
+@mixin x-text-half-dark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .text-half-dark {
+    @include text-style(body-text);
+    @include text-half-dark;
+  }
+}

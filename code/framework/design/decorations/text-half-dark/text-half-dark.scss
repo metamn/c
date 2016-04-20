@@ -1,1 +1,8 @@
-@mixin text-half-dark {}
+@mixin text-half-dark {
+  @include colors(white-on-black);
+  background-image: linear-gradient(90deg,#fff 49.9%,#000 50%);
+
+  &__text {
+    mix-blend-mode: difference;
+  }
+}
