@@ -1,6 +1,23 @@
-@mixin text-half-dark {
-  @include colors(white-on-black);
-  background-image: linear-gradient(90deg,#fff 49.9%,#000 50%);
+// Text half dark
+//
+// Half of the text is light and the other half is dark.
+// Achieved using mix blend mode, based on the idea from [The New Code](http://thenewcode.com/1029/Automatic-Text-Contrast-with-CSS-Blend-Modes)
+//
+// $scheme - starts-light or starts-dark
+// $color - the color of the text-style. If the $scheme is light this must be a light color. Otherwise this must be a dark color
+// $background - the color of the background. If the $scheme is light this must be a dark color. Otherwise this must be a light color
+//
+// Styleguide text-half-dark
+@mixin text-half-dark($scheme: starts-light, $color: $white, $background: $black) {
+  background-image: linear-gradient(90deg, $color 49.9%, $background 50%);
+  
+  @if ($scheme == starts-light) {
+    color: $color;
+  }
+
+  @if ($scheme == starts-dark) {
+    color: $background;
+  }
 
   &__text {
     mix-blend-mode: difference;

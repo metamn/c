@@ -6,6 +6,7 @@
 
   .text-half-dark {
     @include text-style(body-text);
-    @include text-half-dark;
+    @include text-half-dark(starts-dark, $black, $white);
+    //@include text-half-dark;
   }
 }
