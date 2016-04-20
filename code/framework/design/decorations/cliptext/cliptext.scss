@@ -1,11 +1,19 @@
-@mixin cliptext {
+// Cliptext
+//
+// Big text with a background image. The text is masked with blend mode
+// Based on a [The New Code article](http://thenewcode.com/1032/Easy-Cross-Browser-Text-Masks-with-Blend-Modes)
+//
+// $scheme - dark or light; dark will have a black background, light will have a white background
+// $color-scheme - the color scheme for the choosen $scheme
+// Styleguide cliptext
+@mixin cliptext($scheme: light, $color-scheme: black-on-white) {
   @include background-image;
-  
+
   &__image {
     @include cliptext__image;
   }
 
   &__text {
-    @include cliptext__text;
+    @include cliptext__text($scheme, $color-scheme);
   }
 }
