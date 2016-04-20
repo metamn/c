@@ -12,5 +12,17 @@
 
   .fixed-scroll {
     @include fixed-scroll(20%);
+
+    &__slide {
+      margin-bottom: 10vh;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .title {
+        font-size: 3em;
+      }
+    }
   }
 }

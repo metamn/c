@@ -3,10 +3,15 @@ var l = require('./../../helpers/js/loop.js');
 var select = require('./../../helpers/js/select.js');
 var klass = require('./../../helpers/js/klass.js');
 
+// Fixed scroll
+//
 // The event handler with a throttler
-var fixedScroll = function(slidesContainerID, slideID) {
+//
+// $marginBottom - the approx. size of the fixed title. It is used to fine-tune the last slide. If it is not present the last title will overflow the next sections
+//
+var fixedScroll = function(slidesContainerID, slideID, marginBottom) {
   window.addEventListener('scroll',
-    _.throttle(_.bind(fixedScrolling, this, slidesContainerID, slideID), 300)
+    _.throttle(_.bind(fixedScrolling, this, slidesContainerID, slideID, marginBottom), 300)
   );
 };
 
@@ -15,6 +20,7 @@ var fixedScroll = function(slidesContainerID, slideID) {
 var fixedScrolling = function() {
   var slidesContainerID = arguments[0];
   var slideID = arguments[1];
+  var marginBottom = arguments[2];
 
   var slidesSelector = slidesContainerID + ' ' + slideID;
   var slides = select(slidesSelector);
@@ -26,7 +32,7 @@ var fixedScrolling = function() {
   var slideHeight = slidesContainerHeight / slides.length;
 
   // Checking if the container is visible, so the slides has to be activated
-  if (! isContainerScrolledIntoView(slidesContainer)) {
+  if (! isContainerScrolledIntoView(slidesContainer, marginBottom)) {
     klass(slides, 'fixed-scroll__slide--active', 'removeAll');
     return;
   }
@@ -40,10 +46,10 @@ var fixedScrolling = function() {
 
 
 // Check if the slides container is in the viewport
-function isContainerScrolledIntoView(el) {
+function isContainerScrolledIntoView(el, marginBottom) {
   var elemBottom = el.getBoundingClientRect().bottom;
   var elemTop = el.getBoundingClientRect().top;
-  var isVisible = ((elemTop < 50) && (elemBottom > 0)) || ((elemBottom > 50) && (elemTop < 0));
+  var isVisible = ((elemTop < 0) && (elemBottom > marginBottom));
 
   return isVisible;
 }
@@ -69,7 +75,6 @@ function getActiveSlide(slideHeight, slides) {
 function isScrolledIntoView(h, el) {
   var elemBottom = el.getBoundingClientRect().bottom;
   var isVisible = (elemBottom >= 0) && (elemBottom <= h);
-
   return isVisible;
 }
 
