@@ -2,10 +2,10 @@
 //
 // Generate a random background gradient using a color palette
 //
-// $nr-of-colors - the number of colors forming the palette. The palette is composed by lightening $color-start towards $color-stop
-// $color-start - the starting color of the palette
+// $nr-of-colors - the number of colors forming the palette. The palette is composed by lightening $color-start towards $color-stop. Min 3.
+// $color-start - the starting color of the palette. Lighter color first
 // $color-stop - the ending color of the palette
-// $nr-of-rows - if 11 the full background will have gradient; if 2 only the top 10% of the background will have gradient
+// $nr-of-rows - starting from 1
 // $nr-of-columns - how many columns are in a row (0.01 = many,  100 = few)
 //
 // Styleguide background-gradient-matrix
@@ -16,32 +16,33 @@
   // Color columns
   $color-columns: ();
   $color-columns: append($color-columns, $palette);
-  @for $i from 2 to $nr-of-rows {
+  @for $i from 1 to $nr-of-rows {
     $color-columns: append($color-columns, randomize-list($palette));
   }
 
-
   // Color stops
   $color-stops: ();
+  $color-stops: append($color-stops, gradient-stops($nr-of-colors, none, $nr-of-columns));
   @for $i from 1 to $nr-of-rows {
     $color-stops: append($color-stops, gradient-stops($nr-of-colors, none, $nr-of-columns));
   }
 
-  //@debug($color-stops);
-
-
   // The matrix
   $columns: "repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, 1), nth($color-stops, 1)))})";
-  @for $i from 2 through length($color-columns) {
-    $columns: $columns#{', '}#{"repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, $i), nth($color-stops, $i)))})"};
+  @for $i from 1 through length($color-columns) {
+    $columns: $columns#{', '}#{"repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, $i), nth($color-stops, $i))})"};
   }
 
-  $sizes: "100% 10%";
-  @for $i from 2 through length($color-columns) {
-    $sizes: $sizes#{', 100% '}#{10 * $i}#{"%"};
+
+  $row-height: percentage(1 / $nr-of-rows);
+  $rows: "100% #{$row-height}";
+  @if ($nr-of-rows > 1) {
+    @for $i from 2 through $nr-of-rows {
+      $rows: $rows#{', 100% '}#{$row-height * $i};
+    }
   }
 
   background-image: unquote($columns);
-  background-size: unquote($sizes);
+  background-size: unquote($rows);
   background-repeat: no-repeat;
 }
