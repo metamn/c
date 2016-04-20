@@ -2,5 +2,5 @@
   width: 100vw;
   height: 100vh;
 
-  @include background-gradient-matrix(10, $red, $blue, 20, 0.5);
+  @include background-gradient-matrix(50, $black, $white, 15, 0.05);
 }

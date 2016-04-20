@@ -5,26 +5,26 @@
 // $nr-of-colors - the number of colors forming the palette. The palette is composed by lightening $color-start towards $color-stop
 // $color-start - the starting color of the palette
 // $color-stop - the ending color of the palette
-// $nr-of-columns - how many columns are in a row
-// $column-width-granularity - the randomness of column width (0.00 - 1.00)
+// $nr-of-rows - if 11 the full background will have gradient; if 2 only the top 10% of the background will have gradient
+// $nr-of-columns - how many columns are in a row (0.01 = many,  100 = few)
 //
 // Styleguide background-gradient-matrix
-@mixin background-gradient-matrix($nr-of-colors, $color-start, $color-stop, $nr-of-columns, $column-width-granularity) {
+@mixin background-gradient-matrix($nr-of-colors, $color-start, $color-stop, $nr-of-rows, $nr-of-columns) {
   // The palette
   $palette: color-palette($nr-of-colors, $color-start, $color-stop);
 
   // Color columns
   $color-columns: ();
   $color-columns: append($color-columns, $palette);
-  @for $i from 2 to $nr-of-columns {
+  @for $i from 2 to $nr-of-rows {
     $color-columns: append($color-columns, randomize-list($palette));
   }
 
 
   // Color stops
   $color-stops: ();
-  @for $i from 1 to $nr-of-columns {
-    $color-stops: append($color-stops, gradient-stops($nr-of-colors, none, $column-width-granularity));
+  @for $i from 1 to $nr-of-rows {
+    $color-stops: append($color-stops, gradient-stops($nr-of-colors, none, $nr-of-columns));
   }
 
   //@debug($color-stops);
