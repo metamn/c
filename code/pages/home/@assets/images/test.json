@@ -1,6 +1,6 @@
 {
   "resize": "false",
-  "optimize": "false",
+  "optimize": "true",
   "sizes": [
     {
       "name": "mobile",

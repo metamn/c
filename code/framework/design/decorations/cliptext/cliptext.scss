@@ -1,0 +1,11 @@
+@mixin cliptext {
+  @include background-image;
+  
+  &__image {
+    @include cliptext__image;
+  }
+
+  &__text {
+    @include cliptext__text;
+  }
+}

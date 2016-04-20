@@ -1,6 +1,6 @@
 {% extends '../../framework/templates/default/default.html.swig' %}
 {% block content %}
 
-  {% include '../../framework/structure/background-gradient-matrix/x-background-gradient-matrix/x-background-gradient-matrix.html.swig' %}
+  {% include '../../framework/design/decorations/cliptext/x-cliptext/x-cliptext.html.swig' %}
 
 {% endblock %}

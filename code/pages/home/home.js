@@ -1,2 +1,2 @@
-//var monogram = require('./../../framework/design/decorations/monogram/monogram.js');
-//monogram('.monogram', false);
+var clipText = require('./../../framework/design/decorations/cliptext/cliptext.js');
+clipText('.cliptext');

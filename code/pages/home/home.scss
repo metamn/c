@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-background-gradient-matrix {
-        @include x-background-gradient-matrix;
+      .x-cliptext {
+        @include x-cliptext;
       }
     }
   }

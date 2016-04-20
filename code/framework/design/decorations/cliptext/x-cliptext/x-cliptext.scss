@@ -1,0 +1,16 @@
+@mixin x-cliptext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .cliptext {
+    @include cliptext;
+
+    &__text {
+      @include text-style(title);
+      @include scale(large-8);
+      font-weight: 700;
+    }
+  }
+}
