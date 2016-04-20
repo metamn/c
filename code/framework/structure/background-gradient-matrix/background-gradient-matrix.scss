@@ -29,8 +29,10 @@
 
   // The matrix
   $columns: "repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, 1), nth($color-stops, 1)))})";
-  @for $i from 1 through length($color-columns) {
-    $columns: $columns#{', '}#{"repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, $i), nth($color-stops, $i))})"};
+  @if ($nr-of-rows > 1) {
+    @for $i from 2 through length($color-columns) {
+      $columns: $columns#{', '}#{"repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, $i), nth($color-stops, $i))})"};
+    }
   }
 
 

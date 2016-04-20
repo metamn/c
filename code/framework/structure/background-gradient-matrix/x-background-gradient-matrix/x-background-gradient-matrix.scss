@@ -3,5 +3,5 @@
   height: 50vh;
 
 
-  @include background-gradient-matrix(3, $gray, $white, 2, 0.01);
+  @include background-gradient-matrix(30, $gray, $white, 20, 0.03);
 }
