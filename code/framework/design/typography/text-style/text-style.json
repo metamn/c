@@ -42,6 +42,21 @@
       ]
     },
     {
+      "name": "Title",
+      "description": "Settings for titles.",
+      "based_on": "Nimbus Sans",
+      "mixins": [
+        {
+          "name": "uppercase",
+          "value": "1.25px"
+        },
+        {
+          "name": "scale",
+          "value": "large-1"
+        }
+      ]
+    },
+    {
       "name": "Button with triangle",
       "description": "Strong text, call for action.",
       "based_on": "Nimbus Sans Black",

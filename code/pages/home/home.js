@@ -1,2 +1,2 @@
-var fixedScroll = require('./../../framework/structure/fixed-scroll/fixed-scroll.js');
-fixedScroll('.x-fixed-scroll .fixed-scroll', '.fixed-scroll__slide', 150);
+//var monogram = require('./../../framework/design/decorations/monogram/monogram.js');
+//monogram('.monogram', false);

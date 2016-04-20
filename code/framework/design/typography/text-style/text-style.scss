@@ -39,6 +39,16 @@ $text-block-width: 25em;
     
   }
   
+  // Title
+  // - Settings for titles.
+  @if ($variant == 'title') {
+    @include uppercase(1.25px);
+    @include scale(large-1);
+    
+    
+    
+  }
+  
   // Button with triangle
   // - Strong text, call for action.
   @if ($variant == 'button-with-triangle') {
@@ -83,6 +93,14 @@ $text-block-width: 25em;
   @include p;
   
   max-width: 25em;
+  
+  
+}
+
+.text-style--title {
+  @include uppercase(1.25px);
+  @include scale(large-1);
+  
   
   
 }

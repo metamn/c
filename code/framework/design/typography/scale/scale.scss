@@ -39,6 +39,55 @@ $lem: 1.48em;
     
   }
 
+  // Larger than default font size with 2 scalse
+  @if ($variant == 'large-2') {
+    font-size: 1.777em;
+    
+    
+  }
+
+  // Larger than default font size with 3 scales
+  @if ($variant == 'large-3') {
+    font-size: 2.369em;
+    
+    
+  }
+
+  // Larger than default font size with 4 scales
+  @if ($variant == 'large-4') {
+    font-size: 3.157em;
+    
+    
+  }
+
+  // Larger than default font size with 5 scales
+  @if ($variant == 'large-5') {
+    font-size: 4.209em;
+    
+    
+  }
+
+  // Larger than default font size with 6 scales
+  @if ($variant == 'large-6') {
+    font-size: 5.61em;
+    
+    
+  }
+
+  // Larger than default font size with 7 scales
+  @if ($variant == 'large-7') {
+    font-size: 7.478em;
+    
+    
+  }
+
+  // Larger than default font size with 8 scales
+  @if ($variant == 'large-8') {
+    font-size: 9.969em;
+    
+    
+  }
+
 }
 
 
@@ -59,6 +108,48 @@ $lem: 1.48em;
 
 .scale--large-1 {
   font-size: 1.333em;
+  
+  
+}
+
+.scale--large-2 {
+  font-size: 1.777em;
+  
+  
+}
+
+.scale--large-3 {
+  font-size: 2.369em;
+  
+  
+}
+
+.scale--large-4 {
+  font-size: 3.157em;
+  
+  
+}
+
+.scale--large-5 {
+  font-size: 4.209em;
+  
+  
+}
+
+.scale--large-6 {
+  font-size: 5.61em;
+  
+  
+}
+
+.scale--large-7 {
+  font-size: 7.478em;
+  
+  
+}
+
+.scale--large-8 {
+  font-size: 9.969em;
   
   
 }

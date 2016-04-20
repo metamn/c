@@ -1,0 +1,13 @@
+@mixin x-glitch-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .glitch-text {
+    @include glitch-text;
+
+    @include text-style(title);
+    @include scale(large-3);
+  }
+}
