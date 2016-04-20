@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-glitch-text {
-        @include x-glitch-text;
+      .x-background-gradient-matrix {
+        @include x-background-gradient-matrix;
       }
     }
   }

@@ -1,0 +1,47 @@
+// Background gradient matrix
+//
+// Generate a random background gradient using a color palette
+//
+// $nr-of-colors - the number of colors forming the palette. The palette is composed by lightening $color-start towards $color-stop
+// $color-start - the starting color of the palette
+// $color-stop - the ending color of the palette
+// $nr-of-columns - how many columns are in a row
+// $column-width-granularity - the randomness of column width (0.00 - 1.00)
+//
+// Styleguide background-gradient-matrix
+@mixin background-gradient-matrix($nr-of-colors, $color-start, $color-stop, $nr-of-columns, $column-width-granularity) {
+  // The palette
+  $palette: color-palette($nr-of-colors, $color-start, $color-stop);
+
+  // Color columns
+  $color-columns: ();
+  $color-columns: append($color-columns, $palette);
+  @for $i from 2 to $nr-of-columns {
+    $color-columns: append($color-columns, randomize-list($palette));
+  }
+
+
+  // Color stops
+  $color-stops: ();
+  @for $i from 1 to $nr-of-columns {
+    $color-stops: append($color-stops, gradient-stops($nr-of-colors, none, $column-width-granularity));
+  }
+
+  //@debug($color-stops);
+
+
+  // The matrix
+  $columns: "repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, 1), nth($color-stops, 1)))})";
+  @for $i from 2 through length($color-columns) {
+    $columns: $columns#{', '}#{"repeating-linear-gradient(to left, #{gradient-row(nth($color-columns, $i), nth($color-stops, $i)))})"};
+  }
+
+  $sizes: "100% 10%";
+  @for $i from 2 through length($color-columns) {
+    $sizes: $sizes#{', 100% '}#{10 * $i}#{"%"};
+  }
+
+  background-image: unquote($columns);
+  background-size: unquote($sizes);
+  background-repeat: no-repeat;
+}

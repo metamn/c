@@ -1,0 +1,6 @@
+@mixin x-background-gradient-matrix {
+  width: 100vw;
+  height: 100vh;
+
+  @include background-gradient-matrix(10, $red, $blue, 20, 0.5);
+}

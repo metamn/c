@@ -1,0 +1,98 @@
+// A set of helpers to generate a color palette for a background gradient matrix
+//
+
+// Returns a single gradient from start to stop
+@function gradient($color, $start, $stop) {
+  @return "#{$color} #{$start}, #{$color} #{$stop}";
+}
+
+// Returns multiple gradients for an entire row
+@function gradient-row($colors, $stops) {
+  //@debug($colors);
+  //@debug($stops);
+  // Returns a complete list of gradients
+  $gradients: #{gradient(nth($colors, 1), nth($stops, 1), nth($stops, 2))};
+  @for $i from 2 through length($colors) {
+    $gradients: $gradients#{', '}#{gradient(nth($colors, $i), nth($stops, $i), nth($stops, $i+1))};
+  }
+
+  @return unquote($gradients);
+}
+
+// Color Palette
+// - the lighter color should come first
+// - returns a list of colors
+@function color-palette($nr-of-colors, $start, $stop) {
+  $step: round(100% / ($nr-of-colors - 2) / 2);
+
+  $return: ();
+  $return: append($return, $start);
+  @for $i from 1 through ($nr-of-colors - 2) {
+    $return: append($return, lighten($start, $step * $i));
+  }
+  $return: append($return, $stop);
+
+  @return $return;
+}
+
+
+// Generate random steps for a color palette to be used as a background gradient
+// - metric can be px, vw, % or em
+// - if no metric given a random one will be chosen
+// - $granularity multiplies the size, ie making it much bigger or much smaller
+@function gradient-stops($nr-of-stops, $metric: none, $granularity: 1) {
+  @if ($metric == none) {
+    $units: 1px, 1vw, 1vh, 1rem, 1em, 1%;
+    $metric: nth($units, random(length($units)));
+  }
+  $rnd: random-sizes($metric);
+
+  $metric: $metric * $granularity;
+
+  $return: ();
+  $return: append($return, 0 * $metric);
+  @for $i from 1 through $nr-of-stops {
+    $random: random($rnd) * $metric;
+    $return: append($return, $random);
+  }
+
+  @return $return;
+}
+
+
+// Random sizes for a color palette
+@function random-sizes($metric) {
+  @if ($metric == 1px) {
+    $rnd: 100;
+    @return $rnd;
+  } @else if ($metric == 1%) {
+    $rnd: 15;
+    @return $rnd;
+  } @else if ($metric == 1vw) {
+    $rnd: 15;
+    @return $rnd;
+  } @else if ($metric == 1em) {
+    $rnd: 37;
+    @return $rnd;
+  } @else if ($metric == 1rem) {
+    $rnd: 27;
+    @return $rnd;
+  } @else if ($metric == 1vh) {
+    $rnd: 7;
+    @return $rnd;
+  }
+
+}
+
+
+// Randomize a list
+// - returns a list
+@function randomize-list($list) {
+  $return: ();
+  @for $i from 1 through length($list) {
+    $random: random(length($list));
+    $return: append($return, nth($list, $random));
+  }
+
+  @return $return;
+}
