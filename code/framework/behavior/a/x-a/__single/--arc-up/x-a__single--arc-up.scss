@@ -17,5 +17,7 @@
     cursor: pointer;
 
     @include colors(white-on-black);
+
+    @include a--single-arc-up('box-arc-up', short, 'animated', 10em, 10em);
   }
 }

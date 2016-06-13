@@ -21,4 +21,8 @@ $a-timing-sharp: cubic-bezier(0.4, 0.0, 0.6, 1);
 
 
 
-@mixin a {}
+@mixin a($type) {
+  @if ($type == single-arc-up) {
+    @include a--single-arc-up;
+  }
+}
