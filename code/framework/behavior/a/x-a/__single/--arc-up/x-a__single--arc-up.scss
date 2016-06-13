@@ -18,6 +18,6 @@
 
     @include colors(white-on-black);
 
-    @include a--single-arc-up('box-arc-up', short, 'animated', 10em, 10em);
+    @include a--single-arc-up('box-arc-up', short, 'animated', 20em, 20em);
   }
 }

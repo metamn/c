@@ -7,6 +7,10 @@
 // $y - move lement up
 //
 // https://material.google.com/motion/movement.html#movement-movement-within-screen-bounds
+// http://tobiasahlin.com/blog/curved-path-animations-in-css/
+//
+// Experimental: to move along a path (curve, arc) we need to create many keyframe entries in sync with the cubic-bezier function
+// If we simply use a cubic-bezier timing function with a single keyframe 'to' or '100%' the animation will be linear
 //
 @mixin a--single-arc-up($name, $duration, $klass, $x, $y) {
   will-change: transform;
@@ -16,13 +20,22 @@
     animation-timing-function: $a-timing-standard;
     animation-fill-mode: forwards;
 
-    animation-duration: $a-duration-short;
+    animation-duration: $a-duration-long;
     @include tablet {
       animation-duration: calc($a-duration-#{$duration} * $a-duration-tablet);
     }
 
     @keyframes #{$name} {
-      to {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      40% {
+        transform: translateX($x / 4) translateY(-$y / 10 );
+      }
+      80% {
+        transform: translateX($x / 4 * 3) translateY(-$y / 4 * 3);
+      }
+      100% {
         transform: translateX($x) translateY(-$y);
       }
     }

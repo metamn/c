@@ -35,7 +35,7 @@ var _scss = function(source, dest, dest_name) {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([ autoprefixer() ]))
-    //.pipe(minifyCSS())
+    .pipe(minifyCSS())
     .pipe(rename(dest_name))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dest));
