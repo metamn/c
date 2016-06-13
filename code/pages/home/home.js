@@ -1,2 +1,1 @@
-//var clipText = require('./../../framework/design/decorations/cliptext/cliptext.js');
-//clipText('.cliptext');
+require('./../../framework/behavior/a/x-a/x-a.js');

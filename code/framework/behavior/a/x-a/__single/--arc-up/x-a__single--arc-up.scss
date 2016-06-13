@@ -1,0 +1,21 @@
+@mixin x-a__single--arc-up {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    width: 10em;
+    height: 10em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    @include colors(white-on-black);
+  }
+}

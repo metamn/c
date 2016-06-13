@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-text-half-dark {
-        @include x-text-half-dark;
+      .x-a {
+        @include x-a;
       }
     }
   }

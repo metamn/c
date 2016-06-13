@@ -1,0 +1,10 @@
+@mixin x-a__single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  &--arc-up {
+    @include x-a__single--arc-up;
+  }
+}

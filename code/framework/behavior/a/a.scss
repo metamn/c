@@ -1,0 +1,24 @@
+// A
+//
+// The new animation component based on [Material Motion](https://material.google.com/motion/material-motion.html#material-motion-how-does-material-move)
+//
+// Styleguide a
+
+
+// Animation durations
+$a-duration-short: 150ms;
+$a-duration-long: 300ms;
+
+$a-duration-tablet: 30%;
+
+
+// Animation timing functions
+$a-timing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$a-timing-deceleration: cubic-bezier(0.0, 0.0, 0.2, 1);
+$a-timing-acceleration: cubic-bezier(0.4, 0.0, 1, 1);
+$a-timing-sharp: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+
+
+
+@mixin a {}
