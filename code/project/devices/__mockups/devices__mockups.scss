@@ -6,6 +6,7 @@
   .mockup {
     @include mockup;
     @include mockup--placeholder;
+    @include mockup--morphing;
   }
 
   .hidden-images {

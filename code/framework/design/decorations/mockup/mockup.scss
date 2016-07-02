@@ -10,7 +10,6 @@
   }
 
   &--tablet-landscape {
-    @include mockup--tablet;
     @include mockup--tablet-landscape;
   }
 

@@ -1,4 +1,9 @@
+// The tablet landscape image must be rotated 90deg counter clockwise
+// Otherwise rotating back the <figure> element is not working
+
 @mixin mockup--tablet-landscape {
+  @include mockup--tablet;
+
   transform: rotate(90deg);
 
   @include mobile {
