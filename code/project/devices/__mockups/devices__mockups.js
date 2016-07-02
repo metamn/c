@@ -10,9 +10,7 @@ var deviceMockupChange = function(mockup, value) {
   console.log('v:' + value + ', ' + deviceMockupOldValue);
 
   switchDevice(Math.trunc(value), Math.trunc(deviceMockupOldValue));
-
-
-  // Helpers
+  morphDevice(value, deviceMockupOldValue);
 
   // Change mockup device if necessary
   function switchDevice(newValue, oldValue) {
@@ -21,6 +19,13 @@ var deviceMockupChange = function(mockup, value) {
       replaceImage(newValue);
     }
   }
+
+  // Morph device
+  function morphDevice(newValue, oldValue) {
+    
+  }
+
+  // Helpers
 
   // Change mockup klass
   function replaceClass(from, to) {

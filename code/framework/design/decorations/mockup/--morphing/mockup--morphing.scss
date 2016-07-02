@@ -1,3 +1,7 @@
 @mixin mockup--morphing {
-  
+  @include transition(all);
+
+  > * {
+    opacity: 1;
+  }
 }
