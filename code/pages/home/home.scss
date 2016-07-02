@@ -6,6 +6,10 @@
 html {
   &.home {
     body {
+      .x-intrinsic-ratio {
+        @include x-intrinsic-ratio;
+      }
+      
       .devices {
         @include devices;
       }
