@@ -1,0 +1,18 @@
+// Mockup stand
+//
+// The stand of an iMac
+//
+// Styleguide mockup-stand
+@mixin mockup__stand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .trapezoid--1 {
+    @include trapezoid(20%, $lem * 5, -20%)
+  }
+
+  .trapezoid--2 {
+    @include trapezoid(29%, $lem * 2, -60%)
+  }
+}

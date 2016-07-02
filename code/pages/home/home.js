@@ -1,2 +1,1 @@
-var xa = require('./../../framework/behavior/a/x-a/x-a.js');
-xa('.box');
+require('./../../project/devices/devices.js');

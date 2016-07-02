@@ -1,0 +1,16 @@
+@mixin devices {
+  @include section-fitscreen;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__mockups {
+    @include devices__mockups;
+  }
+
+  &__range {
+    @include devices__range;
+  }
+}

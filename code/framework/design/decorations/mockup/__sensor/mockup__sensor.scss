@@ -1,0 +1,27 @@
+// Mockup sensor
+//
+// The speaker and the sensor found at the top of mobiles
+//
+// Styleguide mockup-sensor
+@mixin mockup__sensor($padding: $lem / 2) {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: $padding;
+
+  position: relative;
+  left: -3%;
+
+  .circle {
+    @include circle($padding / 3);
+    @include border(thin, all);
+    margin-right: $padding;
+  }
+
+  .line {
+    @include border(thick);
+    width: 15%;
+  }
+}

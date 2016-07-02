@@ -1,0 +1,35 @@
+// Mockup buttons
+//
+// The three buttons of a browser
+//
+// Styleguide mockup-buttons
+@mixin mockup__buttons($button-colors: false) {
+  display: flex;
+  flex-wrap: nowrap;
+
+  padding: $lem / 2 0;
+
+  .circle {
+    @include circle($lem / 3);
+    @include border(thin, all);
+
+    margin-right: $lem / 4;
+
+    @if ($button-colors != false) {
+      &--red {
+        background: #eb163c;
+        border-color: #eb163c;
+      }
+
+      &--yellow {
+        background: #ebd43c;
+        border-color: #ebd43c;
+      }
+
+      &--green {
+        background: #87d43c;
+        border-color: #87d43c;
+      }
+    }
+  }
+}

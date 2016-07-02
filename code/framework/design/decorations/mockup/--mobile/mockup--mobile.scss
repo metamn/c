@@ -1,0 +1,46 @@
+@mixin mockup--mobile {
+  display: flex;
+  flex-direction: column;
+
+  @include border(thin, all);
+  border-radius: $lem * 1.5;
+
+  .mockup__camera {
+    @include mockup__camera;
+  }
+
+  .mockup__sensor {
+    @include mockup__sensor;
+  }
+
+  .figure {
+    @include figure;
+    line-height: 0;
+    padding: $lem 0;
+  }
+
+  .mockup__button {
+    @include mockup__button($lem);
+  }
+
+
+  @include mobile {
+    border-radius: $lem;
+
+    .mockup__camera {
+      @include mockup__camera($lem / 2);
+    }
+
+    .mockup__sensor {
+      @include mockup__sensor($lem / 4);
+    }
+
+    .figure {
+      padding: $lem / 2 0;
+    }
+
+    .mockup__button {
+      @include mockup__button($lem / 2, $lem / 2);
+    }
+  }
+}

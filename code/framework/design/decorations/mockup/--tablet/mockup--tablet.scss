@@ -1,0 +1,26 @@
+@mixin mockup--tablet {
+  display: flex;
+  flex-direction: column;
+
+  @include border(thin, all);
+  border-radius: $lem;
+
+  .mockup__camera {
+    @include mockup__camera;
+
+    .circle {
+      position: relative;
+      top: - $lem / 4;
+    }
+  }
+
+  .figure {
+    @include figure;
+    line-height: 0;
+    padding: $lem / 2 0;
+  }
+
+  .mockup__button {
+    @include mockup__button($circle-size: $lem, $padding: $lem / 2);
+  }
+}

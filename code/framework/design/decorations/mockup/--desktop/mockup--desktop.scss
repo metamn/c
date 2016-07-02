@@ -1,0 +1,36 @@
+@mixin mockup--desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .mockup__camera {
+    @include mockup__camera($padding: $lem * 2);
+    @include border(thin, all);
+
+    border-radius: $lem * 2 $lem * 2 0 0;
+    border-bottom: none;
+
+    .circle {
+      display: none;
+    }
+  }
+
+  .figure {
+    @include figure;
+    @include border(thin, left);
+    @include border(thin, right);
+
+    padding: $lem $lem * 2 $lem * 2;
+    line-height: 0;
+  }
+
+  .mockup-desktop-bottom {
+    @include border(thin, all);
+    border-radius: 0 0 $lem * 2 $lem * 2;
+    height: $lem * 4;
+  }
+
+  .mockup__stand {
+    @include mockup__stand;
+  }
+}

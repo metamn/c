@@ -1,0 +1,17 @@
+// Mockup camera
+//
+// The camera found at the top of every device
+//
+// Styleguide mockup-camera
+@mixin mockup__camera($padding: $lem) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: $padding;
+
+  .circle {
+    @include circle($padding / 4);
+    @include border(thin, all);
+  }
+}

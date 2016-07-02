@@ -20,9 +20,9 @@
     animation-timing-function: $a-timing-standard;
     animation-fill-mode: forwards;
 
-    animation-duration: $a-duration-long;
+    animation-duration: $a-duration-$duration;
     @include tablet {
-      animation-duration: calc($a-duration-#{$duration} * $a-duration-tablet);
+      animation-duration: $a-duration-#{$duration}-tablet;
     }
 
     @keyframes #{$name} {

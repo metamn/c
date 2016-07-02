@@ -1,0 +1,32 @@
+@mixin mockup {
+  display: inline-flex;
+
+  &--mobile {
+    @include mockup--mobile;
+  }
+
+  &--tablet {
+    @include mockup--tablet;
+  }
+
+  &--tablet-landscape {
+    @include mockup--tablet;
+    @include mockup--tablet-landscape;
+  }
+
+  &--laptop {
+    @include mockup--laptop;
+  }
+
+  &--desktop {
+    @include mockup--desktop;
+  }
+
+  &--browser {
+    @include mockup--browser;
+  }
+
+  &--morphing {
+    @include mockup--morphing;
+  }
+}

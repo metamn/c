@@ -1,0 +1,12 @@
+// Mockup opener
+//
+// The opener of a laptop
+//
+// Styleguide mockup-opener
+@mixin mockup__opener {
+  width: 20%;
+  height: $lem / 2;
+
+  @include border(thin, all);
+  border-radius: 0 0 $lem / 2 $lem / 2;
+}

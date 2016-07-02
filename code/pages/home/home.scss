@@ -6,8 +6,8 @@
 html {
   &.home {
     body {
-      .x-a {
-        @include x-a;
+      .devices {
+        @include devices;
       }
     }
   }

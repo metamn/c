@@ -1,0 +1,23 @@
+@mixin mockup--browser {
+  display: flex;
+  flex-wrap: wrap;
+
+  .mockup__buttons {
+    @include mockup__buttons;
+
+    flex-basis: 100%;
+
+    @include border(thin, all);
+    border-bottom: none;
+    border-radius: $lem / 4 $lem / 4 0 0;
+    padding: $lem / 2;
+  }
+
+  .figure {
+    @include figure($stretch: stretched);
+    @include border(thin, all);
+
+    line-height: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+@mixin devices__mockups {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mockup {
+    @include mockup;
+    @include mockup--placeholder;
+  }
+
+  .hidden-images {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+@mixin mockup--tablet-landscape {
+  transform: rotate(90deg);
+
+  @include mobile {
+    transform: rotate(90deg) scale(.75);
+  }
+
+  @include tablet {
+    transform: rotate(90deg) scale(.85);
+  }
+
+  @include desktop {
+    transform: rotate(90deg) scale(1.2);
+  }
+}
