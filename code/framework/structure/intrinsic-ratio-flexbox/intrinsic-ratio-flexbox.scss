@@ -1,17 +1,46 @@
 // A flexbox friendly intrinsic ratio mixin
 //
-// A solution found on [Codepen](https://codepen.io/leonderijke/post/flexbox-and-intrinsic-sizing-some-browser-inconsistencies)
-// The problem was that the old intrinsic ratio mixin doesn't works inside a flexbox where elements are displayed in a column.
-// Now this is a fix
+// The problem was that the old intrinsic ratio mixin doesn't works inside a flexbox
+// Now this is a fix.
+//
+// Idea:
+// - have an item ('.intrinsic-container-item') an set an intrinsic ratio to display it's children ('intrinsic-container-object')
+// - wrap all in an extra container ('intrinsic-container'). This way flexbox can calculate it's dimensions
+//
+// Usage:
+// ```
+// <article class="article">
+//  <h3>Title</h3>
+//  <div class="intrinsic-container">
+//    <div class="intrinsic-container-item">
+//      <iframe class="intrinsic-container-object" src="//www.youtube.com/embed/KMYrIi_Mt8A" allowfullscreen></iframe>
+//    </div>
+//  </div>
+//</article>
+// ```
+//
+// ```
+// .intrinsic-container { @include intrinsic-ratio-flexbox(16, 9, '.intrinsic-container-item', '.intrinsic-container-object')}
+// ```
+//
+// Example: http://codepen.io/metamn/pen/JKJjxj
 //
 // Styleguide intrinsic-ratio-flexbox
-@mixin intrinsic-ratio-flexbox($width, $height, $item) {
-  height: 0;
-  padding-bottom: percentage($height / $width);
+@mixin intrinsic-ratio-flexbox($width, $height, $item, $object) {
+  width: 100%;
 
   #{$item} {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
+    position: relative;
+    height: 0;
+    padding-bottom: percentage($height / $width);
+    overflow: hidden;
+  }
+  
+  #{$object} {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }
