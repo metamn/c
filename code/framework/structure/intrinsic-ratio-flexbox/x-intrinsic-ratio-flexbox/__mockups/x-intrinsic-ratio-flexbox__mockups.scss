@@ -1,8 +1,9 @@
 @mixin x-intrinsic-ratio-flexbox__mockups {
   .article {
-    :nth-of-type(1) {
-      .picture {
-        //@include intrinsic-ratio-flexbox(16, 9, '.img');
+    &:nth-of-type(1) {
+      .intrinsic-ratio-container {
+        background: lightblue;
+        //@include intrinsic-ratio-flexbox(16, 9, '.figure', '.picture');
       }
     }
   }

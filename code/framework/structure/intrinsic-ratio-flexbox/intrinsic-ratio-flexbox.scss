@@ -23,6 +23,13 @@
 // .intrinsic-container { @include intrinsic-ratio-flexbox(16, 9, '.intrinsic-container-item', '.intrinsic-container-object')}
 // ```
 //
+// Figure
+// - figures must be warpped into a container where this mixin should be applied
+// - example:
+// ```
+// .intrinsic-container { @include intrinsic-ratio-flexbox(16, 9, '.figure', '.picture')}
+// ```
+//
 // Example: http://codepen.io/metamn/pen/JKJjxj
 //
 // Styleguide intrinsic-ratio-flexbox
@@ -35,7 +42,7 @@
     padding-bottom: percentage($height / $width);
     overflow: hidden;
   }
-  
+
   #{$object} {
     position: absolute;
     top:0;

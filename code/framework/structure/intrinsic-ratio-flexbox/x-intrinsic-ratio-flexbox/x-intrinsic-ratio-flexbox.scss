@@ -29,11 +29,17 @@
     }
   }
 
-  &__mockups {
-    @include x-intrinsic-ratio-flexbox__mockups;
+  &__iframe {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @include x-intrinsic-ratio-flexbox__iframe;
   }
 
-  &__iframe {
-    @include x-intrinsic-ratio-flexbox__iframe;
+  &__mockups {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    @include x-intrinsic-ratio-flexbox__mockups;
   }
 }

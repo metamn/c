@@ -7,7 +7,9 @@
 
       <aside class="article__content">
         <h3 class="title">Some content here and an image</h3>
-        {% include "../../../figure/figure.html.swig" %}
+        <div class="intrinsic-ratio-container">
+          {% include "../../../figure/figure.html.swig" %}
+        </div>
       </aside>
 
       <p>
