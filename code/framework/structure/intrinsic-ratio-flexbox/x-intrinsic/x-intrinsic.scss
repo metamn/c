@@ -1,4 +1,4 @@
-@mixin x-intrinsic-ratio {
+@mixin x-intrinsic {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -21,18 +21,18 @@
   }
 
   &--simple {
-    @include x-intrinsic-ratio--simple;
+    @include x-intrinsic--simple;
   }
 
   &--with-image {
-    @include x-intrinsic-ratio--with-image;
+    @include x-intrinsic--with-image;
   }
 
   &--with-image-stretched {
-    @include x-intrinsic-ratio--with-image-stretched;
+    @include x-intrinsic--with-image-stretched;
   }
 
   &--flex-column {
-    @include x-intrinsic-ratio--flex-column;
+    @include x-intrinsic--flex-column;
   }
 }

@@ -1,0 +1,17 @@
+// A flexbox friendly intrinsic ratio mixin
+//
+// A solution found on [Codepen](https://codepen.io/leonderijke/post/flexbox-and-intrinsic-sizing-some-browser-inconsistencies)
+// The problem was that the old intrinsic ratio mixin doesn't works inside a flexbox where elements are displayed in a column.
+// Now this is a fix
+//
+// Styleguide intrinsic-ratio-flexbox
+@mixin intrinsic-ratio-flexbox($width, $height, $item) {
+  height: 0;
+  padding-bottom: percentage($height / $width);
+
+  #{$item} {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}

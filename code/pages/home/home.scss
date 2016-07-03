@@ -6,10 +6,14 @@
 html {
   &.home {
     body {
+      .x-intrinsic {
+        @include x-intrinsic;
+      }
+      
       .x-intrinsic-ratio {
         @include x-intrinsic-ratio;
       }
-      
+
       .devices {
         @include devices;
       }

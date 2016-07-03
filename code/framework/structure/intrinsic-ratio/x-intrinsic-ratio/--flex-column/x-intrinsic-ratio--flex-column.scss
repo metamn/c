@@ -1,0 +1,17 @@
+@mixin x-intrinsic-ratio--flex-column {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+  }
+
+  .figure {
+    //@include intrinsic-ratio(1, 1, '.img');
+    @include figure;
+  }
+
+  .intrinsic-ratio-container {
+    @include intrinsic-ratio(1, 1, '.intrinsic-ratio-item');
+  }
+}

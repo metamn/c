@@ -970,7 +970,536 @@
 
 
 
+  <section class="x-intrinsic">
+  <h3 class="x-intrinsic__title">Intrinsic ratio with flexbox</h3>
+
+  <aside class="x-intrinsic--flex-column">
+  <h3 class="title">Intrinsic ratio with image in a flexbox, displayed in a column</h3>
+
   
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+
+  <p>
+    The image is not visible. It should have it's dimension set manually.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic--simple">
+  <h3 class="title">Simple intrinsic ratio example</h3>
+
+  <div class="container">
+    <p>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+    </p>
+  </div>
+
+  <p>
+    If the content is bigger than the container it must be truncated, otherwise overflows.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic--with-image">
+  <h3 class="title">Intrinsic ratio with image example</h3>
+
+  
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+
+  <p>
+    This image has to have a 1:1 intrinsic ratio. And it must look distorted since the original image is a rectangle in landscape mode.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic--with-image-stretched">
+  <h3 class="title">Intrinsic ratio with image stretched example</h3>
+
+  
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+
+  <p>
+    This image has to have a 1:1 intrinsic ratio. Since it's stretched it can't have this ratio.
+  </p>
+</aside>
+
+</section>
+
+  <section class="x-intrinsic-ratio">
+  <h3 class="x-intrinsic-ratio__title">Intrinsic ratio</h3>
+
+  <aside class="x-intrinsic-ratio--flex-column">
+  <h3 class="title">Intrinsic ratio with image in a flexbox, displayed in a column</h3>
+
+  <div class="intrinsic-ratio-container">
+    <div class="intrinsic-ratio-item">
+      
+      
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+    </div>
+  </div>
+
+  <p>
+    The image is not visible. It should have it's dimension set manually.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic-ratio--simple">
+  <h3 class="title">Simple intrinsic ratio example</h3>
+
+  <div class="container">
+    <p>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+      This element has to have an intrinsic ratio of 16:9 set. <br/>
+    </p>
+  </div>
+
+  <p>
+    If the content is bigger than the container it must be truncated, otherwise overflows.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic-ratio--with-image">
+  <h3 class="title">Intrinsic ratio with image example</h3>
+
+  
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+
+  <p>
+    This image has to have a 1:1 intrinsic ratio. And it must look distorted since the original image is a rectangle in landscape mode.
+  </p>
+</aside>
+
+  <aside class="x-intrinsic-ratio--with-image-stretched">
+  <h3 class="title">Intrinsic ratio with image stretched example</h3>
+
+  
+  
+
+
+
+
+<figure class="figure">
+  
+
+  <!-- The default extension is .png but other formats are handled too -->
+  
+  
+    
+  
+
+  <!-- If 'onesize' is set all images will have the same size -->
+  
+    <!-- Naming convention for responsive images -->
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  <!-- Showing different images for different devices -->
+  
+
+
+  <!-- Figcaption is image title unless is not set explicitely -->
+  
+  
+
+  
+
+
+  <!-- Image url can be relative or absolute -->
+  
+  
+
+
+  <picture class="picture">
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source media="(min-width: 1600px)" srcset="/assets/images/test_desktop.jpg, /assets/images/test_desktop2x.jpg 2x">
+    <source media="(min-width: 1024px)" srcset="/assets/images/test_laptop.jpg, /assets/images/test_laptop2x.jpg 2x">
+    <source media="(min-width: 600px)" srcset="/assets/images/test_tablet.jpg, /assets/images/test_tablet2x.jpg 2x">
+    <source media="(max-width: 599px)" srcset="/assets/images/test_mobile.jpg, /assets/images/test_mobile2x.jpg 2x">
+    <!--[if IE 9]></video><![endif]-->
+    <!-- to make it work with imagesLoaded the 'srcset' is replaced by a standard fallback 'src' -->
+    <img class="img" src="/assets/images/test_laptop.jpg" alt="Test">
+  </picture>
+
+  <figcaption class="figcaption figcaption--from-title">
+    Test
+  </figcaption>
+
+
+</figure>
+
+
+  <p>
+    This image has to have a 1:1 intrinsic ratio. Since it's stretched it can't have this ratio.
+  </p>
+</aside>
+
+</section>
+
   <section class="devices">
   <h3>Device changer</h3>
 
