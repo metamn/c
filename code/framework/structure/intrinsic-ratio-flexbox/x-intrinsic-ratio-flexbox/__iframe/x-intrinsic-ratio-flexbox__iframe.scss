@@ -1,0 +1,5 @@
+@mixin x-intrinsic-ratio-flexbox__iframe {
+  .intrinsic-ratio-flexbox-container {
+    @include intrinsic-ratio-flexbox(16, 9, '.iframe');
+  }
+}

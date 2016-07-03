@@ -6,12 +6,8 @@
 html {
   &.home {
     body {
-      .x-intrinsic {
-        @include x-intrinsic;
-      }
-      
-      .x-intrinsic-ratio {
-        @include x-intrinsic-ratio;
+      .x-intrinsic-ratio-flexbox {
+        @include x-intrinsic-ratio-flexbox;
       }
 
       .devices {

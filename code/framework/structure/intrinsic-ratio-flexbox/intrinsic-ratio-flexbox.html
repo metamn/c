@@ -1,1 +1,0 @@
-< class="intrinsic-ratio-flexbox">

@@ -1,0 +1,39 @@
+@mixin x-intrinsic-ratio-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+
+  .title,
+  .article__title {
+    display: flex;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include border(normal, all);
+    padding: $lem;
+    margin: 5vh 5vw;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .figure {
+        @include figure;;
+      }
+    }
+  }
+
+  &__mockups {
+    @include x-intrinsic-ratio-flexbox__mockups;
+  }
+
+  &__iframe {
+    @include x-intrinsic-ratio-flexbox__iframe;
+  }
+}
