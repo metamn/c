@@ -13,8 +13,7 @@ var deviceMockupChange = function(mockup, value) {
   // Morph devices
   var m = Math.trunc(value);
   var s = value % 1;
-  var d = (value - deviceMockupOldValue > 0) ? "up" : "down"
-  mockupMorphingScale(mockup, m, s, d);
+  mockupMorphingScale(mockup, m, s);
 
   // Switch devices
   switchDevice(Math.trunc(value), Math.trunc(deviceMockupOldValue));
