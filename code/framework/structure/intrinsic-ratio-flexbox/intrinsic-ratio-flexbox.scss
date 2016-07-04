@@ -1,11 +1,11 @@
 // A flexbox friendly intrinsic ratio mixin
 //
 // The problem was that the old intrinsic ratio mixin doesn't works inside a flexbox
-// Now this is a fix.
+// Now this is a fix. Kind of.
 //
 // Idea:
-// - have an item ('.intrinsic-container-item') an set an intrinsic ratio to display it's children ('intrinsic-container-object')
-// - wrap all in an extra container ('intrinsic-container'). This way flexbox can calculate it's dimensions
+// - You have an item ('.intrinsic-container-item') and want to set an intrinsic ratio to display it's children ('intrinsic-container-object')
+// - You should wrap all into an extra container ('intrinsic-container'). This way flexbox can calculate it's dimensions.
 //
 // Usage:
 // ```
@@ -31,6 +31,10 @@
 // ```
 //
 // Example: http://codepen.io/metamn/pen/JKJjxj
+//
+//
+// Experimental
+//
 //
 // Styleguide intrinsic-ratio-flexbox
 @mixin intrinsic-ratio-flexbox($width, $height, $item, $object) {

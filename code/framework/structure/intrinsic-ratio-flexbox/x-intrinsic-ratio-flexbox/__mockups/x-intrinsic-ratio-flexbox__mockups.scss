@@ -3,7 +3,7 @@
     &:nth-of-type(1) {
       .intrinsic-ratio-container {
         background: lightblue;
-        @include intrinsic-ratio-flexbox(2, 3, '.figure', '.picture');
+        @include intrinsic-ratio-flexbox(2, 3, '.intrinsic-ratio-item', '.intrinsic-ratio-object');
       }
     }
   }

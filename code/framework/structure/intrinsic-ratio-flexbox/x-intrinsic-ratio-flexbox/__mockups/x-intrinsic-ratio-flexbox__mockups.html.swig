@@ -5,18 +5,16 @@
     <article class="article">
       <h3 class="article__title">{{ image.title }}</h3>
 
-      <div>Some content here</div>
-
       <aside class="article__content">
-        <h3 class="title">and an image</h3>
         <div class="intrinsic-ratio-container">
-          {% include "../../../figure/figure.html.swig" %}
+          <div class="intrinsic-ratio-item">
+            <div class="intrinsic-ratio-object">
+              <img class="intrinsic-ratio-object" src="http://lorempixel.com/400/200">
+            </div>
+          </div>
         </div>
       </aside>
 
-      <p>
-        It's a footer !!!
-      </p>
     </article>
   {% endfor %}
 </section>
