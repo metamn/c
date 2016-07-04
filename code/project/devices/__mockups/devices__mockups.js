@@ -2,11 +2,6 @@ var klass = require('./../../../framework/helpers/js/klass.js');
 var changeImage = require('./../../../framework/helpers/js/changeImage.js');
 var mockupMorphingScale = require('./../../../framework/design/decorations/mockup/--morphing/mockup--morphing.js');
 
-// Idea
-// 1. Get all mockup sizes
-// 2. Create a custom scale between them connected to the range
-// 3. Scale up / down mockups
-// 4. Hide / show mockup components like buttons, etc.
 
 // Globals
 var deviceMockupOldValue = 1;
@@ -19,8 +14,7 @@ var deviceMockupChange = function(mockup, value) {
   var m = Math.trunc(value);
   var s = value % 1;
   var d = (value - deviceMockupOldValue > 0) ? "up" : "down"
-  mockupMorphingScale(deviceMockups[m - 1], s, d);
-
+  mockupMorphingScale(mockup, m, s, d);
 
   // Switch devices
   switchDevice(Math.trunc(value), Math.trunc(deviceMockupOldValue));

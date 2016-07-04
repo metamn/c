@@ -1,12 +1,22 @@
 var select = require('./../../../../helpers/js/select.js');
+var transform = require('./../../../../helpers/js/transform.js');
 var l = require('./../../../../helpers/js/loop.js');
 var elementSize = require('./../../../../helpers/js/elementSize.js');
 
 
 // Scale a mockup
-var mockupMorphingScale = function(mockup, scale, direction) {
-  console.log('Scaling ' + mockup + " " + direction + " to " + scale);
+var mockupMorphingScale = function(mockup, device, scale, direction) {
+  console.log('Scaling ' + device + " " + direction + " to " + scale);
   var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
+  var device1Sizes = mockupSizes[device - 1]
+  var device2Sizes = mockupSizes[device];
+  var scaleXUnit = (device2Sizes.width / device1Sizes.width - 1) / 10;
+  var scaleYUnit = (device2Sizes.height / device1Sizes.height - 1) / 10;
+  console.log('xU:' + scaleXUnit + ', yU: ' + scaleYUnit);
+  var scaleX = 1 + scaleXUnit * scale * 10;
+  var scaleY = 1 + scaleYUnit * scale * 10;
+  //console.log(': ' + s);
+  transform(mockup, '', 'scale(' + scaleX + ', ' + scaleY + ')');
 }
 
 module.exports = mockupMorphingScale;
