@@ -5,8 +5,8 @@ var elementSize = require('./../../../../helpers/js/elementSize.js');
 
 
 // Scale a mockup
-var mockupMorphingScale = function(mockup, device, scale) {
-  console.log('Scaling ' + device + " to " + scale);
+var mockupMorphingScale = function(mockup, device, scale, direction) {
+  console.log('Scaling ' + device + " " + direction + " to " + scale);
   var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
   var device1Sizes = mockupSizes[device - 1]
   var device2Sizes = mockupSizes[device];
