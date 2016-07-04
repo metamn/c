@@ -7,6 +7,34 @@ var elementSize = require('./../../../../helpers/js/elementSize.js');
 // Scale a mockup
 var mockupMorphingScale = function(mockup, device, scale, direction) {
   console.log('Scaling ' + device + " " + direction + " to " + scale);
+  if (direction == 'up') {
+    mockupMorphingScaleUp(mockup, device, scale);
+  } else {
+    mockupMorphingScaleDown(mockup, device, scale);
+  }
+}
+
+module.exports = mockupMorphingScale;
+
+
+// Scale down a mockup
+function mockupMorphingScaleDown(mockup, device, scale) {
+  var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
+  var device1Sizes = mockupSizes[device]
+  var device2Sizes = mockupSizes[device - 1];
+  if (device2Sizes) {
+    var scaleXUnit = (device2Sizes.width / device1Sizes.width - 1) / 10;
+    var scaleYUnit = (device2Sizes.height / device1Sizes.height - 1) / 10;
+    var scaleX = 1 + scaleXUnit * scale * 10;
+    var scaleY = 1 + scaleYUnit * scale * 10;
+    transform(mockup, '', 'scale(' + scaleX + ', ' + scaleY + ')');
+  } else {
+    transform(mockup, 'scale(1, 1)', 'scale(1, 1)');
+  }
+}
+
+// Scale up a mockup
+function mockupMorphingScaleUp(mockup, device, scale) {
   var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
   var device1Sizes = mockupSizes[device - 1]
   var device2Sizes = mockupSizes[device];
@@ -20,9 +48,6 @@ var mockupMorphingScale = function(mockup, device, scale, direction) {
     transform(mockup, 'scale(1, 1)', 'scale(1, 1)');
   }
 }
-
-module.exports = mockupMorphingScale;
-
 
 
 // Get mockup sizes

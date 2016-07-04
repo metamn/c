@@ -10,28 +10,27 @@ var deviceMockups = ['mobile', 'tablet', 'laptop'];
 var deviceMockupChange = function(mockup, value) {
   console.log('v:' + value + ', ' + deviceMockupOldValue);
 
-  // Morph devices
-  var m = Math.trunc(value);
-  var s = value % 1;
-  var d = (value - deviceMockupOldValue > 0) ? "up" : "down"
-  mockupMorphingScale(mockup, m, s, d);
-
-  // Switch devices
-  switchDevice(Math.trunc(value), Math.trunc(deviceMockupOldValue));
-
-  function switchDevice(newValue, oldValue) {
-    if (newValue != oldValue) {
-      replaceClass('mockup--' + deviceMockups[oldValue - 1], 'mockup--' + deviceMockups[newValue - 1]);
-      replaceImage(newValue);
-    }
-  }
+  replaceClass(mockup, value);
 
 
   // Helpers
   // Change mockup klass
-  function replaceClass(from, to) {
-    klass(mockup, from, 'remove');
-    klass(mockup, to, 'add');
+  function replaceClass(mockup, value) {
+    switch (true) {
+      case (value <= 1.5):
+        device = 0;
+        break;
+      case ((value > 1.5) && (value <= 2.5)):
+        device = 1;
+        break;
+      default:
+        device = 2;
+    }
+
+    mockup.classList = '';
+    mockup.classList.add('mockup--morphing');
+    mockup.classList.add('mockup--' + deviceMockups[device]);
+    replaceImage(device + 1);
   }
 
   // Change mockup image
