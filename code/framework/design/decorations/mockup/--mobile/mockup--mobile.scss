@@ -13,8 +13,12 @@
     @include mockup__sensor;
   }
 
+  .mockup__content {
+    @include mockup__content(2, 3);
+  }
+
   .figure {
-    @include figure;
+    @include figure($stretch: stretched);
     line-height: 0;
     padding: $lem 0;
   }

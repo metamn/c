@@ -15,6 +15,10 @@
     }
   }
 
+  .mockup__content {
+    @include mockup__content(16, 9);
+  }
+
   .figure {
     @include figure;
     @include border(thin, left);

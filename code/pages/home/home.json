@@ -12,7 +12,7 @@
       "title": "Device changer",
       "subtitle": "This headline will be changed"
     },
-    "iframe": "<!-- Tag Name: Test Tag Advertiser: Blizzard Client: Gawker Ad Id: y71Kfa Tag Id: 4QE29Ws8ab--><script>window.__tsmp=+(new Date());</script><link rel='dns-prefetch' href='https://c.specless.io'><link rel='preconnect' href='https://c.specless.io' crossorigin><script type='text/javascript' src='https://s.specless.io/ads/1/start_623?ad=y71Kfa&tid=4QE29Ws8ab&ch=royale'></script><script type='text/javascript'>Specless.scope().load('y71Kfa', { 'tagId':'4QE29Ws8ab', 'requestTime':window.__tsmp,});</script>",
+    "iframe": "http://w3schools.com",
     "images": [
       {
         "tite": "Placeholder 2x3",

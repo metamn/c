@@ -1,11 +1,21 @@
 {% import "../../helpers/link/link.swig" as l  %}
 
-{% set klass = "figure" %}
+{# Setting up classes #}
+{% set k = "figure" %}
+{% if klass %}
+  {% set k = "figure " + klass %}
+{% endif %}
 {% if image.class %}
-  {% set klass = "figure {{ image.class }}" %}
+  {% set k = k + " " + image.class %}
 {% endif %}
 
-<figure class="{{ klass }}">
+{% set kp = '' %}
+{% if klass == 'intrinsic-ratio-item' %}
+  {% set kp = 'intrinsic-ratio-object' %}
+{% endif %}
+
+
+<figure class="{{ k }}">
   {% if image.link %}{{ l.link(link) }}{% endif %}
 
   <!-- The default extension is .png but other formats are handled too -->
@@ -74,7 +84,7 @@
   {% endif %}
 
 
-  <picture class="picture">
+  <picture class="picture {{ kp }}">
     <!--[if IE 9]><video style="display: none;"><![endif]-->
     <source media="(min-width: 1600px)" srcset="{{ site_url }}{{ site.images }}{{ desktop }}, {{ site_url }}{{ site.images }}{{ desktop2x }} 2x">
     <source media="(min-width: 1024px)" srcset="{{ site_url }}{{ site.images }}{{ laptop }}, {{ site_url }}{{ site.images }}{{ laptop2x }} 2x">

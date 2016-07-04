@@ -13,6 +13,10 @@
     padding: $lem / 2;
   }
 
+  .mockup__content {
+    @include mockup__content(16, 9);
+  }
+
   .figure {
     @include figure($stretch: stretched);
     @include border(thin, all);

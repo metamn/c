@@ -1,0 +1,6 @@
+@mixin mockup__content($w, $h) {
+  width: 100%;
+  .intrinsic-ratio-container {
+    @include intrinsic-ratio-flexbox($w, $h, '.intrinsic-ratio-item', '.intrinsic-ratio-object');
+  }
+}

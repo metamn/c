@@ -1,7 +1,0 @@
-@mixin mockup__iframe($width, $r1, $r2) {
-  width: $width;
-
-  .intrinsic-ratio-container {
-    @include intrinsic-ratio($r1, $r2, '.intrinsic-ratio-item');
-  }
-}
