@@ -24,7 +24,7 @@
       align-items: center;
 
       .figure {
-        @include figure;;
+        @include figure($stretch: stretched);
       }
     }
   }
