@@ -6,9 +6,10 @@
   {% include "../../../framework/design/decorations/mockup/mockup.html.swig" %}
 
 
-  <span class="hidden-images">
+  <span class="hidden-mockups">
     {% for image in devices.images %}
-      {% include "../../../framework/structure/figure/figure.html.swig" %}
+      {% set mockup = { type: image.mockup, image: image } %}
+      {% include "../../../framework/design/decorations/mockup/mockup.html.swig" %}
     {% endfor %}
   </span>
 </section>

@@ -9,7 +9,5 @@
     @include mockup--morphing;
   }
 
-  .hidden-images {
-    display: none;
-  }
+  @include devices__mockups--hide;
 }

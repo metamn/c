@@ -1,0 +1,12 @@
+@mixin devices__mockups--hide {
+  overflow: hidden;
+  position: relative;
+
+  .hidden-mockups {
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+}
