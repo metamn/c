@@ -10,31 +10,6 @@ var deviceMockups = ['mobile', 'tablet', 'laptop'];
 var steps = 10;
 
 
-// Change a mockup
-var mockupMorphingChangeDevice = function(mockup, to) {
-  console.log('Changing mockup to ' + to);
-
-  // get the current size
-  var currentSize = elementSize(mockup);
-  console.log('size: ' + currentSize.width + ', ' + currentSize.height);
-
-  // change class
-  mockup.classList = '';
-  mockup.classList.add('mockup--morphing');
-  mockup.classList.add('mockup--' + deviceMockups[to]);
-
-  // replace image
-  var imageID = to + 1
-  var sourceImageID = '.devices__mockups .hidden-mockups .mockup:nth-of-type(' + imageID + ') .figure';
-  changeImage(sourceImageID, '.devices__mockups .mockup .figure');
-
-  // set original size
-  mockup.style.width = currentSize.width + 'px';
-  //mockup.style.height = currentSize.height + 'px';
-  mockup.style.transform = 'none';
-}
-
-
 // Scale an element via `transform`
 //
 // $mockup - the element to scale
@@ -99,6 +74,29 @@ var mockupMorphingGetSizes = function(mockupsID) {
 }
 
 
+// Change a mockup
+var mockupMorphingChangeDevice = function(mockup, to) {
+  console.log('Changing mockup to ' + to);
+
+  // get the current size
+  // - this means we need the figure size
+  var figure = select('.mockup .figure')[0];
+  var currentSize = elementSize(figure);
+
+  // change class
+  mockup.classList = '';
+  mockup.classList.add('mockup--morphing');
+  mockup.classList.add('mockup--' + deviceMockups[to]);
+
+  // replace image
+  var imageID = to + 1
+  var sourceImageID = '.devices__mockups .hidden-mockups .mockup:nth-of-type(' + imageID + ') .figure';
+  changeImage(sourceImageID, '.devices__mockups .mockup .figure');
+
+  // set original size
+  figure.style.width = currentSize.width + 'px';
+  //mockup.style.transform = 'none';
+}
 
 module.exports = {
   mockupMorphingChangeDevice: mockupMorphingChangeDevice,
