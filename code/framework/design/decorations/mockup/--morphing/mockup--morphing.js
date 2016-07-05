@@ -20,6 +20,13 @@ var steps = 10;
 // Example: (mockup, 0, 1, 0.3, 10);
 var mockupMorphingScale = function(mockup, from, to, step) {
   console.log('Scaling ' + from + " to " + to + " with " + step);
+
+  if (step == 0) {
+    var figure = select('.mockup .figure')[0];
+    figure.style = '';
+  }
+
+
   var scaleUnit = mockupMorphingGetScalingUnit(from, to, steps);
   var scaleX = 1 + scaleUnit.x * step * steps;
   var scaleY = 1 + scaleUnit.y * step * steps;
@@ -95,7 +102,7 @@ var mockupMorphingChangeDevice = function(mockup, to) {
 
   // set original size
   figure.style.width = currentSize.width + 'px';
-  //mockup.style.transform = 'none';
+  figure.style.height = currentSize.height + 'px';
 }
 
 module.exports = {
