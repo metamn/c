@@ -2,21 +2,55 @@ var select = require('./../../../../helpers/js/select.js');
 var transform = require('./../../../../helpers/js/transform.js');
 var l = require('./../../../../helpers/js/loop.js');
 var elementSize = require('./../../../../helpers/js/elementSize.js');
+var changeImage = require('./../../../../helpers/js/changeImage.js');
+
+
+// Globals
+var deviceMockups = ['mobile', 'tablet', 'laptop'];
+var steps = 10;
+
+
+// Change a mockup
+var mockupMorphingChangeDevice = function(mockup, to) {
+  console.log('Changing mockup to ' + to);
+
+  // get the current size
+  var currentSize = elementSize(mockup);
+  console.log('size: ' + currentSize.width + ', ' + currentSize.height);
+
+  // change class
+  mockup.classList = '';
+  mockup.classList.add('mockup--morphing');
+  mockup.classList.add('mockup--' + deviceMockups[to]);
+
+  // replace image
+  var imageID = to + 1
+  var sourceImageID = '.devices__mockups .hidden-mockups .mockup:nth-of-type(' + imageID + ') .figure';
+  changeImage(sourceImageID, '.devices__mockups .mockup .figure');
+
+  // set original size
+  mockup.style.width = currentSize.width + 'px';
+  //mockup.style.height = currentSize.height + 'px';
+  mockup.style.transform = 'none';
+}
 
 
 // Scale an element via `transform`
 //
 // $mockup - the element to scale
-// $scaleUnit - the unit of scale
-// $scale - how much to scale (coming from a user input perhaps)
-// $steps - how many steps are in the transition (according to the range slider)
+// $from - the ID of the element to scale from (0 - mobile, 1 - tablet, etc)
+// $to - the ID of the element to scale to
+// $step - how much to scale (0.1 - 0.99)
 //
-// Example: (mockup, scaleUnit, .3, 10) => scaling 3 steps
-var mockupMorphingScale = function(mockup, scaleUnit, scale, steps) {
-  var scaleX = 1 + scaleUnit.x * scale * steps;
-  var scaleY = 1 + scaleUnit.y * scale * steps;
+// Example: (mockup, 0, 1, 0.3, 10);
+var mockupMorphingScale = function(mockup, from, to, step) {
+  console.log('Scaling ' + from + " to " + to + " with " + step);
+  var scaleUnit = mockupMorphingGetScalingUnit(from, to, steps);
+  var scaleX = 1 + scaleUnit.x * step * steps;
+  var scaleY = 1 + scaleUnit.y * step * steps;
   transform(mockup, '', 'scale(' + scaleX + ', ' + scaleY + ')');
 }
+
 
 
 // Get the scaling unit
@@ -34,33 +68,15 @@ var mockupMorphingScale = function(mockup, scaleUnit, scale, steps) {
 // (1.979 - 1) / 10 = 0.0979 is each step in the scale; scale 1 up = scalex(1 + 0.0979); scale 9 up = scaleX(1 + 0.0979*9) = scaleX(1,8811); scale 9.9 up = scaleX(1,96921)
 //
 // Returns an object
-var mockupMorphingGetScalingUnit = function($device1Sizes, $device2Sizes, $steps) {
-  var scaleXUnit = (device2Sizes.width / device1Sizes.width - 1) / $steps;
-  var scaleYUnit = (device2Sizes.height / device1Sizes.height - 1) / $steps;
+var mockupMorphingGetScalingUnit = function(from, to, steps) {
+  var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
+  var device1Sizes = mockupSizes[from]
+  var device2Sizes = mockupSizes[to];
+  var scaleXUnit = (device2Sizes.width / device1Sizes.width - 1) / steps;
+  var scaleYUnit = (device2Sizes.height / device1Sizes.height - 1) / steps;
 
   return { x: scaleXUnit, y: scaleYUnit }
 }
-
-
-
-// Get a scale
-//
-// When scaling from mobile to tablet we scale up mobile to a point then switch the mockup to tablet.
-// Then scale up tablet to the original tablet size.
-// Example: mobile -> tablet small -> tablet original
-// This function returns these scales (mobile -> tablet small, tablet small -> tablet, etc)
-//
-// $device1 - the ID of the first device, ie 1 for mobile
-// $device2 - the ID to the second device, ie 2 for tablet
-// $morphingPoint - where the $device1 morphs to $device2, ie 1.67
-// $startingPoint - the type of the result returned. If $startinPoint = $device1 we will get back the scale from 1-1.67, if $startinPoint = tablet we will get back the scale for 1.67 - 2
-var mockupMorphingGetScale = function($device1, $device2, $morphingPoint, $startingPoint) {
-  var mockupSizes = mockupMorphingGetSizes('.hidden-mockups .mockup');
-  var device1Sizes = mockupSizes[device1]
-  var device2Sizes = mockupSizes[device2];
-  var scalingUnit = mockupMorphingGetScalingUnit(device1Sizes, device2Sizes, 10);
-}
-
 
 
 // Get mockup sizes
@@ -85,6 +101,6 @@ var mockupMorphingGetSizes = function(mockupsID) {
 
 
 module.exports = {
-  mockupMorphingGetScale: mockupMorphingGetScale,
+  mockupMorphingChangeDevice: mockupMorphingChangeDevice,
   mockupMorphingScale: mockupMorphingScale
 }

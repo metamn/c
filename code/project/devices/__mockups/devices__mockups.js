@@ -1,69 +1,25 @@
-var klass = require('./../../../framework/helpers/js/klass.js');
-var changeImage = require('./../../../framework/helpers/js/changeImage.js');
 var m = require('./../../../framework/design/decorations/mockup/--morphing/mockup--morphing.js');
 
 
-// Globals
-var deviceMockupOldValue = 1;
-var deviceMockups = ['mobile', 'tablet', 'laptop'];
-var steps = 10;
-
 var deviceMockupChange = function(mockup, value) {
-  console.log('v:' + value + ', ' + deviceMockupOldValue);
+  console.log('v:' + value);
 
   var step = value % 1;
 
   switch (true) {
-    case (value < 1.66):
-      device = 0;
-      unit = m.mockupMorphingGetScale(0, 1, 1.66, 0);
+    case (value == 1.6):
+      m.mockupMorphingChangeDevice(mockup, 1);
       break;
-    case (value = 1.66):
-      device = 1;
-      replaceClass(mockup, device);
-      unit = m.mockupMorphingGetScale(0, 1, 1.66, 1);
+    case (value == 2.3):
+      m.mockupMorphingChangeDevice(mockup, 2);
       break;
-    case ((value > 1.66) && (value < 2)):
-      device = 1;
-      unit = m.mockupMorphingGetScale(0, 1, 1.66, 1);
+    case (value <= 2):
+      m.mockupMorphingScale(mockup, 0, 1, step);
       break;
-    case ((value >= 2) && (value < 2.33)):
-      device = 1;
-      unit = m.mockupMorphingGetScale(1, 2, 2.33, 1);
-      break;
-    case (value = 2.33):
-      device = 2;
-      replaceClass(mockup, device);
-      unit = m.mockupMorphingGetScale(1, 2, 2.33, 1);
-      break;
-    case (value > 2.33):
-      device = 2;
-      unit = m.mockupMorphingGetScale(1, 2, 2.33, 2);
+    case (value > 2):
+      m.mockupMorphingScale(mockup, 1, 2, step);
       break;
   }
-
-  m.mockupMorphingScale(mockup, unit, step, steps);
-
-
-
-  // Helpers
-
-
-  // Change mockup klass
-  function replaceClass(mockup, device) {
-    mockup.classList = '';
-    mockup.classList.add('mockup--morphing');
-    mockup.classList.add('mockup--' + deviceMockups[device]);
-    replaceImage(device + 1);
-  }
-
-  // Change mockup image
-  function replaceImage(imageID) {
-    var sourceImageID = '.devices__mockups .hidden-mockups .mockup:nth-of-type(' + imageID + ') .figure';
-    changeImage(sourceImageID, '.devices__mockups .mockup .figure');
-  }
-
-  deviceMockupOldValue = value;
 }
 
 module.exports = deviceMockupChange;
